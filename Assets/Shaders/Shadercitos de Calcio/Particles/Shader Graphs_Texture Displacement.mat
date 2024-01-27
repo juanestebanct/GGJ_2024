@@ -32,7 +32,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture_Red_Emissiv_Green_Opacity:
-        m_Texture: {fileID: 2800000, guid: 21257980273577541bd6eee57a2768fc, type: 3}
+        m_Texture: {fileID: 2800000, guid: 7ec20746059fd6546bd975a892d68549, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Vertex_Offset_Texture:
@@ -59,26 +59,26 @@ Material:
     - _Blend: 0
     - _CastShadows: 1
     - _Cull: 2
-    - _Depth_Fade_Distance: 0
-    - _Displacement_Intensity: 0.01
+    - _Depth_Fade_Distance: 0.2
+    - _Displacement_Intensity: -0.03
     - _DstBlend: 10
     - _Emissiv_Driven_By_Vertex_Color_Alpha_1: 1
-    - _Emissiv_Intensity: 1.89
+    - _Emissiv_Intensity: 2.07
     - _QueueControl: 0
     - _QueueOffset: 0
     - _SrcBlend: 5
     - _Surface: 1
-    - _UV_Distorsion_Intensity: 0.41
+    - _UV_Distorsion_Intensity: 0.17
     - _Vertex_Offset_Source_0_Texture_1_Noise: 0
     - _ZTest: 4
     - _ZWrite: 0
     - _ZWriteControl: 0
     m_Colors:
-    - _Color_1: {r: 0, g: 0.6366434, b: 1, a: 0}
-    - _Color_2: {r: 0, g: 8.574186, b: 5.0654254, a: 1}
-    - _Main_Texture_Tiling_and_Offset_Speed: {r: 1, g: 1.5, b: 0.1, a: 0.1}
+    - _Color_1: {r: 0, g: 0.63529444, b: 1, a: 0}
+    - _Color_2: {r: 0.21323244, g: 2.143547, b: 0.9626189, a: 1}
+    - _Main_Texture_Tiling_and_Offset_Speed: {r: 2, g: 1, b: 0.1, a: 0.5}
     - _Rainbow_Tile: {r: 1, g: 1, b: 0, a: 0}
-    - _UV_Distorsion_Tiling_and_Offset_Speed: {r: 1, g: 1, b: 0, a: 0.1}
+    - _UV_Distorsion_Tiling_and_Offset_Speed: {r: 1, g: 1, b: 0, a: 0}
     - _Vertex_Offset_Tiling_and_Offset_Speed: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &7965977303786825608
