@@ -15,6 +15,11 @@ MonoBehaviour:
   ScenesTabs:
   - pin: 0
     path:
+    - Assets/_Scenes/Procedural Generation/PG.unity
+    guid:
+    - 9b04cd90e36c6064b8107b38ad4595fd
+  - pin: 0
+    path:
     - Assets/_Scenes/PlayerController_Testing.unity
     guid:
     - 99c9720ab356a0642a771bea13969a05
