@@ -61,10 +61,10 @@ Material:
     - _CastShadows: 0
     - _Cull: 1
     - _Depth_Fade_Distance: 0
-    - _Displacement_Intensity: 0.59
+    - _Displacement_Intensity: 0.52
     - _DstBlend: 10
     - _Emissiv_Driven_By_Vertex_Color_Alpha_1: 1
-    - _Emissiv_Intensity: 1
+    - _Emissiv_Intensity: 2
     - _QueueControl: 0
     - _QueueOffset: -1
     - _SrcBlend: 5
@@ -77,7 +77,7 @@ Material:
     m_Colors:
     - _Color_1: {r: 1, g: 1, b: 1, a: 1}
     - _Color_2: {r: 0, g: 0, b: 0, a: 1}
-    - _Main_Texture_Tiling_and_Offset_Speed: {r: 1, g: 5, b: -3, a: 2}
+    - _Main_Texture_Tiling_and_Offset_Speed: {r: 1, g: 1, b: 3, a: 2}
     - _UV_Distorsion_Tiling_and_Offset_Speed: {r: 1, g: 1, b: 2, a: 3}
     - _Vertex_Offset_Tiling_and_Offset_Speed: {r: 1, g: 1, b: 0, a: 1}
   m_BuildTextureStacks: []
