@@ -15,9 +15,9 @@ MonoBehaviour:
   ScenesTabs:
   - pin: 0
     path:
-    - Assets/_Scenes/EnemyTest/EnemyWW.unity
+    - Assets/_Scenes/TechnicalTesticular.unity
     guid:
-    - 97ad7b191c0347f46a16f9bc78629642
+    - a16630d96ef0bb54899d51ead0c88455
   - pin: 0
     path:
     - Assets/_Scenes/PlayerController_Testing.unity
@@ -25,9 +25,9 @@ MonoBehaviour:
     - 99c9720ab356a0642a771bea13969a05
   - pin: 0
     path:
-    - Assets/_Scenes/TechnicalTesticular.unity
+    - Assets/_Scenes/EnemyTest/EnemyWW.unity
     guid:
-    - a16630d96ef0bb54899d51ead0c88455
+    - 97ad7b191c0347f46a16f9bc78629642
   HasCustomIconKeys: []
   HidedComponentsIconsValues: []
   HidedComponentsIconsKeys: []

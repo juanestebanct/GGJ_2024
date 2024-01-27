@@ -7,17 +7,15 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_Custom Particles Lit
-  m_Shader: {fileID: -6465566751694194690, guid: 27af99120556e1d4081e279a35aa7271,
+  m_Name: Shader Graphs_ToonToonToon Transparent
+  m_Shader: {fileID: -6465566751694194690, guid: b4e64bb0174e6e6438dc80dd83bb1443,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _ALPHAPREMULTIPLY_ON
-  - _SPECULAR_SETUP
   - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords: []
-  m_LightmapFlags: 2
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -29,13 +27,13 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _Normal_Map:
+    - _Main_Tex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Texture_Red_Emissiv_Green_Opacity:
-        m_Texture: {fileID: 2800000, guid: 46be3b6891b56d14abf9b8582658ed6d, type: 3}
-        m_Scale: {x: 1, y: 1}
+    - _brushes:
+        m_Texture: {fileID: 2800000, guid: e4646dbeaf2b6cf4a84da4db726d61bf, type: 3}
+        m_Scale: {x: 10, y: 5}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
@@ -51,29 +49,28 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _0_Opacity_Fade_1_Disolve: 0
+    - _Alpha: 0.32
     - _AlphaClip: 0
     - _AlphaToMask: 0
     - _Blend: 0
-    - _BlendModePreserveSpecular: 1
     - _CastShadows: 1
     - _Cull: 2
-    - _Depth_Fade_Distance: 0
     - _DstBlend: 10
-    - _Emissiv_Driven_By_Vertex_Color_Alpha_1: 0
-    - _Emissiv_Intensity: 1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _ReceiveShadows: 1
-    - _SrcBlend: 1
+    - _Smoothness: 0.37
+    - _SrcBlend: 5
     - _Surface: 1
-    - _WorkflowMode: 0
+    - _Toon_Smoothness: 0.16
     - _ZTest: 4
     - _ZWrite: 0
     - _ZWriteControl: 0
-    m_Colors: []
+    m_Colors:
+    - _Ambient_Color: {r: 1, g: 0.514151, b: 0.514151, a: 0}
+    - _Main_Color: {r: 0.5801887, g: 0.9204568, b: 1, a: 1}
+    - _Specular: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &8733851544877462455
+--- !u!114 &6618110128140852462
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
