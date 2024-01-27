@@ -15,6 +15,11 @@ MonoBehaviour:
   ScenesTabs:
   - pin: 0
     path:
+    - Assets/_Scenes/EnemyTest/EnemyWW.unity
+    guid:
+    - 97ad7b191c0347f46a16f9bc78629642
+  - pin: 0
+    path:
     - 
     guid:
     - 
