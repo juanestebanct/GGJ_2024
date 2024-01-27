@@ -72,7 +72,6 @@ public class PlayerController : MonoBehaviour
         HandleCameraLook();
         HandleMovement();
         HandleInput();
-        print(Controller.velocity.magnitude);
     }
 
     private void HandleInput()
@@ -112,8 +111,7 @@ public class PlayerController : MonoBehaviour
         else _runningValue = WalkingValue;
         float movementDirectionY = MoveDirection.y;
         MoveDirection = (forward * Vertical) + (right * Horizontal);
-
-        print(Controller.isGrounded);
+        
         if (_jump && CanMove && Controller.isGrounded)
         {
             MoveDirection.y = _jumpSpeed;
