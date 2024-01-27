@@ -6354,15 +6354,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dead_Enemy_VFX
       objectReference: {fileID: 0}
+    - target: {fileID: 6790947676075578654, guid: 3cf5e28d5b8bbab488da18f423d7c75b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8967946409829115952, guid: 3cf5e28d5b8bbab488da18f423d7c75b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.2
+      value: 6.8
       objectReference: {fileID: 0}
     - target: {fileID: 8967946409829115952, guid: 3cf5e28d5b8bbab488da18f423d7c75b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.37
+      value: 2.16
       objectReference: {fileID: 0}
     - target: {fileID: 8967946409829115952, guid: 3cf5e28d5b8bbab488da18f423d7c75b,
         type: 3}
@@ -6553,7 +6558,7 @@ PrefabInstance:
     - target: {fileID: 5772446032989736273, guid: 1a01f8ca8d553814f9f6aef41138e556,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
