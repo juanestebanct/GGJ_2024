@@ -5,15 +5,14 @@ using UnityEngine.AI;
 
 public class EnemyWw : Enemy
 {
-    [SerializeField] private Transform playerReferent;
     [SerializeField] private GameObject DamageZone;
 
-    [Header("WwStact")]
-    [SerializeField] private float rangezoneAttack;
     private void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         Live = MaxLive;
+
+        navMeshAgent.speed = Speed;
 
         ChangePatrone(MoventPatron.Change);
         playerReferent = GameObject.FindGameObjectWithTag("Player").transform;
@@ -27,7 +26,6 @@ public class EnemyWw : Enemy
         {
             case MoventPatron.Change:
                 Move = chasePlayer;
-  
                 navMeshAgent.isStopped = false;
                 break;
 
@@ -47,12 +45,12 @@ public class EnemyWw : Enemy
         float distance = Vector3.Distance(playerReferent.transform.position,transform.position);
         navMeshAgent.SetDestination(playerReferent.transform.position);
 
-        if (distance <= rangezoneAttack)
+        if (distance <= rangeZoneAttack)
         {
             ChangePatrone(MoventPatron.Attacking);
             print("Attacking");
         }
-        else if (distance >= rangezoneAttack)
+        else if (distance >= rangeZoneAttack)
         {
             print("No attackin");
         }
@@ -60,15 +58,10 @@ public class EnemyWw : Enemy
     }
     private void AttackMove()
     {
-        Vector2 direction = (playerReferent.transform.position - transform.position).normalized;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-        // Rotacion 
-        Quaternion targetRotation = Quaternion.Euler(0, 0, angle);
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 100 * Time.deltaTime);
+       
     }
     /// <summary>
-    ///Se queda quieto atacando 
+    ///Se queda quieto atacando y las dos funciones ya funcionan bien cuando haya animacion
     /// </summary>
     public override void Attack()
     {
@@ -81,7 +74,7 @@ public class EnemyWw : Enemy
         DamageZone.SetActive(false);
         ChangePatrone(MoventPatron.Change);
     }
-
+    //activa temporalmente el daño
     IEnumerator TempTImeSpame()
     {
         yield return new WaitForSeconds(1f);

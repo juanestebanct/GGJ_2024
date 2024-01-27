@@ -15,7 +15,10 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected int MaxLive;
     [SerializeField] protected int Live;
     [SerializeField] protected int AttackDamage;
+    [SerializeField] protected float rangeZoneAttack;
+    [SerializeField] protected float Speed;
 
+    protected Transform playerReferent;
     protected NavMeshAgent navMeshAgent;
     protected MoventPatron m_Patron;
     private void Update()
