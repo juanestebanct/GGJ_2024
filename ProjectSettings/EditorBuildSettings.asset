@@ -9,5 +9,5 @@ EditorBuildSettings:
     path: Assets/_Scenes/PlayerController_Testing.unity
     guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects:
-    com.unity.addressableassets: {fileID: 11400000, guid: 9e9a2e4311c8b164990294d533c175ef,
+    com.unity.addressableassets: {fileID: 11400000, guid: 6e99349d8d5b7e7458c631012d15f46c,
       type: 2}
