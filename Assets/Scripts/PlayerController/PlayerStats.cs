@@ -15,8 +15,8 @@ public class PlayerStats : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.H)) Heal();
-        if (Input.GetKeyDown(KeyCode.J)) ReceiveDamage(1);
+        
+        
     }
 
 
