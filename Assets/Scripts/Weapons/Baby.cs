@@ -97,7 +97,7 @@ public class Baby : MonoBehaviour
         {
             _ray.SetActive(true);
             _laserDamageArea.enabled = true;
-            yield return new WaitForEndOfFrame();
+            yield return new WaitForSeconds(_fireRate/2);
             CameraShaker.Invoke_LaserShake();
             _laserDamageArea.enabled = false;
             _currentAmmo--;
