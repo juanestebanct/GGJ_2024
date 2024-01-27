@@ -4,22 +4,38 @@ using UnityEngine;
 
 public class RoomTemplates : MonoBehaviour
 {
-    public GameObject[] bottomRooms;
-    public GameObject[] topRooms;
-    public GameObject[] leftRooms;
-    public GameObject[] rightRooms;
+    //SINGLETON
+    public static RoomTemplates instance;
 
-    public GameObject closedRoom;
+    //VARIABLES
+    //Changeable
+    [SerializeField] private List<GameObject> bottomRooms, topRooms, leftRooms, rightRooms;
+    [SerializeField] private GameObject closedRoom;
+    [SerializeField] [Range(0f, 100f)] private float waitTime;
+    [SerializeField] private GameObject boss;
 
-    public List<GameObject> rooms;
-
-    public float waitTime;
+    //Utility
+    private List<GameObject> rooms = new List<GameObject>();
     private bool spawnedBoss;
-    public GameObject boss;
+
+    //Access
+    public List<GameObject> BottomRooms { get => bottomRooms; }
+    public List<GameObject> TopRooms { get => topRooms; }
+    public List<GameObject> LeftRooms { get => leftRooms; }
+    public List<GameObject> RightRooms { get => rightRooms; }
+    public List<GameObject> Rooms { get => rooms; }
+    public GameObject ClosedRoom { get => closedRoom; }
+    public GameObject Boss { get => boss; }
+
+    private void Awake()
+    {
+        //Instance Assign
+        if(!instance) instance = this;
+        else Destroy(gameObject);
+    }
 
     void Update()
     {
-
         if (waitTime <= 0 && spawnedBoss == false)
         {
             for (int i = 0; i < rooms.Count; i++)
@@ -37,4 +53,12 @@ public class RoomTemplates : MonoBehaviour
         }
     }
 
+    #region Utility
+
+    public void AddRoom(GameObject room)
+    {
+        rooms.Add(room);
+    }
+
+    #endregion
 }
