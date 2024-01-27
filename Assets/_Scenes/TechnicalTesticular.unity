@@ -25673,7 +25673,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.5
+      scalar: 0.45
       minScalar: 0.35
       maxCurve:
         serializedVersion: 2
@@ -25780,7 +25780,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.4571169, g: 0.2028302, b: 1, a: 1}
+      maxColor: {r: 0.3139186, g: 0, b: 1, a: 0.5176471}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -25843,8 +25843,8 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     startSize:
       serializedVersion: 2
-      minMaxState: 3
-      scalar: 7
+      minMaxState: 0
+      scalar: 10.44
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -25896,7 +25896,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeY:
       serializedVersion: 2
-      minMaxState: 3
+      minMaxState: 0
       scalar: 12
       minScalar: 5
       maxCurve:
@@ -25949,7 +25949,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeZ:
       serializedVersion: 2
-      minMaxState: 3
+      minMaxState: 0
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -26537,7 +26537,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 2
+        scalar: 1
         minScalar: 15
         maxCurve:
           serializedVersion: 2
@@ -26989,7 +26989,7 @@ ParticleSystem:
     fps: 30
     frameOverTime:
       serializedVersion: 2
-      minMaxState: 3
+      minMaxState: 1
       scalar: 0.75
       minScalar: 0
       maxCurve:
@@ -30589,6 +30589,46 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 873688629}
     m_Modifications:
+    - target: {fileID: 757481058191205755, guid: 18223f977d858824d9c5dae96723f8ad,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 757481058191205755, guid: 18223f977d858824d9c5dae96723f8ad,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2551486674134432395, guid: 18223f977d858824d9c5dae96723f8ad,
+        type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2551486674134432395, guid: 18223f977d858824d9c5dae96723f8ad,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.atime1
+      value: 771
+      objectReference: {fileID: 0}
+    - target: {fileID: 2551486674134432395, guid: 18223f977d858824d9c5dae96723f8ad,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.atime2
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 2551486674134432395, guid: 18223f977d858824d9c5dae96723f8ad,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key1.a
+      value: 0.58431375
+      objectReference: {fileID: 0}
+    - target: {fileID: 2551486674134432395, guid: 18223f977d858824d9c5dae96723f8ad,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key2.a
+      value: 0.67058825
+      objectReference: {fileID: 0}
+    - target: {fileID: 2551486674134432395, guid: 18223f977d858824d9c5dae96723f8ad,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.m_NumAlphaKeys
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2791630397139719912, guid: 18223f977d858824d9c5dae96723f8ad,
         type: 3}
       propertyPath: m_Name
@@ -30643,6 +30683,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4510970652374484651, guid: 18223f977d858824d9c5dae96723f8ad,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4510970652374484651, guid: 18223f977d858824d9c5dae96723f8ad,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 8827276087584036189, guid: 18223f977d858824d9c5dae96723f8ad,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8827276087584036189, guid: 18223f977d858824d9c5dae96723f8ad,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.minScalar
+      value: 2.99
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
