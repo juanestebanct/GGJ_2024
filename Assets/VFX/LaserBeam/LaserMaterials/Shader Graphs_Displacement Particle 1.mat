@@ -68,7 +68,7 @@ Material:
     - _Depth_Fade_Distance: 0
     - _Displacement_Intensity: 0.87
     - _DstBlend: 10
-    - _Emissiv_Driven_By_Vertex_Color_Alpha_1: 1
+    - _Emissiv_Driven_By_Vertex_Color_Alpha_1: 0
     - _Emissiv_Intensity: 2.76
     - _QueueControl: 0
     - _QueueOffset: 1
@@ -80,9 +80,9 @@ Material:
     - _ZWrite: 0
     - _ZWriteControl: 0
     m_Colors:
-    - _Color_1: {r: 0.7254902, g: 0.048368774, b: 0, a: 1}
+    - _Color_1: {r: 1, g: 1, b: 1, a: 1}
     - _Color_2: {r: 1, g: 1, b: 1, a: 1}
-    - _Main_Texture_Tiling_and_Offset_Speed: {r: 50, g: 10, b: 4, a: 5}
+    - _Main_Texture_Tiling_and_Offset_Speed: {r: 1, g: 3, b: 0, a: 0}
     - _Rainbow_Tile: {r: 1, g: 1, b: 0, a: 0}
     - _UV_Distorsion_Tiling_and_Offset_Speed: {r: 5, g: 5, b: 0, a: 0}
     - _Vertex_Offset_Tiling_and_Offset_Speed: {r: 1, g: 1, b: 0, a: 1}
