@@ -15,7 +15,59 @@ MonoBehaviour:
   types:
   - data: []
   - data: []
-  - data: []
+  - data:
+    - saverType: 2
+      id_in_external_heap: 752132568
+      indentifierVersion: GlobalObjectId_V1
+      identifierTypetargetObjectIdtargetPrefabId: -2-99c9720ab356a0642a771bea13969a05-583448915-0
+      namesPathBackup: Environment
+      siblingsPathBackup: 5
+      boolValue: 0
+      stringValue: 
+      highLighterData:
+      - TempColorData:
+        - 255
+        - 242
+        - 76
+        - 255
+        - 0
+        - 38
+        - 42
+        - 45
+        - 255
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      iconData: []
+    - saverType: 2
+      id_in_external_heap: 965576145
+      indentifierVersion: GlobalObjectId_V1
+      identifierTypetargetObjectIdtargetPrefabId: -2-99c9720ab356a0642a771bea13969a05-3621593064644270484-1620664070041434495
+      namesPathBackup: PlayerController
+      siblingsPathBackup: 5
+      boolValue: 0
+      stringValue: 
+      highLighterData:
+      - TempColorData:
+        - 149
+        - 33
+        - 44
+        - 255
+        - 0
+        - 255
+        - 255
+        - 255
+        - 255
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      iconData: []
   - data: []
   - data: []
   - data: []

@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour
 {
     public static PlayerController Instance;
     [HideInInspector] public CharacterController Controller;
+    private ReloadMiniGameController _reloadMiniGame;
     private InputManager _inputManager;
     private Camera _cam;
     
@@ -49,6 +50,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Instance == null) Instance = this;
         else Destroy(transform.root);
+        _reloadMiniGame = GetComponent<ReloadMiniGameController>();
         _inputManager = GetComponent<InputManager>();
         _inputManager.OnJumpPressed += Jump;
         _inputManager.OnSprintPressed += Run;
@@ -76,7 +78,8 @@ public class PlayerController : MonoBehaviour
 
     private void HandleInput()
     {
-        LookVertical = -_inputManager.LookInput.y;
+        if (_reloadMiniGame.CurrentState == ReloadState.Reloading) LookVertical = 0;    
+        else LookVertical = -_inputManager.LookInput.y;
         LookHorizontal = _inputManager.LookInput.x;
         _moveVertical = _inputManager.MovementInput.y;
         _moveHorizontal = _inputManager.MovementInput.x;

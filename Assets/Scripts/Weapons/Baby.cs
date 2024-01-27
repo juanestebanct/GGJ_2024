@@ -9,12 +9,14 @@ public class Baby : MonoBehaviour
 
     [SerializeField] private GameObject _ray;
     [SerializeField] private Collider _laserDamageArea;
+    [SerializeField] private ReloadMiniGameController _reloadController;
     
     [SerializeField] private float _fireRate = 0.1f;
     [SerializeField] private int _maxAmmo = 30;
+    [SerializeField] private int _currentAmmo;
+    
     private InputManager _inputManager;
     private WeaponState _currentState;
-    [SerializeField] private int _currentAmmo;
     private bool _isReloading;
     private bool _firePressed;
     private bool _reloadPressed;
@@ -22,6 +24,7 @@ public class Baby : MonoBehaviour
 
     private void Awake()
     {
+        _reloadController = GetComponentInParent<ReloadMiniGameController>();
         _inputManager = GetComponentInParent<InputManager>();
         _inputManager.OnFirePressed += FireInput;
         _inputManager.OnFireReleased += FireInput;
@@ -71,7 +74,21 @@ public class Baby : MonoBehaviour
     private void HandleReload()
     {
         _ray.SetActive(false);
-        if (_reloadPressed && _currentAmmo < _maxAmmo) StartCoroutine(Reload());
+        if (_reloadPressed && _currentAmmo < _maxAmmo) 
+            if (!_isReloading)
+            {
+                _reloadPressed = false;
+                _isReloading = true;
+                _currentState = WeaponState.Reloading;
+                _reloadController.StartReload();
+            }
+    }
+
+    public void ReloadDone()
+    {
+        _isReloading = false;
+        _currentAmmo = _maxAmmo;
+        _currentState = WeaponState.IdleShooting;
     }
     
     IEnumerator Shoot()
@@ -86,23 +103,6 @@ public class Baby : MonoBehaviour
             _currentAmmo--;
         }
         else _currentState = WeaponState.OutOfAmmo;
-    }
-
-    IEnumerator Reload()
-    {
-        if (!_isReloading)
-        {
-            _reloadPressed = false;
-            _isReloading = true;
-            _currentState = WeaponState.Reloading;
-            
-            //Here should be triggered the reload mini game
-            yield return new WaitForSeconds(2f);
-
-            _currentAmmo = _maxAmmo;
-            _isReloading = false;
-            _currentState = WeaponState.IdleShooting;
-        }
     }
 
     private void FireInput(bool value) { _firePressed = value; }

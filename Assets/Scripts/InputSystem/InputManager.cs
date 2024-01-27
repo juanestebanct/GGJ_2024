@@ -10,6 +10,7 @@ public class InputManager : MonoBehaviour
     [Header("Input Values")]
     public Vector2 MovementInput;
     public Vector2 LookInput;
+    public Vector2 ReloadMovementInput;
     public Action OnJumpPressed;
     public Action<bool> OnFirePressed;
     public Action<bool> OnFireReleased;
@@ -35,6 +36,7 @@ public class InputManager : MonoBehaviour
     {
         MovementInput = _input.Player.Move.ReadValue<Vector2>();
         LookInput = _input.Player.Look.ReadValue<Vector2>();
+        ReloadMovementInput = _input.Player.ReloadMovement.ReadValue<Vector2>();
     }
 
     private void OnEnable() { _input.Enable(); }
