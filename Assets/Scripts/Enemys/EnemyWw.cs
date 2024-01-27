@@ -17,6 +17,9 @@ public class EnemyWw : Enemy
 
         ChangePatrone(MoventPatron.Change);
         playerReferent = GameObject.FindGameObjectWithTag("Player").transform;
+
+        DamageZone.GetComponent<DamageZone>().ReciveDamageZone(AttackDamage);
+        DamageZone.SetActive(false);
     }
     private void ChangePatrone(MoventPatron patron)
     {
@@ -24,6 +27,7 @@ public class EnemyWw : Enemy
         {
             case MoventPatron.Change:
                 Move = chasePlayer;
+  
                 navMeshAgent.isStopped = false;
                 break;
 
@@ -31,6 +35,7 @@ public class EnemyWw : Enemy
                 Move = AttackMove;
                 navMeshAgent.velocity = Vector3.zero;
                 navMeshAgent.isStopped = true;
+                Attack();
                 break;
         }
     }
@@ -41,6 +46,7 @@ public class EnemyWw : Enemy
     {
         float distance = Vector3.Distance(playerReferent.transform.position,transform.position);
         navMeshAgent.SetDestination(playerReferent.transform.position);
+
         if (distance <= rangezoneAttack)
         {
             ChangePatrone(MoventPatron.Attacking);
@@ -48,7 +54,6 @@ public class EnemyWw : Enemy
         }
         else if (distance >= rangezoneAttack)
         {
-            print("No attackin");
             print("No attackin");
         }
 
@@ -59,7 +64,7 @@ public class EnemyWw : Enemy
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
         // Rotacion 
-        Quaternion targetRotation = Quaternion.Euler(0, 0, angle + 90.0f);
+        Quaternion targetRotation = Quaternion.Euler(0, 0, angle);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 100 * Time.deltaTime);
     }
     /// <summary>
@@ -67,12 +72,21 @@ public class EnemyWw : Enemy
     /// </summary>
     public override void Attack()
     {
-        DamageZone.gameObject.SetActive(true);
+        DamageZone.SetActive(true);
+        print("Attaco");
+        StartCoroutine(TempTImeSpame());
     }
     public void EndAttack()
     {
-        DamageZone.gameObject.SetActive(false);
+        DamageZone.SetActive(false);
         ChangePatrone(MoventPatron.Change);
     }
-   
+
+    IEnumerator TempTImeSpame()
+    {
+        yield return new WaitForSeconds(1f);
+        EndAttack();
+    }
+
+
 }
