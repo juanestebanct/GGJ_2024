@@ -24,6 +24,15 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "ReloadMovement",
+                    "type": "Value",
+                    "id": "ac0c8f53-cebb-4b22-bcf0-cc154e9f1178",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
                     "name": "Jump",
                     "type": "Button",
                     "id": "22c9bca4-b5a9-493c-b2d6-2de12e923c7b",
@@ -45,6 +54,15 @@
                     "name": "Reload",
                     "type": "Button",
                     "id": "a5dd8077-31f3-4a3a-87b9-cd92ac1d0046",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Sprint",
+                    "type": "Button",
+                    "id": "334f69af-eab7-4435-8a33-07abb0121014",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -148,6 +166,28 @@
                     "processors": "",
                     "groups": "Mouse&Keyboard",
                     "action": "Reload",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1316177d-b270-4373-8c81-96e14351d98e",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse&Keyboard",
+                    "action": "Sprint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "27e3bf5c-1a7d-4e69-939d-6fbfb652b0fb",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse&Keyboard",
+                    "action": "ReloadMovement",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
