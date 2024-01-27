@@ -7,41 +7,36 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_Displacement Particle
-  m_Shader: {fileID: -6465566751694194690, guid: 70d2124810c339f4fbf690097995541e,
+  m_Name: Splash
+  m_Shader: {fileID: -6465566751694194690, guid: 27af99120556e1d4081e279a35aa7271,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _SURFACE_TYPE_TRANSPARENT
+  - _ALPHATEST_ON
+  - _SPECULAR_SETUP
   m_InvalidKeywords: []
-  m_LightmapFlags: 4
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
+  m_CustomRenderQueue: 2450
   stringTagMap:
-    RenderType: Transparent
-  disabledShaderPasses:
-  - SHADOWCASTER
-  - DepthOnly
+    RenderType: TransparentCutout
+  disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _RainbowTexture:
-        m_Texture: {fileID: 2800000, guid: 9ce45c19de48e2e4d9234335203693fe, type: 3}
+    - _Normal_Map:
+        m_Texture: {fileID: 2800000, guid: 5867f8b7d4b9ea547a9692650ae1f1ac, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Texture2DAsset_e676f76c51d240ac85cad7191809f0eb_Out_0_Texture2D:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
+    - _Paint_Texture:
+        m_Texture: {fileID: 2800000, guid: e4646dbeaf2b6cf4a84da4db726d61bf, type: 3}
+        m_Scale: {x: 10, y: 10}
         m_Offset: {x: 0, y: 0}
     - _Texture_Red_Emissiv_Green_Opacity:
-        m_Texture: {fileID: 2800000, guid: e4646dbeaf2b6cf4a84da4db726d61bf, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Vertex_Offset_Texture:
-        m_Texture: {fileID: 2800000, guid: ba035a91bffe3e94981ed81a725c2b98, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6cd7f180cca170e43b4a45985549a76e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -58,35 +53,35 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _0_Opacity_Fade_1_Disolve: 0
-    - _AlphaClip: 0
-    - _AlphaToMask: 0
+    - _0_Opacity_Fade_1_Disolve: 0.1
+    - _AlphaClip: 1
+    - _AlphaToMask: 1
+    - _Alpha_Clip: 0.09
     - _Blend: 0
-    - _CastShadows: 0
-    - _Cull: 2
-    - _Depth_Fade_Distance: 0
-    - _Displacement_Intensity: 0.67
-    - _DstBlend: 10
-    - _Emissiv_Driven_By_Vertex_Color_Alpha_1: 1
+    - _BlendModePreserveSpecular: 1
+    - _CastShadows: 1
+    - _Cull: 0
+    - _Depth_Fade_Distance: 1
+    - _DstBlend: 0
+    - _Emissiv_Driven_By_Vertex_Color_Alpha_1: 0
     - _Emissiv_Intensity: 5
+    - _Normal_Lerp: 0.5
+    - _Normal_Strength: 0.05
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _SrcBlend: 5
-    - _Surface: 1
-    - _UV_Distorsion_Intensity: 5
-    - _Vertex_Offset_Source_0_Texture_1_Noise: 1
+    - _ReceiveShadows: 1
+    - _Smoothness: 0.8
+    - _SrcBlend: 1
+    - _Surface: 0
+    - _WorkflowMode: 0
     - _ZTest: 4
-    - _ZWrite: 0
+    - _ZWrite: 1
     - _ZWriteControl: 0
     m_Colors:
-    - _Color_1: {r: 0.8018868, g: 0.44255075, b: 0.453824, a: 1}
-    - _Color_2: {r: 0.5383, g: 0.5235849, b: 1, a: 1}
-    - _Main_Texture_Tiling_and_Offset_Speed: {r: 1, g: 5, b: 1, a: 1}
-    - _Rainbow_Tile: {r: 2.32, g: 0, b: 0, a: 0}
-    - _UV_Distorsion_Tiling_and_Offset_Speed: {r: 1, g: 1, b: 1, a: 1}
-    - _Vertex_Offset_Tiling_and_Offset_Speed: {r: 5, g: 5, b: 0, a: 1}
+    - _Color: {r: 1, g: 0.018810797, b: 0, a: 0}
+    - _Especular_Color: {r: 0.7384583, g: 0.1273585, b: 1, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &5796382589809212162
+--- !u!114 &8733851544877462455
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
