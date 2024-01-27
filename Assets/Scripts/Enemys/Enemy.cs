@@ -12,6 +12,9 @@ public class Enemy : MonoBehaviour
     public NavMeshSurface navMeshSurface;
     
     public Action Move;
+
+    [SerializeField] private GameObject deathParticlePrefab;
+    [Header("Statistics Enemy")]
     [SerializeField] protected int MaxLive;
     [SerializeField] protected int Live;
     [SerializeField] protected int AttackDamage;
@@ -31,11 +34,38 @@ public class Enemy : MonoBehaviour
     }
     public virtual void ReciveDamage(int damageRecive)
     {
+        int tempLive = damageRecive;
+
+        if (damageRecive > 0) Live = tempLive;
+        else Dead();
 
     }
     public void GetReference(Transform RefPlayer, NavMeshSurface refNav )
     {
         playerReferent = RefPlayer;
         navMeshSurface = refNav;
+    }
+    public void Dead()
+    {
+        if (deathParticlePrefab != null)
+        {
+            Instantiate(deathParticlePrefab, transform.position, Quaternion.identity);
+            deathParticlePrefab.GetComponent<ParticleSystem>().Play();
+            Desactive();
+        }
+    }
+    public void Desactive()
+    {
+        Live = MaxLive;
+        gameObject.SetActive(false);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Attack")
+        {
+            // se coloca el daño del laser 
+            ReciveDamage(2);
+        }
     }
 }

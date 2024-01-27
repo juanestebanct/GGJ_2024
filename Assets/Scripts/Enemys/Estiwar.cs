@@ -59,6 +59,9 @@ public class Estiwar : Enemy
     }
     private void AttackMove()
     {
+
+        transform.LookAt(playerReferent.position);
+
         if (!ChangeMode())
         {
             ChangePatrone(MoventPatron.Change);

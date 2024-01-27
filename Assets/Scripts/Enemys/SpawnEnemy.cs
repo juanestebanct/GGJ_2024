@@ -33,7 +33,6 @@ public class SpawnEnemy : MonoBehaviour
         GenerateNavMesh();
         PoolEnemies(Wws, ListNavmesh[0]);
         PoolEnemies(Estiwars,ListNavmesh[1]);
-        ExampleGrid();
         SpawnEnemys(choose());
         SpawnEnemys(choose());
         SpawnEnemys(choose());
