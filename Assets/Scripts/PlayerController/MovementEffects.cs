@@ -24,9 +24,9 @@ namespace EvolveGames
 
         private void Update()
         {
-            float movementX = (Player.vertical * RotationAmount);
-            float movementZ = (-Player.horizontal * RotationAmount);
-            MovementVector = new Vector3(CanMovementFX ? movementX + Player.characterController.velocity.y * MovementAmount : movementX, 0, movementZ);
+            float movementX = (Player.Vertical * RotationAmount);
+            float movementZ = (-Player.Horizontal * RotationAmount);
+            MovementVector = new Vector3(CanMovementFX ? movementX + Player.Controller.velocity.y * MovementAmount : movementX, 0, movementZ);
             transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(MovementVector + InstallRotation.eulerAngles), Time.deltaTime * RotationSmooth);
         }
     }

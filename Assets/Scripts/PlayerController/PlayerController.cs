@@ -1,118 +1,122 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
-[RequireComponent(typeof(CharacterController))]
+[RequireComponent(typeof(CharacterController), typeof(InputManager))]
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController Instance;
+    [HideInInspector] public CharacterController Controller;
+    private InputManager _inputManager;
     
-    [Header("PlayerController")] [SerializeField]
-    public Transform Camera;
+    [Header("PlayerController")] 
+    [SerializeField] private Transform _camera;
+    [SerializeField, Range(1, 10)] private float _walkingSpeed = 3.0f;
+    [SerializeField, Range(2, 20)] private float _runningSpeed = 4.0f;
+    [SerializeField, Range(0, 20)] private float _jumpSpeed = 6.0f;
+    [SerializeField, Range(0.5f, 10)] private float _lookSpeed = 2.0f;
+    [SerializeField, Range(10, 120)] private float _lookXLimit = 80.0f;
 
-    [SerializeField, Range(1, 10)] float walkingSpeed = 3.0f;
-    [SerializeField, Range(2, 20)] float RunningSpeed = 4.0f;
-    [SerializeField, Range(0, 20)] float jumpSpeed = 6.0f;
-    [SerializeField, Range(0.5f, 10)] float lookSpeed = 2.0f;
-    [SerializeField, Range(10, 120)] float lookXLimit = 80.0f;
+    [Space(10)] 
+    [Header("Advance")] 
+    [SerializeField] private float _runningFOV = 65.0f;
+    [SerializeField] private float _speedToFOV = 4.0f;
+    [SerializeField] private float _gravity = 20.0f;
+    [SerializeField] private float _timeToRunning = 2.0f;
+    [HideInInspector] public bool CanMove = true;
+    [HideInInspector] public bool CanRun = true;
 
-    [Space(10)] [Header("Advance")] [SerializeField]
-    float RunningFOV = 65.0f;
-
-    [SerializeField] float SpeedToFOV = 4.0f;
-    [SerializeField] float gravity = 20.0f;
-    [SerializeField] float timeToRunning = 2.0f;
-    [HideInInspector] public bool canMove = true;
-    [HideInInspector] public bool CanRunning = true;
-
-    [Space(10)]
+    [Space(10)] 
     [Header("Input")] 
-    [HideInInspector] public CharacterController characterController;
-    [HideInInspector] public Vector3 moveDirection = Vector3.zero;
-    bool isCrough = false;
+    [HideInInspector] public Vector3 MoveDirection = Vector3.zero;
     float rotationX = 0;
     [HideInInspector] public bool isRunning = false;
     float InstallFOV;
     Camera cam;
     [HideInInspector] public bool Moving;
-    [HideInInspector] public float vertical;
-    [HideInInspector] public float horizontal;
-    [HideInInspector] public float Lookvertical;
-    [HideInInspector] public float Lookhorizontal;
+    [HideInInspector] public float Vertical;
+    [HideInInspector] public float Horizontal;
+    [HideInInspector] public float LookVertical;
+    [HideInInspector] public float LookHorizontal;
+    private float _moveVertical;
+    private float _moveHorizontal;
     private float RunningValue;
-    private float installGravity;
     private bool WallDistance;
     [HideInInspector] public float WalkingValue;
     public float MouseSensitivity;
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            //DontDestroyOnLoad(this);
-        }
+        if (Instance == null) Instance = this;
+        else Destroy(transform.root);
+        _inputManager = GetComponent<InputManager>();
     }
 
     void Start()
     {
-        characterController = GetComponent<CharacterController>();
+        Controller = GetComponent<CharacterController>();
         cam = GetComponentInChildren<Camera>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         InstallFOV = cam.fieldOfView;
-        RunningValue = RunningSpeed;
-        installGravity = gravity;
-        WalkingValue = walkingSpeed;
+        RunningValue = _runningSpeed;
+        WalkingValue = _walkingSpeed;
     }
 
     void Update()
     {
         HandleCameraLook();
         HandleMovement();
+        HandleInput();
+    }
+
+    private void HandleInput()
+    {
+        LookVertical = -_inputManager.LookInput.y;
+        LookHorizontal = _inputManager.LookInput.x;
+        _moveVertical = _inputManager.MovementInput.y;
+        _moveHorizontal = _inputManager.MovementInput.x;
+
     }
 
 
     private void HandleCameraLook()
     {
-        if (Cursor.lockState == CursorLockMode.Locked && canMove)
+        if (Cursor.lockState == CursorLockMode.Locked && CanMove)
         {
-            Lookvertical = -Input.GetAxis("Mouse Y");
-            Lookhorizontal = Input.GetAxis("Mouse X");
-            lookSpeed = MouseSensitivity;
-            rotationX += Lookvertical * lookSpeed;
-            rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
-            
-            print(rotationX);
-            Camera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
-            transform.rotation *= Quaternion.Euler(0, Lookhorizontal * lookSpeed, 0);
+            _lookSpeed = MouseSensitivity;
+            rotationX += LookVertical * _lookSpeed;
+            rotationX = Mathf.Clamp(rotationX, -_lookXLimit, _lookXLimit);
+            _camera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
+            transform.rotation *= Quaternion.Euler(0, LookHorizontal * _lookSpeed, 0);
 
             if (isRunning && Moving)
-                cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, RunningFOV, SpeedToFOV * Time.deltaTime);
-            else cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, InstallFOV, SpeedToFOV * Time.deltaTime);
+                cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, _runningFOV, _speedToFOV * Time.deltaTime);
+            else cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, InstallFOV, _speedToFOV * Time.deltaTime);
         }
     }
 
     private void HandleMovement()
     {
-        if (!characterController.isGrounded) moveDirection.y -= gravity * Time.deltaTime;
+        if (!Controller.isGrounded) MoveDirection.y -= _gravity * Time.deltaTime;
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
-        isRunning = !isCrough ? CanRunning ? Input.GetKey(KeyCode.LeftShift) : false : false;
-        vertical = canMove ? (isRunning ? RunningValue : WalkingValue) * Input.GetAxis("Vertical") : 0;
-        horizontal = canMove ? (isRunning ? RunningValue : WalkingValue) * Input.GetAxis("Horizontal") : 0;
-        if (isRunning) RunningValue = Mathf.Lerp(RunningValue, RunningSpeed, timeToRunning * Time.deltaTime);
+        isRunning = CanRun && Input.GetKey(KeyCode.LeftShift);
+        Vertical = CanMove ? (isRunning ? RunningValue : WalkingValue) * _moveVertical : 0;
+        Horizontal = CanMove ? (isRunning ? RunningValue : WalkingValue) * _moveHorizontal : 0;
+        if (isRunning) RunningValue = Mathf.Lerp(RunningValue, _runningSpeed, _timeToRunning * Time.deltaTime);
         else RunningValue = WalkingValue;
-        float movementDirectionY = moveDirection.y;
-        moveDirection = (forward * vertical) + (right * horizontal);
+        float movementDirectionY = MoveDirection.y;
+        MoveDirection = (forward * Vertical) + (right * Horizontal);
 
-        if (Input.GetKeyDown(KeyCode.Space) && canMove && characterController.isGrounded) moveDirection.y = jumpSpeed;
-        else moveDirection.y = movementDirectionY;
+        if (Input.GetKeyDown(KeyCode.Space) && CanMove && Controller.isGrounded) MoveDirection.y = _jumpSpeed;
+        else MoveDirection.y = movementDirectionY;
 
-        characterController.Move(moveDirection * Time.deltaTime);
-        Moving = horizontal < 0 || vertical < 0 || horizontal > 0 || vertical > 0 ? true : false;
+        Controller.Move(MoveDirection * Time.deltaTime);
+        Moving = Horizontal < 0 || Vertical < 0 || Horizontal > 0 || Vertical > 0 ? true : false;
     }
 }
