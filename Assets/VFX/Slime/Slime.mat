@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_Texture Displacement
+  m_Name: Slime
   m_Shader: {fileID: -6465566751694194690, guid: 56d45197bc2689e4f9813fded461b29c,
     type: 3}
   m_Parent: {fileID: 0}
@@ -23,7 +23,7 @@ Material:
     RenderType: Transparent
   disabledShaderPasses:
   - DepthOnly
-  m_LockedProperties: 
+  m_LockedProperties: _Emissiv_Intensity _Vertex_Offset_Tiling_and_Offset_Speed
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -59,11 +59,12 @@ Material:
     - _Blend: 0
     - _CastShadows: 1
     - _Cull: 2
-    - _Depth_Fade_Distance: 0.2
-    - _Displacement_Intensity: -0.03
+    - _Depth_Fade_Distance: -1.28
+    - _Displacement_Intensity: 0
     - _DstBlend: 10
     - _Emissiv_Driven_By_Vertex_Color_Alpha_1: 1
-    - _Emissiv_Intensity: 2.07
+    - _Emissiv_Intensity: 1.17
+    - _Fresnel_Power: 1.97
     - _QueueControl: 0
     - _QueueOffset: 0
     - _SrcBlend: 5
@@ -74,11 +75,11 @@ Material:
     - _ZWrite: 0
     - _ZWriteControl: 0
     m_Colors:
-    - _Color_1: {r: 0, g: 0.63529444, b: 1, a: 0}
-    - _Color_2: {r: 0.21323244, g: 2.143547, b: 0.9626189, a: 1}
-    - _Main_Texture_Tiling_and_Offset_Speed: {r: 2, g: 1, b: 0.1, a: 0.5}
+    - _Color_1: {r: 0.36040404, g: 0.6348196, b: 0.8584906, a: 1}
+    - _Color_2: {r: 0.60471267, g: 1.9722936, b: 1.7743545, a: 1}
+    - _Main_Texture_Tiling_and_Offset_Speed: {r: 2, g: 1, b: 0.1, a: 0.1}
     - _Rainbow_Tile: {r: 1, g: 1, b: 0, a: 0}
-    - _UV_Distorsion_Tiling_and_Offset_Speed: {r: 1, g: 1, b: 0.1, a: 0.1}
+    - _UV_Distorsion_Tiling_and_Offset_Speed: {r: 2, g: 2, b: -0.2, a: 0.2}
     - _Vertex_Offset_Tiling_and_Offset_Speed: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &7965977303786825608
