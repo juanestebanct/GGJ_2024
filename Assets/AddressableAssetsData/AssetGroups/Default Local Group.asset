@@ -16,7 +16,13 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: d1b2d658161e30d4a9c9f21b676608c9
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 6421417036634f847bb183bd21b6296c
+    m_Address: Assets/VFX/LaserBeam/LaserV2Materials/Shader Graphs_Displacement Particle
+      3.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: adca44d8e17e73241a665f922c3f36da, type: 2}
   m_SchemaSet:
