@@ -15,12 +15,12 @@ MonoBehaviour:
   ScenesTabs:
   - pin: 0
     path:
-    - 
+    - Assets/_Scenes/EnemyTest/EnemyWW.unity
     guid:
-    - 
+    - 97ad7b191c0347f46a16f9bc78629642
   - pin: 0
     path:
-    - Assets/_Scenes/SampleScene.unity
+    - Assets/_Scenes/PlayerController_Testing.unity
     guid:
     - 99c9720ab356a0642a771bea13969a05
   HasCustomIconKeys: []
