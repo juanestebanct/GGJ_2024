@@ -32,7 +32,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture_Red_Emissiv_Green_Opacity:
-        m_Texture: {fileID: 2800000, guid: 7ec20746059fd6546bd975a892d68549, type: 3}
+        m_Texture: {fileID: 2800000, guid: dc3ba92d01f2c2d4e927cc6ce0460c8a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Vertex_Offset_Texture:
@@ -68,7 +68,7 @@ Material:
     - _QueueOffset: 0
     - _SrcBlend: 5
     - _Surface: 1
-    - _UV_Distorsion_Intensity: 0.17
+    - _UV_Distorsion_Intensity: 0.15
     - _Vertex_Offset_Source_0_Texture_1_Noise: 0
     - _ZTest: 4
     - _ZWrite: 0
@@ -78,7 +78,7 @@ Material:
     - _Color_2: {r: 0.21323244, g: 2.143547, b: 0.9626189, a: 1}
     - _Main_Texture_Tiling_and_Offset_Speed: {r: 2, g: 1, b: 0.1, a: 0.5}
     - _Rainbow_Tile: {r: 1, g: 1, b: 0, a: 0}
-    - _UV_Distorsion_Tiling_and_Offset_Speed: {r: 1, g: 1, b: 0, a: 0}
+    - _UV_Distorsion_Tiling_and_Offset_Speed: {r: 1, g: 1, b: 0.1, a: 0.1}
     - _Vertex_Offset_Tiling_and_Offset_Speed: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &7965977303786825608
