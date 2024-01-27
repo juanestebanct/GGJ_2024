@@ -6,7 +6,8 @@ public class CameraShaker : MonoBehaviour
 {
     [SerializeField] private Transform _camera;
     
-    [Header("Laser")] 
+    [Header("Baby Laser")]
+    [Space(5)] 
     [SerializeField] private Vector3 _laserRotationStrength;
     [SerializeField] private float _laserShakeTime;
 
