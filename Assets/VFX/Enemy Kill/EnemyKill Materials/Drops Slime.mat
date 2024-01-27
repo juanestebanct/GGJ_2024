@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Splash
+  m_Name: Drops Slime
   m_Shader: {fileID: -6465566751694194690, guid: 27af99120556e1d4081e279a35aa7271,
     type: 3}
   m_Parent: {fileID: 0}
@@ -28,15 +28,15 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Normal_Map:
-        m_Texture: {fileID: 2800000, guid: 5867f8b7d4b9ea547a9692650ae1f1ac, type: 3}
+        m_Texture: {fileID: 2800000, guid: a8ea5d06c066a264298e6c8fdb3e5b86, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Paint_Texture:
         m_Texture: {fileID: 2800000, guid: e4646dbeaf2b6cf4a84da4db726d61bf, type: 3}
-        m_Scale: {x: 10, y: 10}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture_Red_Emissiv_Green_Opacity:
-        m_Texture: {fileID: 2800000, guid: 6cd7f180cca170e43b4a45985549a76e, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0a4ba25f20ed20d4aa2e685093d35b7b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -64,7 +64,7 @@ Material:
     - _Depth_Fade_Distance: 1
     - _DstBlend: 0
     - _Emissiv_Driven_By_Vertex_Color_Alpha_1: 0
-    - _Emissiv_Intensity: 6
+    - _Emissiv_Intensity: 5
     - _Normal_Lerp: 0.5
     - _Normal_Strength: 0.05
     - _QueueControl: 0
@@ -78,8 +78,8 @@ Material:
     - _ZWrite: 1
     - _ZWriteControl: 0
     m_Colors:
-    - _Color: {r: 1, g: 0.018810797, b: 0, a: 1}
-    - _Especular_Color: {r: 0.7384583, g: 0.1273585, b: 1, a: 1}
+    - _Color: {r: 0, g: 1, b: 0.7607843, a: 1}
+    - _Especular_Color: {r: 0.6, g: 1, b: 0.1254902, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &8733851544877462455
 MonoBehaviour:
