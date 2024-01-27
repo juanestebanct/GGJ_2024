@@ -15,7 +15,6 @@ public class EnemyWw : Enemy
         navMeshAgent.speed = Speed;
 
         ChangePatrone(MoventPatron.Change);
-        playerReferent = GameObject.FindGameObjectWithTag("Player").transform;
 
         DamageZone.GetComponent<DamageZone>().ReciveDamageZone(AttackDamage);
         DamageZone.SetActive(false);

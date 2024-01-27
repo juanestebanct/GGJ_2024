@@ -11,7 +11,7 @@ NavMeshProjectSettings:
     cost: 1
   - name: Jump
     cost: 2
-  - name: 
+  - name: fly
     cost: 1
   - name: 
     cost: 1
@@ -73,10 +73,10 @@ NavMeshProjectSettings:
   m_Settings:
   - serializedVersion: 3
     agentTypeID: 0
-    agentRadius: 0.21
-    agentHeight: 0.54
+    agentRadius: 0.8
+    agentHeight: 0.99
     agentSlope: 45
-    agentClimb: 0.19
+    agentClimb: 0.8
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
@@ -92,9 +92,9 @@ NavMeshProjectSettings:
   - serializedVersion: 3
     agentTypeID: -334000983
     agentRadius: 0.58
-    agentHeight: 600
+    agentHeight: 200
     agentSlope: 60
-    agentClimb: 500
+    agentClimb: 100
     ledgeDropHeight: 3.46
     maxJumpAcrossDistance: 2
     minRegionArea: 2

@@ -20,7 +20,6 @@ public class Estiwar : Enemy
         navMeshAgent.speed = Speed;
 
         ChangePatrone(MoventPatron.Change);
-        playerReferent = GameObject.FindGameObjectWithTag("Player").transform;
         GetComponent<GunProyectiles>().addReference(playerReferent);
     }
     private void ChangePatrone(MoventPatron patron)

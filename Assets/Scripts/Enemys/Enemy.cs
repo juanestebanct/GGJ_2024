@@ -25,11 +25,6 @@ public class Enemy : MonoBehaviour
     {
         Move();
     }
-
-    void GenerateNavMesh()
-    {
-        navMeshSurface.BuildNavMesh();
-    }
     public virtual void Attack()
     {
 
@@ -37,5 +32,10 @@ public class Enemy : MonoBehaviour
     public virtual void ReciveDamage(int damageRecive)
     {
 
+    }
+    public void GetReference(Transform RefPlayer, NavMeshSurface refNav )
+    {
+        playerReferent = RefPlayer;
+        navMeshSurface = refNav;
     }
 }
