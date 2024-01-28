@@ -25,7 +25,7 @@
 				<GameParameter Id="2175994658" Name="Music_Parameter"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{ADB78AAB-98CB-2B27-AFF5-A2A94D3A8205}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{A649ABBF-2EB6-6E38-CCAD-7EF06CA17867}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -83,7 +83,7 @@
 						<MediaRef Id="782584750"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1954149466" Name="Play_BabyExplotion" DurationType="OneShot" DurationMin="1.0061686" DurationMax="1.5075496">
+				<Event Id="1954149466" Name="Play_BabyExplotion" DurationType="OneShot" DurationMin="1.0221504" DurationMax="1.5314951">
 					<MediaRefs>
 						<MediaRef Id="719394933"/>
 					</MediaRefs>
@@ -116,5 +116,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{69537345-0499-BA50-A3B1-33E362EA39D8}</FileHash>
+	<FileHash>{1F191814-E39F-35FD-5744-6C5DCF0CF9C5}</FileHash>
 </SoundBanksInfo>

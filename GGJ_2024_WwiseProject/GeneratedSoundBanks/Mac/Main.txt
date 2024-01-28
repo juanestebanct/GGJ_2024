@@ -17,7 +17,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	422282666	Hit_Bodyfall	E:\Proyectos\Juegos\GGJ_2024\GGJ_2024_WwiseProject\.cache\Mac\SFX\Hit_Bodyfall_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Impacts\Hit_Bodyfall		149208
 	496249538	Acid-Action_145BPM	E:\Proyectos\Juegos\GGJ_2024\GGJ_2024_WwiseProject\.cache\Mac\SFX\GGJ_Music_Action_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Music_PlayList\Music\Acid-Action_145BPM		5912372
 	580469773	Acid-Basic_145BPM	E:\Proyectos\Juegos\GGJ_2024\GGJ_2024_WwiseProject\.cache\Mac\SFX\GGJ_Music_Chill_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Music_PlayList\Music\Acid-Basic_145BPM		5912372
-	719394933	Baby explotion	E:\Proyectos\Juegos\GGJ_2024\GGJ_2024_WwiseProject\.cache\Mac\SFX\Baby explotion_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Baby\Baby explotion		236564
+	719394933	Baby explotion	E:\Proyectos\Juegos\GGJ_2024\GGJ_2024_WwiseProject\.cache\Mac\SFX\Baby explotion_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Baby\Baby explotion		240320
 	766503118	Enemy death Slime	E:\Proyectos\Juegos\GGJ_2024\GGJ_2024_WwiseProject\.cache\Mac\SFX\Enemy death Slime_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Enemy death Slime		204660
 	782584750	Hit_Punch	E:\Proyectos\Juegos\GGJ_2024\GGJ_2024_WwiseProject\.cache\Mac\SFX\Hit_Punch_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Impacts\Hit_Punch		221356
 	1028423080	Laser Start	E:\Proyectos\Juegos\GGJ_2024\GGJ_2024_WwiseProject\.cache\Mac\SFX\Laser Start_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Baby\Laser\Laser Start		37428
