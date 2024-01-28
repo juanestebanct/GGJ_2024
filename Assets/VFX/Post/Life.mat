@@ -66,7 +66,7 @@ Material:
     - _Fullscreen_Intensity: 0.5
     - _Fullscreen_SrcAlphaBlend: 1
     - _Fullscreen_SrcColorBlend: 5
-    - _Multiply: 827
+    - _Multiply: 130.40186
     - _Power: 2.39
     - _QueueControl: 0
     - _QueueOffset: 0
