@@ -15,6 +15,16 @@ MonoBehaviour:
   ScenesTabs:
   - pin: 0
     path:
+    - Assets/_Scenes/Procedural Generation/Teleport.unity
+    guid:
+    - 3f74a32051a278f4fbda6d368d829a0a
+  - pin: 0
+    path:
+    - Assets/_Scenes/Procedural Generation/PG.unity
+    guid:
+    - 9b04cd90e36c6064b8107b38ad4595fd
+  - pin: 0
+    path:
     - Assets/_Scenes/PlayerController_Testing.unity
     guid:
     - 99c9720ab356a0642a771bea13969a05
