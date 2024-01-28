@@ -24,6 +24,11 @@ public class SpawnEnemy : MonoBehaviour
     [SerializeField] private int maxEnemyRound;
     [SerializeField] private GameObject prefabt;
     [SerializeField] private Transform center;
+
+    [Header("LevelManager")]
+    [SerializeField] private int enemyByLevels;
+    [SerializeField] private int level;
+
     private int xPos;
     private int zPos;
 
@@ -34,7 +39,7 @@ public class SpawnEnemy : MonoBehaviour
 
     private int indexEnemy;
     private Transform playerReferent;
-    void Start()
+    private void Start()
     {
         if (Instance == null) Instance = this;
 
@@ -161,5 +166,16 @@ public class SpawnEnemy : MonoBehaviour
         {
             SpawnEnemys(choose());
         }
+    }
+    /// <summary>
+    /// Vamos a subir de nivel 
+    /// </summary>
+    public void NextLevel()
+    {
+        maxEnemyRound += enemyByLevels;
+        
+        probability[0] +=2;
+        probability[0] +=2;
+        probability[0] -=2;
     }
 }

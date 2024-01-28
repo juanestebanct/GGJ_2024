@@ -1628,7 +1628,7 @@ MonoBehaviour:
   probability: 28000000280000000a000000
   maxRange: {x: 10, y: 10}
   spacing: 4
-  maxEnemyRound: 6
+  maxEnemyRound: 10
   prefabt: {fileID: 465044829}
   center: {fileID: 0}
 --- !u!4 &1793811055
@@ -1759,7 +1759,7 @@ Transform:
   m_GameObject: {fileID: 1848693042}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.49, y: 2.4, z: -11.5}
+  m_LocalPosition: {x: -8.3, y: 2.4, z: -15.3}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

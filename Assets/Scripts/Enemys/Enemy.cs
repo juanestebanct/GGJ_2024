@@ -62,10 +62,10 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Attack")
+        if (other.gameObject.tag == "laser")
         {
             // se coloca el daño del laser 
-            ReciveDamage(2);
+            ReciveDamage(1);
         }
     }
 }
