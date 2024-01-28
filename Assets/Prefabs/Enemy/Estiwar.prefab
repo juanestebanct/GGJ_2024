@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 5419196153400774914}
   - component: {fileID: 4659652165967404480}
   - component: {fileID: 7842282636509035480}
-  - component: {fileID: 7686388676929518223}
   - component: {fileID: 4823726675154876711}
+  - component: {fileID: 6435044373721068190}
   m_Layer: 0
   m_Name: Estiwar
   m_TagString: Untagged
@@ -94,27 +94,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!65 &7686388676929518223
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5862923921047638827}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4823726675154876711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,6 +111,29 @@ MonoBehaviour:
   ProjectirePoint: {fileID: 6052888632978511969}
   force: 60
   player: {fileID: 0}
+--- !u!136 &6435044373721068190
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5862923921047638827}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1.9337094
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.9443723, z: 0}
 --- !u!1 &9056602820145034333
 GameObject:
   m_ObjectHideFlags: 0

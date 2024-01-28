@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1267092689477790627}
   - component: {fileID: 5706354146105612394}
   - component: {fileID: 9001441612753632057}
-  - component: {fileID: 5024300144705046025}
+  - component: {fileID: 7672882326959173128}
   m_Layer: 0
   m_Name: Ww
   m_TagString: Untagged
@@ -78,8 +78,8 @@ MonoBehaviour:
   rangeZoneAttack: 1.6
   Speed: 10
   DamageZone: {fileID: 7326202857374584932}
---- !u!65 &5024300144705046025
-BoxCollider:
+--- !u!136 &7672882326959173128
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -96,9 +96,11 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1.4707355
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.751691, z: 0}
 --- !u!1 &7326202857374584932
 GameObject:
   m_ObjectHideFlags: 0

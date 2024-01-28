@@ -32,11 +32,11 @@ public class Enemy : MonoBehaviour
     {
 
     }
-    public virtual void ReciveDamage(int damageRecive)
+    public virtual void RecieveDamage(int damageRecive)
     {
-        int tempLive = damageRecive;
+        int tempLive = Live-damageRecive;
 
-        if (damageRecive > 0) Live = tempLive;
+        if (tempLive > 0) Live = tempLive;
         else Dead();
 
     }
@@ -51,8 +51,8 @@ public class Enemy : MonoBehaviour
         {
             Instantiate(deathParticlePrefab, transform.position, Quaternion.identity);
             deathParticlePrefab.GetComponent<ParticleSystem>().Play();
-            Desactive();
         }
+        Desactive();
     }
     public void Desactive()
     {
@@ -62,10 +62,10 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "laser")
-        {
+        print("collisiono algo?");
+
             // se coloca el daño del laser 
-            ReciveDamage(1);
-        }
+            RecieveDamage(1);
+
     }
 }
