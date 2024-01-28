@@ -1,0 +1,10 @@
+Event	ID	Name			Wwise Object Path	Notes
+	4264879856	Play_Music_PlayList			\Default Work Unit\Music\Play_Music_PlayList	
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	2175994658	Music_Parameter			\Default Work Unit\Music_Parameter	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	496249538	Acid-Action_145BPM	E:\Proyectos\Juegos\GGJ_2024\GGJ_2024_WwiseProject\.cache\Mac\SFX\GGJ_Music_Action_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Music_PlayList\Music\Acid-Action_145BPM		5912372
+	580469773	Acid-Basic_145BPM	E:\Proyectos\Juegos\GGJ_2024\GGJ_2024_WwiseProject\.cache\Mac\SFX\GGJ_Music_Chill_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Music_PlayList\Music\Acid-Basic_145BPM		5912372
+
