@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class TPInfo : MonoBehaviour
@@ -10,7 +11,7 @@ public class TPInfo : MonoBehaviour
     
     //Utility
     private RoomInfo destiny = null;
-    private int tpIndex;
+    private Teleport tpBinded = null;
 
     //Access
     public BoxCollider CollisionZone { get => collisionZone; }
@@ -18,16 +19,20 @@ public class TPInfo : MonoBehaviour
 
     #region Utility
 
-    public void SetDestinyRoom(RoomInfo destiny, int tpIndex)
+    public void SetDestinyRoom(RoomInfo destiny, Teleport tpBinded)
     {
-        if (destiny) return;
+        if (this.destiny) return;
+
         this.destiny = destiny;
-        this.tpIndex = tpIndex;
+        this.tpBinded = tpBinded;
     }
 
-    private void TeleportTriggered()
+    private void TeleportTriggered(Transform player)
     {
+        Transform destinyTrans = tpBinded.transform;
 
+        player.position= destinyTrans.position;
+        player.forward = destinyTrans.forward;
     }
 
     #endregion
@@ -36,9 +41,9 @@ public class TPInfo : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if(other.CompareTag("GameController"))
         {
-            
+            TeleportTriggered(other.transform);
         }
     }
 

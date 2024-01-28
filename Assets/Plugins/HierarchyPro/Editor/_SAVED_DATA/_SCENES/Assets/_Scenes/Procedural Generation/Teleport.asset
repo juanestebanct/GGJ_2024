@@ -21,11 +21,11 @@ MonoBehaviour:
   - data: []
   - data:
     - saverType: 6
-      id_in_external_heap: 34728725
+      id_in_external_heap: -358112050
       indentifierVersion: GlobalObjectId_V1
-      identifierTypetargetObjectIdtargetPrefabId: -2-3f74a32051a278f4fbda6d368d829a0a-9113272614898540513-3476003537139203841
+      identifierTypetargetObjectIdtargetPrefabId: -2-3f74a32051a278f4fbda6d368d829a0a-5640169076358406368-0
       namesPathBackup: "Main Map\xBE-----Teleports------\xBEEntrada"
-      siblingsPathBackup: "3\xBE2\xBE0"
+      siblingsPathBackup: "2\xBE2\xBE0"
       boolValue: 0
       stringValue: 
       highLighterData: []
@@ -35,11 +35,11 @@ MonoBehaviour:
         has_icon_color: 0
         icon_color: {r: 0, g: 0, b: 0, a: 0}
     - saverType: 6
-      id_in_external_heap: -2139774452
+      id_in_external_heap: -1891642117
       indentifierVersion: GlobalObjectId_V1
-      identifierTypetargetObjectIdtargetPrefabId: -2-3f74a32051a278f4fbda6d368d829a0a-7339402140613326363-3476003537139203841
+      identifierTypetargetObjectIdtargetPrefabId: -2-3f74a32051a278f4fbda6d368d829a0a-6190186214013880602-0
       namesPathBackup: "Main Map\xBE-----Teleports------\xBEEntrada (3)"
-      siblingsPathBackup: "3\xBE2\xBE3"
+      siblingsPathBackup: "2\xBE2\xBE3"
       boolValue: 0
       stringValue: 
       highLighterData: []
@@ -49,11 +49,11 @@ MonoBehaviour:
         has_icon_color: 0
         icon_color: {r: 0, g: 0, b: 0, a: 0}
     - saverType: 6
-      id_in_external_heap: -622439180
+      id_in_external_heap: -2022673733
       indentifierVersion: GlobalObjectId_V1
-      identifierTypetargetObjectIdtargetPrefabId: -2-3f74a32051a278f4fbda6d368d829a0a-8767312386522326724-3476003537139203841
+      identifierTypetargetObjectIdtargetPrefabId: -2-3f74a32051a278f4fbda6d368d829a0a-5302705879175748037-0
       namesPathBackup: "Main Map\xBE-----Teleports------\xBEEntrada (1)"
-      siblingsPathBackup: "3\xBE2\xBE1"
+      siblingsPathBackup: "2\xBE2\xBE1"
       boolValue: 0
       stringValue: 
       highLighterData: []
@@ -63,11 +63,11 @@ MonoBehaviour:
         has_icon_color: 0
         icon_color: {r: 0, g: 0, b: 0, a: 0}
     - saverType: 6
-      id_in_external_heap: 267252176
+      id_in_external_heap: 1173389597
       indentifierVersion: GlobalObjectId_V1
-      identifierTypetargetObjectIdtargetPrefabId: -2-3f74a32051a278f4fbda6d368d829a0a-5068719051132554525-3476003537139203841
+      identifierTypetargetObjectIdtargetPrefabId: -2-3f74a32051a278f4fbda6d368d829a0a-8532786185719525916-0
       namesPathBackup: "Main Map\xBE-----Teleports------\xBEEntrada (2)"
-      siblingsPathBackup: "3\xBE2\xBE2"
+      siblingsPathBackup: "2\xBE2\xBE2"
       boolValue: 0
       stringValue: 
       highLighterData: []
@@ -77,11 +77,12 @@ MonoBehaviour:
         has_icon_color: 0
         icon_color: {r: 0, g: 0, b: 0, a: 0}
     - saverType: 6
-      id_in_external_heap: 1498703573
+      id_in_external_heap: -1095589558
       indentifierVersion: GlobalObjectId_V1
-      identifierTypetargetObjectIdtargetPrefabId: -2-3f74a32051a278f4fbda6d368d829a0a-1159865279876625955-117507414
-      namesPathBackup: "Sala 2\xBE-----Teleports------\xBEEntrada"
-      siblingsPathBackup: "6\xBE1\xBE0"
+      identifierTypetargetObjectIdtargetPrefabId: -2-3f74a32051a278f4fbda6d368d829a0a-1076545274-0
+      namesPathBackup: "RoomManager\xBESala 2(Clone)\xBE-----Teleports------\xBEEntrada
+        (2)"
+      siblingsPathBackup: "3\xBE0\xBE1\xBE0"
       boolValue: 0
       stringValue: 
       highLighterData: []
@@ -91,39 +92,12 @@ MonoBehaviour:
         has_icon_color: 0
         icon_color: {r: 0, g: 0, b: 0, a: 0}
     - saverType: 6
-      id_in_external_heap: -1739515423
+      id_in_external_heap: -2119548620
       indentifierVersion: GlobalObjectId_V1
-      identifierTypetargetObjectIdtargetPrefabId: -2-3f74a32051a278f4fbda6d368d829a0a-1159865279876625955-1889524821
-      namesPathBackup: "Sala 2\xBE-----Teleports------\xBEEntrada (1)"
-      siblingsPathBackup: "6\xBE1\xBE1"
-      boolValue: 0
-      stringValue: 
-      highLighterData: []
-      iconData:
-      - icon_guid: Library/sv_icon_dot14_pix16_gizmo
-        icon_path: 
-        has_icon_color: 0
-        icon_color: {r: 0, g: 0, b: 0, a: 0}
-    - saverType: 6
-      id_in_external_heap: -344464892
-      indentifierVersion: GlobalObjectId_V1
-      identifierTypetargetObjectIdtargetPrefabId: -2-3f74a32051a278f4fbda6d368d829a0a-1159865279876625955-667381811
-      namesPathBackup: "Sala 2\xBE-----Teleports------\xBEEntrada (2)"
-      siblingsPathBackup: "6\xBE1\xBE2"
-      boolValue: 0
-      stringValue: 
-      highLighterData: []
-      iconData:
-      - icon_guid: Library/sv_icon_dot14_pix16_gizmo
-        icon_path: 
-        has_icon_color: 0
-        icon_color: {r: 0, g: 0, b: 0, a: 0}
-    - saverType: 6
-      id_in_external_heap: 366060643
-      indentifierVersion: GlobalObjectId_V1
-      identifierTypetargetObjectIdtargetPrefabId: -2-3f74a32051a278f4fbda6d368d829a0a-1159865279876625955-1143271973
-      namesPathBackup: "Sala 2\xBE-----Teleports------\xBEEntrada (3)"
-      siblingsPathBackup: "6\xBE1\xBE3"
+      identifierTypetargetObjectIdtargetPrefabId: -2-3f74a32051a278f4fbda6d368d829a0a-1080583404-0
+      namesPathBackup: "RoomManager\xBESala 2(Clone)\xBE-----Teleports------\xBEEntrada
+        (3)"
+      siblingsPathBackup: "3\xBE0\xBE1\xBE1"
       boolValue: 0
       stringValue: 
       highLighterData: []

@@ -11,6 +11,7 @@ public class RoomManager : MonoBehaviour
     //VARIABLES
     //Assignable
     [SerializeField] List<RoomInfo> roomPrefabs = new List<RoomInfo>();
+    [SerializeField] GameObject player, hola;
 
     //Utility
     private List<RoomInfo> roomCreated = new List<RoomInfo>();
@@ -35,6 +36,11 @@ public class RoomManager : MonoBehaviour
         {
             SpawnRoom();
         }
+
+        if (Input.GetKeyUp(KeyCode.L))
+        {
+            player.transform.position = hola.transform.position;
+        }
     }
 
     #region Utility
@@ -51,8 +57,6 @@ public class RoomManager : MonoBehaviour
     {
         if (lastRoom == null) return;
 
-        print("Called");
-
         int rnd = 0;
 
         foreach(Teleport tp in lastRoom.EntranceTeleport) 
@@ -67,9 +71,11 @@ public class RoomManager : MonoBehaviour
 
                 rnd = Random.Range(0, createdRoom.EntranceTeleport.Count);
 
-                tp.TPInfo.SetDestinyRoom(createdRoom, rnd);
+                print("Entro");
 
-                createdRoom.EntranceTeleport[rnd].TPInfo.SetDestinyRoom(lastRoom, lastRoom.EntranceTeleport.FindIndex(a => a == tp));
+                tp.TPInfo.SetDestinyRoom(createdRoom, createdRoom.EntranceTeleport.ElementAt(rnd));
+
+                createdRoom.EntranceTeleport[rnd].TPInfo.SetDestinyRoom(lastRoom, tp);
             }
         }
 
