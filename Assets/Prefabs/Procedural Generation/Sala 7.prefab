@@ -62,7 +62,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7774572911596631008}
+  - {fileID: 3960306969256214204}
   - {fileID: 6537374115774549762}
   - {fileID: 8814841543606874297}
   - {fileID: 3055957558491162834}
@@ -84,6 +84,7 @@ MonoBehaviour:
   entranceTeleport:
   - {fileID: 2785632501247051786}
   - {fileID: 6481115264320167501}
+  gridSize: {x: 4, y: 3}
 --- !u!1 &2294279598562771252
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,9 +472,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84f7e4d8a2114c24192357701500bf36, type: 3}
---- !u!4 &7774572911596631008 stripped
+--- !u!4 &3960306969256214204 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 1889685867523434260, guid: 84f7e4d8a2114c24192357701500bf36,
+  m_CorrespondingSourceObject: {fileID: 5127490714096970312, guid: 84f7e4d8a2114c24192357701500bf36,
     type: 3}
   m_PrefabInstance: {fileID: 8204810406264837364}
   m_PrefabAsset: {fileID: 0}
