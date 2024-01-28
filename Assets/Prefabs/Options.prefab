@@ -36,7 +36,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 85}
+  m_SizeDelta: {x: 510.7612, y: 85}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &7135909921448616036
 MonoBehaviour:
@@ -99,7 +99,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 85}
+  m_SizeDelta: {x: 0, y: 85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &32309285530310002
 GameObject:
@@ -484,7 +484,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3959064582871587642}
+      - m_Target: {fileID: 2208916197300054344}
         m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
         m_MethodName: SetQuality
         m_Mode: 3
@@ -606,7 +606,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 259.775, y: 50}
+  m_SizeDelta: {x: 153.09, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9171878692834625930
 CanvasRenderer:
@@ -1150,8 +1150,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00000333786, y: -0.00000047683716}
-  m_SizeDelta: {x: 166.7727, y: 37.6014}
+  m_AnchoredPosition: {x: 0.00000333786, y: 0}
+  m_SizeDelta: {x: 166.7727, y: 37.601395}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5431649904652063473
 MonoBehaviour:
@@ -1200,7 +1200,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3959064582871587642}
+      - m_Target: {fileID: 2208916197300054344}
         m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
         m_MethodName: Fullscreen
         m_Mode: 0
@@ -1532,7 +1532,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3959064582871587642}
+      - m_Target: {fileID: 2208916197300054344}
         m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
         m_MethodName: UpdateMouseSensitivity
         m_Mode: 0
@@ -3112,7 +3112,7 @@ GameObject:
   - component: {fileID: 7391097786273111080}
   - component: {fileID: 2788464442452546529}
   - component: {fileID: 321015362720835647}
-  - component: {fileID: 3959064582871587642}
+  - component: {fileID: 2208916197300054344}
   m_Layer: 0
   m_Name: Options
   m_TagString: Untagged
@@ -3142,7 +3142,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 510.7612, y: 510.7612}
+  m_SizeDelta: {x: 510.76123, y: 510.76123}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7391097786273111080
 CanvasRenderer:
@@ -3165,7 +3165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.8156863}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3208,7 +3208,7 @@ MonoBehaviour:
   m_ChildScaleWidth: 1
   m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
---- !u!114 &3959064582871587642
+--- !u!114 &2208916197300054344
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3552,7 +3552,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3959064582871587642}
+      - m_Target: {fileID: 2208916197300054344}
         m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
         m_MethodName: SetQuality
         m_Mode: 3
@@ -3838,7 +3838,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 85}
+  m_SizeDelta: {x: 0, y: 85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8916304217924598486
 GameObject:
@@ -4133,7 +4133,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3959064582871587642}
+      - m_Target: {fileID: 2208916197300054344}
         m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
         m_MethodName: SetQuality
         m_Mode: 3
