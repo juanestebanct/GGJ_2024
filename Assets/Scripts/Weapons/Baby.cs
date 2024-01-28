@@ -14,6 +14,8 @@ public class Baby : MonoBehaviour
     [SerializeField] private float _fireRate = 0.1f;
     [SerializeField] private int _maxAmmo = 30;
     [SerializeField] private int _currentAmmo;
+    [SerializeField] private LayerMask _enemiesLayer;
+    [SerializeField] private Transform _aimPoint;
     
     private InputManager _inputManager;
     private WeaponState _currentState;
@@ -21,6 +23,8 @@ public class Baby : MonoBehaviour
     private bool _firePressed;
     private bool _reloadPressed;
     private float _nextFireTime;
+
+    public Action ReloadCompleted;
 
     private void Awake()
     {
@@ -89,6 +93,7 @@ public class Baby : MonoBehaviour
         _isReloading = false;
         _currentAmmo = _maxAmmo;
         _currentState = WeaponState.IdleShooting;
+        ReloadCompleted.Invoke();
     }
     
     IEnumerator Shoot()
@@ -96,13 +101,27 @@ public class Baby : MonoBehaviour
         if (_currentAmmo > 0)
         {
             _ray.SetActive(true);
-            _laserDamageArea.enabled = true;
+            HitScan();
             yield return new WaitForSeconds(_fireRate/2);
             CameraShaker.Invoke_LaserShake();
-            _laserDamageArea.enabled = false;
             _currentAmmo--;
         }
         else _currentState = WeaponState.OutOfAmmo;
+    }
+
+    private void HitScan()
+    {
+        Ray ray = new Ray(_aimPoint.position, _aimPoint.forward);
+
+        if (Physics.Raycast(ray, out var enemyHit, Mathf.Infinity, _enemiesLayer))
+        {
+            enemyHit.transform.GetComponent<Enemy>().RecieveDamage(1);
+        }
+
+        if (Physics.Raycast(ray, out var collisionHit, Mathf.Infinity))
+        {
+            //Here goes the collision particle
+        }
     }
 
     private void FireInput(bool value) { _firePressed = value; }

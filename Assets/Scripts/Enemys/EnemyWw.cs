@@ -15,8 +15,7 @@ public class EnemyWw : Enemy
         navMeshAgent.speed = Speed;
 
         ChangePatrone(MoventPatron.Change);
-
-        DamageZone.GetComponent<DamageZone>().ReciveDamageZone(AttackDamage);
+        
         DamageZone.SetActive(false);
     }
     private void ChangePatrone(MoventPatron patron)
@@ -73,7 +72,7 @@ public class EnemyWw : Enemy
         DamageZone.SetActive(false);
         ChangePatrone(MoventPatron.Change);
     }
-    //activa temporalmente el daño
+    //activa temporalmente el daï¿½o
     IEnumerator TempTImeSpame()
     {
         yield return new WaitForSeconds(1f);

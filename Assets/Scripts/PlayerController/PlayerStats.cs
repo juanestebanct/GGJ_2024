@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
@@ -28,6 +29,7 @@ public class PlayerStats : MonoBehaviour
     
     public void ReceiveDamage(int amount)
     {
+        CameraShaker.Invoke_ReceiveDamage();
         _health -= amount;
         switch (_health)
         {
