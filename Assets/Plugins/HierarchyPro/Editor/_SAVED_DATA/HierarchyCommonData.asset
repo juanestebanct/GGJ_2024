@@ -17,17 +17,22 @@ MonoBehaviour:
     path:
     - Assets/_Scenes/InGameTutorial.unity
     guid:
-    - aeffe36b1fd88814cb7a0dc5ee68f1f9
+    - cd0d84e4b6db11e45ae3df6f56c57049
   - pin: 0
     path:
-    - 
+    - Assets/_Scenes/InGameTutorial.unity
     guid:
-    - 
+    - aeffe36b1fd88814cb7a0dc5ee68f1f9
   - pin: 0
     path:
     - Assets/_Scenes/PlayerController_Testing.unity
     guid:
     - 99c9720ab356a0642a771bea13969a05
+  - pin: 0
+    path:
+    - 
+    guid:
+    - 
   - pin: 0
     path:
     - Assets/_Scenes/TechnicalTesticular.unity
