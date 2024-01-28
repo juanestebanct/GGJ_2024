@@ -6,6 +6,8 @@ using UnityEngine;
 public class LaserFX : MonoBehaviour
 {
     [SerializeField] private ParticleSystem _hitParticle;
+    [SerializeField] private ParticleSystem _launchParticle;
+    [SerializeField] private ParticleSystem _hitMarker;
     [SerializeField] private GameObject _laser;
     [SerializeField] private Vector3 _laserScale = new Vector3(0.02f, 0.02f, 0.02f);
     [SerializeField] private float _laserStartTime;
@@ -16,9 +18,16 @@ public class LaserFX : MonoBehaviour
         _hitParticle.transform.position = pos;
         _hitParticle.Play();
     }
+    
+    public void SetHitMarkerPosition(Vector3 pos)
+    {
+        _hitMarker.transform.position = pos;
+        _hitMarker.Play();
+    }
 
     public void StartLaser()
     {
+        _launchParticle.Play();
         _laser.SetActive(true);
         _laser.transform.localScale = Vector3.zero;
         DOTween.To(() => _laser.transform.localScale, x => _laser.transform.localScale = x,
