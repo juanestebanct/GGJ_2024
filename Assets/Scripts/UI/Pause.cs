@@ -20,7 +20,7 @@ public class Pause : MonoBehaviour
         _settingsMenu.gameObject.SetActive(false);
     }
 
-    private void TogglePause()
+    public void TogglePause()
     {
         if (!paused)
         {
@@ -48,11 +48,13 @@ public class Pause : MonoBehaviour
 
     public void OpenOptions()
     {
-        _settingsMenu.gameObject.SetActive(false);
+        _settingsMenu.gameObject.SetActive(true);
+        Buttons.DOFade(0, 0.5f).SetUpdate(true);
     }
     public void CloseOptions()
     {
-        _settingsMenu.gameObject.SetActive(true);
+        _settingsMenu.gameObject.SetActive(false);
+        Buttons.DOFade(1, 1.5f).SetUpdate(true);
     }
 
 }
