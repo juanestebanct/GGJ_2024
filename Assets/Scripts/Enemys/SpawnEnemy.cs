@@ -52,7 +52,7 @@ public class SpawnEnemy : MonoBehaviour
 
     private void PoolEnemies(List<GameObject> list, NavMeshSurface nav)
     {
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 8; i++)
         {
             GameObject enemy = Instantiate(enemysPrefabs[indexEnemy]);
             enemy.SetActive(false);
@@ -125,26 +125,44 @@ public class SpawnEnemy : MonoBehaviour
     }
     private Vector3 PositionToSpawn()
     {
-        Vector3 startOffset = new Vector3(-maxRange.x * spacing * 0.5f, 0f, -maxRange.y * spacing * 0.5f);
-        xPos = (int)Random.Range(0, maxRange.x);
-        zPos = (int)Random.Range(0, maxRange.y);
-        Vector3 spawnPosition = new Vector3(xPos * spacing, 3f, zPos * spacing) + center.position + startOffset;
-        NavMeshHit hit;
+        bool isSpawn = false;
+        int temp = 0;
+        while (!isSpawn)
+        {
+            temp++;
+            Vector3 startOffset = new Vector3(-maxRange.x * spacing * 0.5f, -center.position.y, -maxRange.y * spacing * 0.5f);
+            xPos = (int)Random.Range(0, maxRange.x);
+            zPos = (int)Random.Range(0, maxRange.y);
+            Vector3 spawnPosition = new Vector3(xPos * spacing, center.position.y, zPos * spacing) + center.position + startOffset;
+            print(spawnPosition);
+            NavMeshHit hit;
+            if (temp>25)
+            {
+                print("Dale, no prende");
+                return Vector3.zero;
 
-        if (NavMesh.SamplePosition(spawnPosition, out hit, 5f, NavMesh.GetAreaFromName("fly")))
-            return hit.position;
-        else return PositionToSpawn();
+            }
+
+            if (NavMesh.SamplePosition(spawnPosition, out hit, 20f,NavMesh.AllAreas))
+            {
+                isSpawn = true;
+                print(hit.position);
+                return hit.position;
+            }
+            else isSpawn = false;
+        }
+        return Vector3.zero;
 
     }
     private void ExampleGrid()
     {
-        Vector3 startOffset = new Vector3(-maxRange.x * spacing * 0.5f, 0f, -maxRange.y * spacing * 0.5f);
+        Vector3 startOffset = new Vector3(-maxRange.x * spacing * 0.5f, -center.position.y, -maxRange.y * spacing * 0.5f);
         for (int x = 0; x < maxRange.x; x++)
         {
             for (int z = 0; z < maxRange.y; z++)
             {
                 // Calcular la posición de spawn
-                Vector3 spawnPosition = new Vector3(x * spacing, 3f, z * spacing)+ center.position+ startOffset;
+                Vector3 spawnPosition = new Vector3(x * spacing, center.position.y, z * spacing)+ center.position+ startOffset;
 
                 // Instanciar el objeto en la posición calculada
                 Instantiate(prefabt, spawnPosition, Quaternion.identity);
@@ -156,10 +174,11 @@ public class SpawnEnemy : MonoBehaviour
         ListNavmesh[0].BuildNavMesh();
         ListNavmesh[1].BuildNavMesh();
     }
-    public void ActionLevel(Transform tempCol)
+    public void ActionLevel(Transform tempCol,Vector2 tempGrid)
     {
         center = tempCol;
-
+        maxRange = tempGrid;
+        //ExampleGrid();
         for (int i = 0;i < maxEnemyRound; i++)
         {
             SpawnEnemys(choose());

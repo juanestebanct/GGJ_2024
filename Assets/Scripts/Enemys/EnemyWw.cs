@@ -7,17 +7,11 @@ public class EnemyWw : Enemy
 {
     [SerializeField] private GameObject DamageZone;
 
-    private void Start()
+    private void Awake()
     {
-        navMeshAgent = GetComponent<NavMeshAgent>();
-        Live = MaxLive;
-
-        navMeshAgent.speed = Speed;
-
-        ChangePatrone(MoventPatron.Change);
-        
-        DamageZone.SetActive(false);
+        Configurate();
     }
+
     private void ChangePatrone(MoventPatron patron)
     {
         switch (patron)
@@ -40,19 +34,35 @@ public class EnemyWw : Enemy
     /// </summary>
     private void chasePlayer()
     {
-        float distance = Vector3.Distance(playerReferent.transform.position,transform.position);
-        navMeshAgent.SetDestination(playerReferent.transform.position);
-
-        if (distance <= rangeZoneAttack)
+        try 
         {
-            ChangePatrone(MoventPatron.Attacking);
-            print("Attacking");
-        }
-        else if (distance >= rangeZoneAttack)
+            float distance = Vector3.Distance(playerReferent.transform.position, transform.position);
+            navMeshAgent.SetDestination(playerReferent.transform.position);
+
+            if (distance <= rangeZoneAttack)
+            {
+                ChangePatrone(MoventPatron.Attacking);
+            }
+            else if (distance >= rangeZoneAttack)
+            {
+            }
+        } 
+        catch (System.Exception e) 
         {
-            print("No attackin");
+            Configurate();
         }
 
+    }
+    private void Configurate()
+    {
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        Live = MaxLive;
+
+        navMeshAgent.speed = Speed;
+
+        ChangePatrone(MoventPatron.Change);
+
+        DamageZone.SetActive(false);
     }
     private void AttackMove()
     {
