@@ -24,6 +24,8 @@ public class Baby : MonoBehaviour
     private bool _reloadPressed;
     private float _nextFireTime;
 
+    public Action ReloadCompleted;
+
     private void Awake()
     {
         _reloadController = GetComponentInParent<ReloadMiniGameController>();
@@ -36,8 +38,8 @@ public class Baby : MonoBehaviour
 
     private void Start()
     {
-        _currentAmmo = _maxAmmo;
-        _currentState = WeaponState.IdleShooting;
+        _currentAmmo = 0;
+        _currentState = WeaponState.OutOfAmmo;
         _firePressed = false;
         _reloadPressed = false;
         _laserDamageArea.enabled = false;
@@ -91,6 +93,7 @@ public class Baby : MonoBehaviour
         _isReloading = false;
         _currentAmmo = _maxAmmo;
         _currentState = WeaponState.IdleShooting;
+        ReloadCompleted.Invoke();
     }
     
     IEnumerator Shoot()

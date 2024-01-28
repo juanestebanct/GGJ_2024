@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7d2db98314fc904fa81236a0a67b3cf, type: 3}
+  m_Name: Teleport
+  m_EditorClassIdentifier: 
+  types:
+  - data: []
+  - data: []
+  - data: []
+  - data: []
+  - data: []
+  - data: []
+  - data:
+    - saverType: 6
+      id_in_external_heap: 303975812
+      indentifierVersion: GlobalObjectId_V1
+      identifierTypetargetObjectIdtargetPrefabId: -2-3f74a32051a278f4fbda6d368d829a0a-1159865279876625955-1829259842141293951
+      namesPathBackup: "Main Map\xBE-----Teleports------\xBEEntrada 1"
+      siblingsPathBackup: "4\xBE2\xBE0"
+      boolValue: 0
+      stringValue: 
+      highLighterData: []
+      iconData:
+      - icon_guid: Library/sv_icon_dot14_pix16_gizmo
+        icon_path: 
+        has_icon_color: 0
+        icon_color: {r: 0, g: 0, b: 0, a: 0}
+    - saverType: 6
+      id_in_external_heap: 521430608
+      indentifierVersion: GlobalObjectId_V1
+      identifierTypetargetObjectIdtargetPrefabId: -2-3f74a32051a278f4fbda6d368d829a0a-1411315689-0
+      namesPathBackup: "Main Map\xBE-----Teleports------\xBEEntrada 4"
+      siblingsPathBackup: "4\xBE2\xBE3"
+      boolValue: 0
+      stringValue: 
+      highLighterData: []
+      iconData:
+      - icon_guid: Library/sv_icon_dot14_pix16_gizmo
+        icon_path: 
+        has_icon_color: 0
+        icon_color: {r: 0, g: 0, b: 0, a: 0}
+    - saverType: 6
+      id_in_external_heap: 1341003845
+      indentifierVersion: GlobalObjectId_V1
+      identifierTypetargetObjectIdtargetPrefabId: -2-3f74a32051a278f4fbda6d368d829a0a-1159865279876625955-87711783
+      namesPathBackup: "Main Map\xBE-----Teleports------\xBEEntrada"
+      siblingsPathBackup: "4\xBE2\xBE4"
+      boolValue: 0
+      stringValue: 
+      highLighterData: []
+      iconData:
+      - icon_guid: Library/sv_icon_dot14_pix16_gizmo
+        icon_path: 
+        has_icon_color: 0
+        icon_color: {r: 0, g: 0, b: 0, a: 0}
+    - saverType: 6
+      id_in_external_heap: 2063685206
+      indentifierVersion: GlobalObjectId_V1
+      identifierTypetargetObjectIdtargetPrefabId: -2-3f74a32051a278f4fbda6d368d829a0a-1159865279876625955-926731571
+      namesPathBackup: "Main Map\xBE-----Teleports------\xBEEntrada (2)"
+      siblingsPathBackup: "4\xBE2\xBE2"
+      boolValue: 0
+      stringValue: 
+      highLighterData: []
+      iconData:
+      - icon_guid: Library/sv_icon_dot14_pix16_gizmo
+        icon_path: 
+        has_icon_color: 0
+        icon_color: {r: 0, g: 0, b: 0, a: 0}
+    - saverType: 6
+      id_in_external_heap: 1213358019
+      indentifierVersion: GlobalObjectId_V1
+      identifierTypetargetObjectIdtargetPrefabId: -2-3f74a32051a278f4fbda6d368d829a0a-1159865279876625955-1593301644
+      namesPathBackup: "Main Map\xBE-----Teleports------\xBEEntrada (3)"
+      siblingsPathBackup: "4\xBE2\xBE3"
+      boolValue: 0
+      stringValue: 
+      highLighterData: []
+      iconData:
+      - icon_guid: Library/sv_icon_dot14_pix16_gizmo
+        icon_path: 
+        has_icon_color: 0
+        icon_color: {r: 0, g: 0, b: 0, a: 0}
+  BookMarks_InternalGlobal: []
+  HierExpands_InternalGlobal: []
