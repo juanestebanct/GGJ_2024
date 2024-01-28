@@ -104,7 +104,7 @@ Material:
     - _ClearCoatSmoothness: 0
     - _Cull: 2
     - _Cutoff: 0.5
-    - _Depth_Fade_Distance: 54
+    - _Depth_Fade_Distance: -1.28
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _Displacement_Intensity: 0
@@ -149,7 +149,7 @@ Material:
     - _UV_Distorsion_Tiling_and_Offset_Speed: {r: 2, g: 2, b: -0.2, a: 0.2}
     - _Vertex_Offset_Tiling_and_Offset_Speed: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &7479645427537144477
+--- !u!114 &4191321611048000198
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

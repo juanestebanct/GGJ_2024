@@ -41,9 +41,12 @@ public class SpawnEnemy : MonoBehaviour
     private int indexEnemy;
     private int enemyActives;
     private Transform playerReferent;
-    private void Start()
+    private void Awake()
     {
         if (Instance == null) Instance = this;
+    }
+    private void Start()
+    {
 
         playerReferent = GameObject.FindGameObjectWithTag("Player").transform;
 
@@ -53,6 +56,7 @@ public class SpawnEnemy : MonoBehaviour
 
         EndFight.AddListener(Finish);
         StarFight.AddListener(StarEvent);
+        this.gameObject.layer = 2;
     }
 
     private void PoolEnemies(List<GameObject> list, NavMeshSurface nav)
@@ -173,21 +177,7 @@ public class SpawnEnemy : MonoBehaviour
     {
         print("Sobreviviste ve a otro ligar ");
     }
-    private void ExampleGrid()
-    {
-        Vector3 startOffset = new Vector3(-maxRange.x * spacing * 0.5f, -center.position.y, -maxRange.y * spacing * 0.5f);
-        for (int x = 0; x < maxRange.x; x++)
-        {
-            for (int z = 0; z < maxRange.y; z++)
-            {
-                // Calcular la posición de spawn
-                Vector3 spawnPosition = new Vector3(x * spacing, center.position.y, z * spacing) + center.position + startOffset;
-
-                // Instanciar el objeto en la posición calculada
-                Instantiate(prefabt, spawnPosition, Quaternion.identity);
-            }
-        }
-    }
+ 
     public void ActionLevel(Transform tempCol,Vector2 tempGrid)
     {
         center = tempCol;
@@ -222,13 +212,29 @@ public class SpawnEnemy : MonoBehaviour
     /// </summary>
     public void RemoveEnemy()
     {
-        if (enemyActives < 0)
+        enemyActives--;
+        if (enemyActives <= 0)
         {
             EndFight.Invoke();
         }
-        else enemyActives--;
+        else 
         print("Faltan  "+enemyActives);
     }
     // pruebas 
- 
+    private void ExampleGrid()
+    {
+        Vector3 startOffset = new Vector3(-maxRange.x * spacing * 0.5f, -center.position.y, -maxRange.y * spacing * 0.5f);
+        for (int x = 0; x < maxRange.x; x++)
+        {
+            for (int z = 0; z < maxRange.y; z++)
+            {
+                // Calcular la posición de spawn
+                Vector3 spawnPosition = new Vector3(x * spacing, center.position.y, z * spacing) + center.position + startOffset;
+
+                // Instanciar el objeto en la posición calculada
+                Instantiate(prefabt, spawnPosition, Quaternion.identity);
+            }
+        }
+    }
+
 }
