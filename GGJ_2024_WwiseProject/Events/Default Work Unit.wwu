@@ -116,6 +116,29 @@
 						<Property Name="Color" Type="int16" Value="17"/>
 						<Property Name="OverrideColor" Type="bool" Value="True"/>
 					</PropertyList>
+					<ChildrenList>
+						<Event Name="Play_Door" ID="{AD1A6E3C-D696-4E66-BF90-2A6A4208A5CD}">
+							<ChildrenList>
+								<Action Name="" ID="{6712FDDC-1A13-4BE5-8227-9DFEAD607137}" ShortID="659122990">
+									<PropertyList>
+										<Property Name="Delay" Type="Real64" Value="0.5"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Door Active Loop" ID="{3AA4A068-B80F-4222-B2BE-BC038CD2DD28}" WorkUnitID="{2DE1879A-8553-4D10-BEFD-54ACB10CC91E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{070AA7A7-4FBE-4BF8-AC93-C3DDFABC85A8}" ShortID="680313743">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Door Active Start" ID="{CFA0198E-F968-4951-9CC9-72A351F89E21}" WorkUnitID="{2DE1879A-8553-4D10-BEFD-54ACB10CC91E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
 				</Folder>
 			</ChildrenList>
 		</WorkUnit>

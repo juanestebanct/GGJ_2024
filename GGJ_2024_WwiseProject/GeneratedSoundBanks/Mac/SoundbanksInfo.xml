@@ -25,7 +25,7 @@
 				<GameParameter Id="2175994658" Name="Music_Parameter"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{A649ABBF-2EB6-6E38-CCAD-7EF06CA17867}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{68F3EE50-754D-AC77-707C-B88D27445F2B}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -44,6 +44,10 @@
 				<File Id="309855778" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Hit_Bodyfall 02.wav</ShortName>
 					<CachePath>SFX/Hit_Bodyfall 02_10C4C929.wem</CachePath>
+				</File>
+				<File Id="359599581" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Door Active Loop.wav</ShortName>
+					<CachePath>SFX/Door Active Loop_D79FB2B7.wem</CachePath>
 				</File>
 				<File Id="422282666" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Hit_Bodyfall.wav</ShortName>
@@ -69,6 +73,10 @@
 					<ShortName>Hit_Punch.wav</ShortName>
 					<CachePath>SFX/Hit_Punch_10C4C929.wem</CachePath>
 				</File>
+				<File Id="802891982" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Door Active Start.wav</ShortName>
+					<CachePath>SFX/Door Active Start_10C4C929.wem</CachePath>
+				</File>
 				<File Id="1028423080" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Laser Start.wav</ShortName>
 					<CachePath>SFX/Laser Start_10C4C929.wem</CachePath>
@@ -86,6 +94,12 @@
 				<Event Id="1954149466" Name="Play_BabyExplotion" DurationType="OneShot" DurationMin="1.0221504" DurationMax="1.5314951">
 					<MediaRefs>
 						<MediaRef Id="719394933"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2547633870" Name="Play_Door" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="359599581"/>
+						<MediaRef Id="802891982"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="2270376495" Name="Play_Laser" DurationType="Infinite">
@@ -116,5 +130,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{665C8662-364C-774C-7235-DD019FD4CC1A}</FileHash>
+	<FileHash>{9FC2BC07-4FB2-8EA0-E468-6B7C5AA4105E}</FileHash>
 </SoundBanksInfo>
