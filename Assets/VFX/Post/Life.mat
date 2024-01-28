@@ -63,10 +63,10 @@ Material:
     - _Fullscreen_DepthWrite: 0
     - _Fullscreen_DstAlphaBlend: 10
     - _Fullscreen_DstColorBlend: 10
-    - _Fullscreen_Intensity: 0
+    - _Fullscreen_Intensity: 0.5
     - _Fullscreen_SrcAlphaBlend: 1
     - _Fullscreen_SrcColorBlend: 5
-    - _Multiply: 827
+    - _Multiply: 0
     - _Power: 2.39
     - _QueueControl: 0
     - _QueueOffset: 0
