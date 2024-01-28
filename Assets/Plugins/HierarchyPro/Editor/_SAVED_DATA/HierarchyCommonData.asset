@@ -15,9 +15,9 @@ MonoBehaviour:
   ScenesTabs:
   - pin: 0
     path:
-    - Assets/_Scenes/InGameTutorial.unity
+    - Assets/_Scenes/Procedural Generation/Teleport.unity
     guid:
-    - cd0d84e4b6db11e45ae3df6f56c57049
+    - 3f74a32051a278f4fbda6d368d829a0a
   - pin: 0
     path:
     - Assets/_Scenes/EnemyTest/EnemyWW.unity
