@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Flare
+  m_Name: trail
   m_Shader: {fileID: -6465566751694194690, guid: 11fdea7b5399e5b4fb3f54363cda2757,
     type: 3}
   m_Parent: {fileID: 0}
@@ -29,7 +29,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Texture_Red_Emissiv_Green_Opacity:
-        m_Texture: {fileID: 2800000, guid: 796f2c29e83bea143b064ee78c540530, type: 3}
+        m_Texture: {fileID: 2800000, guid: 7431b957b6fca57479c16bbd532fb7d9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -54,8 +54,8 @@ Material:
     - _Cull: 2
     - _Depth_Fade_Distance: 1
     - _DstBlend: 10
-    - _Emissiv_Driven_By_Vertex_Color_Alpha_1: 0
-    - _Emissiv_Intensity: 10
+    - _Emissiv_Driven_By_Vertex_Color_Alpha_1: 1
+    - _Emissiv_Intensity: 5
     - _QueueControl: 0
     - _QueueOffset: 5
     - _SrcBlend: 5
