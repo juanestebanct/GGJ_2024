@@ -25,10 +25,34 @@
 				<GameParameter Id="2175994658" Name="Music_Parameter"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{D222E544-AF38-3994-F202-E81CBF61FB4A}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{68F3EE50-754D-AC77-707C-B88D27445F2B}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
+				<File Id="93839807" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Laser Beam Loop.wav</ShortName>
+					<CachePath>SFX/Laser Beam Loop_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="182345871" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Enemy death.wav</ShortName>
+					<CachePath>SFX/Enemy death_10C4C929.wem</CachePath>
+				</File>
+				<File Id="294384409" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Hit_Punch 02.wav</ShortName>
+					<CachePath>SFX/Hit_Punch 02_10C4C929.wem</CachePath>
+				</File>
+				<File Id="309855778" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Hit_Bodyfall 02.wav</ShortName>
+					<CachePath>SFX/Hit_Bodyfall 02_10C4C929.wem</CachePath>
+				</File>
+				<File Id="359599581" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Door Active Loop.wav</ShortName>
+					<CachePath>SFX/Door Active Loop_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="422282666" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Hit_Bodyfall.wav</ShortName>
+					<CachePath>SFX/Hit_Bodyfall_10C4C929.wem</CachePath>
+				</File>
 				<File Id="496249538" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GGJ_Music_Action.wav</ShortName>
 					<CachePath>SFX/GGJ_Music_Action_D79FB2B7.wem</CachePath>
@@ -37,12 +61,67 @@
 					<ShortName>GGJ_Music_Chill.wav</ShortName>
 					<CachePath>SFX/GGJ_Music_Chill_D79FB2B7.wem</CachePath>
 				</File>
+				<File Id="719394933" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Baby explotion.wav</ShortName>
+					<CachePath>SFX/Baby explotion_10C4C929.wem</CachePath>
+				</File>
+				<File Id="766503118" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Enemy death Slime.wav</ShortName>
+					<CachePath>SFX/Enemy death Slime_10C4C929.wem</CachePath>
+				</File>
+				<File Id="782584750" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Hit_Punch.wav</ShortName>
+					<CachePath>SFX/Hit_Punch_10C4C929.wem</CachePath>
+				</File>
+				<File Id="802891982" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Door Active Start.wav</ShortName>
+					<CachePath>SFX/Door Active Start_10C4C929.wem</CachePath>
+				</File>
+				<File Id="1028423080" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Laser Start.wav</ShortName>
+					<CachePath>SFX/Laser Start_10C4C929.wem</CachePath>
+				</File>
 			</Media>
 			<Events>
+				<Event Id="1316910230" Name="Impacts" DurationType="OneShot" DurationMin="0.42491063" DurationMax="1.5353407">
+					<MediaRefs>
+						<MediaRef Id="294384409"/>
+						<MediaRef Id="309855778"/>
+						<MediaRef Id="422282666"/>
+						<MediaRef Id="782584750"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1954149466" Name="Play_BabyExplotion" DurationType="OneShot" DurationMin="1.0221504" DurationMax="1.5314951">
+					<MediaRefs>
+						<MediaRef Id="719394933"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2547633870" Name="Play_Door" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="359599581"/>
+						<MediaRef Id="802891982"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2270376495" Name="Play_Laser" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="93839807"/>
+						<MediaRef Id="1028423080"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="4264879856" Name="Play_Music_PlayList" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="496249538"/>
 						<MediaRef Id="580469773"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2794401964" Name="Steward_Death" DurationType="OneShot" DurationMin="0.58344585" DurationMax="0.73509574">
+					<MediaRefs>
+						<MediaRef Id="182345871"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2523452252" Name="WW_Death" DurationType="OneShot" DurationMin="0.92217517" DurationMax="1.2309562">
+					<MediaRefs>
+						<MediaRef Id="766503118"/>
 					</MediaRefs>
 				</Event>
 			</Events>
@@ -51,5 +130,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{C2EA883F-79BB-EB2D-0BD4-A79DA6C3F625}</FileHash>
+	<FileHash>{9FC2BC07-4FB2-8EA0-E468-6B7C5AA4105E}</FileHash>
 </SoundBanksInfo>
