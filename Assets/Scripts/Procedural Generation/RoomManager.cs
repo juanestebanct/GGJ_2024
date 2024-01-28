@@ -11,7 +11,8 @@ public class RoomManager : MonoBehaviour
 
     //VARIABLES
     //Assignable
-    [SerializeField] List<RoomInfo> roomPrefabs = new List<RoomInfo>();
+    [SerializeField] private List<RoomInfo> roomPrefabs = new List<RoomInfo>();
+    [SerializeField] private int bakeLayer, defaultLayer;
 
     //Utility
     public UnityEvent OnRoomFinished;
@@ -53,7 +54,12 @@ public class RoomManager : MonoBehaviour
         roomCreated.Add(roomInfo);
         roomSpawnPoint.Enqueue(roomInfo.TopHeight);
 
-        if(!currentRoom) currentRoom = roomInfo;
+        if (!currentRoom)
+        {
+            currentRoom = roomInfo;
+
+            currentRoom.gameObject.layer = bakeLayer;
+        }
     }
 
     public void SpawnRoom(Teleport tp)
@@ -68,8 +74,6 @@ public class RoomManager : MonoBehaviour
 
             RoomInfo createdRoom = Instantiate(roomPrefabs[rnd], roomSpawnPoint.Dequeue(), Quaternion.identity, transform);
 
-            AddRoom(createdRoom);
-
             rnd = Random.Range(0, createdRoom.EntranceTeleport.Count);
 
             Teleport destinyTeleport = createdRoom.EntranceTeleport.ElementAt(rnd);
@@ -77,6 +81,8 @@ public class RoomManager : MonoBehaviour
             tp.TPInfo.SetDestinyRoom(createdRoom, destinyTeleport);
 
             destinyTeleport.TPInfo.SetDestinyRoom(currentRoom, tp);
+
+            createdRoom.gameObject.layer = bakeLayer;
         }
     }
 
@@ -87,6 +93,7 @@ public class RoomManager : MonoBehaviour
         if (currentRoom.Finished) return;
 
         currentRoom.RoomFinished();
+        currentRoom.gameObject.layer = defaultLayer;
     }
 
     #endregion

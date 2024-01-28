@@ -60,7 +60,7 @@ public class TPInfo : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("GameController"))
+        if(other.CompareTag("Player"))
         {
             StartCoroutine(TeleportTriggered(other.transform));
         }
