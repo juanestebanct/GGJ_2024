@@ -375,11 +375,13 @@ MonoBehaviour:
   _laserSFX:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 78e2bec264604374ca8c65b5f10b9b4b,
+      type: 2}
   _hitMarkerSFX:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: be5040acbff7f714a912930a6204b2ee,
+      type: 2}
 --- !u!1 &3621593064644270484
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,7 +522,8 @@ MonoBehaviour:
   _explotionSFX:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 9a166a3e388e2da4692eda5d41ec93bb,
+      type: 2}
   CurrentState: 0
 --- !u!114 &1864483337108529732
 MonoBehaviour:
