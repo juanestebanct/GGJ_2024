@@ -17,6 +17,7 @@ public class Teleport : MonoBehaviour
     private void Awake()
     {
         tpInfo = tpZone.GetComponent<TPInfo>();
+        tpInfo.MyTp = this;
     }
 
     #region Utility

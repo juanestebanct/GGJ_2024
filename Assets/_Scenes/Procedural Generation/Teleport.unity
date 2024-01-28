@@ -123,37 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &492716604
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 492716605}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &492716605
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 492716604}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 4.12}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &599374863
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,14 +453,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomPrefabs:
   - {fileID: 4229971765952218214, guid: 967e3f1a2656ee0458e1dbe08209b076, type: 3}
-  player: {fileID: 1538278215}
-  hola: {fileID: 492716604}
---- !u!1 &1538278215 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3621593064644270484, guid: 553119e9d60edbf46b4441d949b342b0,
-    type: 3}
-  m_PrefabInstance: {fileID: 1838048681}
-  m_PrefabAsset: {fileID: 0}
+  - {fileID: 7654621946808384056, guid: ddf8d95509ce2084dbd2894d3f9e5bcd, type: 3}
+  - {fileID: 1061770064931826250, guid: f03cde8212943da41ba170ef12a1b8f4, type: 3}
+  - {fileID: 2204027428770612828, guid: d3aa13fedc71cc443b8b00f1e21f1138, type: 3}
+  - {fileID: 3101043757455451264, guid: 0449ec86943cc3447a88f1b453e9ef53, type: 3}
+  - {fileID: 8260808816243432375, guid: 3720700d6c814024fb42d3e271b54773, type: 3}
 --- !u!1 &1576217102
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,6 +532,11 @@ PrefabInstance:
     - target: {fileID: 892560269231681936, guid: 553119e9d60edbf46b4441d949b342b0,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653619898218261139, guid: 553119e9d60edbf46b4441d949b342b0,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3621593064644270484, guid: 553119e9d60edbf46b4441d949b342b0,
@@ -726,4 +697,3 @@ SceneRoots:
   - {fileID: 3476003537139203841}
   - {fileID: 1509941926}
   - {fileID: 1838048681}
-  - {fileID: 492716605}

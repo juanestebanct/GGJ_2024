@@ -1,19 +1,23 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class TPInfo : MonoBehaviour
 {
     //VARIABLES
     //Assignable
+    [SerializeField] [Range(0f, 100f)] float tpDelay = 2f;
     [SerializeField] private BoxCollider collisionZone;
     
     //Utility
     private RoomInfo destiny = null;
-    private Teleport tpBinded = null;
+    private Teleport myTp = null, tpBinded = null;
 
     //Access
+    public Teleport MyTp
+    { 
+        get => myTp; 
+        set { if(!myTp) myTp = value; }
+    }
     public BoxCollider CollisionZone { get => collisionZone; }
     public RoomInfo Destiny { get => destiny; }
 
@@ -27,15 +31,27 @@ public class TPInfo : MonoBehaviour
         this.tpBinded = tpBinded;
     }
 
-    private void TeleportTriggered(Transform player)
+    private IEnumerator TeleportTriggered(Transform player)
     {
-        Transform destinyTrans = tpBinded.transform;
-        CharacterController controller = player.GetComponent<CharacterController>();
+        Transform destinyTrans;
+        CharacterController controller = PlayerController.Instance.Controller;
 
         controller.enabled = false;
+        PlayerController.Instance.CanMove = false;
+
+        RoomManager.instance.SpawnRoom(myTp);
+
+        yield return new WaitForSeconds(tpDelay);
+        yield return new WaitUntil(() => tpBinded && destiny);
+
+        destinyTrans = tpBinded.transform;
+        RoomManager.instance.CurrentRoom = destiny;
+
         player.position= destinyTrans.position;
         player.forward = destinyTrans.forward;
+
         controller.enabled = true;
+        PlayerController.Instance.CanMove = true;
     }
 
     #endregion
@@ -46,7 +62,7 @@ public class TPInfo : MonoBehaviour
     {
         if(other.CompareTag("GameController"))
         {
-            TeleportTriggered(other.transform);
+            StartCoroutine(TeleportTriggered(other.transform));
         }
     }
 
