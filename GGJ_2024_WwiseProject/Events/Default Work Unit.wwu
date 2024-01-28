@@ -111,6 +111,12 @@
 						</Folder>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="Ambient" ID="{C44BEEC3-84EC-45D0-AD8E-1AD1E2000092}" ShortID="114539924">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="17"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

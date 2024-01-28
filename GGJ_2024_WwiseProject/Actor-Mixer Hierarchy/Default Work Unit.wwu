@@ -338,6 +338,7 @@
 						</Sound>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="Ambient" ID="{6BFFB106-DF1A-4927-95E7-1C8345D02ACA}" ShortID="886740956"/>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>
