@@ -1657,7 +1657,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: a6560a915ef98420e9faacc1c7438823, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 3249af1125ec4be42b0c4bb277172942, type: 2}
 --- !u!4 &832575519
 Transform:
   m_ObjectHideFlags: 0
@@ -2743,6 +2743,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2437690233164619985, guid: 553119e9d60edbf46b4441d949b342b0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3621593064644270484, guid: 553119e9d60edbf46b4441d949b342b0,
         type: 3}
       propertyPath: m_Name
@@ -2817,6 +2822,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMin.x
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4967841183180178521, guid: 553119e9d60edbf46b4441d949b342b0,
+        type: 3}
+      propertyPath: m_Antialiasing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4967841183180178521, guid: 553119e9d60edbf46b4441d949b342b0,
+        type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5993197383510921346, guid: 553119e9d60edbf46b4441d949b342b0,
         type: 3}
