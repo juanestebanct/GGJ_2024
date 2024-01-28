@@ -32,14 +32,16 @@ public class RoomManager : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyUp(KeyCode.K))
+        if(Input.GetKeyDown(KeyCode.K))
         {
             SpawnRoom();
         }
 
-        if (Input.GetKeyUp(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.L))
         {
+            player.GetComponent<CharacterController>().enabled = false;
             player.transform.position = hola.transform.position;
+            player.GetComponent<CharacterController>().enabled = true;
         }
     }
 
@@ -70,8 +72,6 @@ public class RoomManager : MonoBehaviour
                 AddRoom(createdRoom);
 
                 rnd = Random.Range(0, createdRoom.EntranceTeleport.Count);
-
-                print("Entro");
 
                 tp.TPInfo.SetDestinyRoom(createdRoom, createdRoom.EntranceTeleport.ElementAt(rnd));
 

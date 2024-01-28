@@ -30,9 +30,12 @@ public class TPInfo : MonoBehaviour
     private void TeleportTriggered(Transform player)
     {
         Transform destinyTrans = tpBinded.transform;
+        CharacterController controller = player.GetComponent<CharacterController>();
 
+        controller.enabled = false;
         player.position= destinyTrans.position;
         player.forward = destinyTrans.forward;
+        controller.enabled = true;
     }
 
     #endregion
