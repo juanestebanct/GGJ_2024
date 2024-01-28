@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{B92ECC66-4074-4996-B057-BD06025CBFFE}" SchemaVersion="110">
 	<Events>
-		<WorkUnit Name="Default Work Unit" ID="{B92ECC66-4074-4996-B057-BD06025CBFFE}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{B92ECC66-4074-4996-B057-BD06025CBFFE}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="Music" ID="{A9AE3E11-D945-4EAE-A159-A1000D0D67C4}" ShortID="44011915">
+					<ChildrenList>
+						<Event Name="Play_Music_PlayList" ID="{BC06EA40-0807-4C30-9AC1-7EFEFBCAA4ED}">
+							<ChildrenList>
+								<Action Name="" ID="{E05CDA52-E966-4B60-8142-0C3FF0C3EF29}" ShortID="877140085">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Music_PlayList" ID="{33990337-C704-4471-A643-56B3AFB6DE49}" WorkUnitID="{2308E022-0B5D-42C1-AE09-69512D5169D4}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Gameplay" ID="{D2E94621-46DB-4885-B503-5E3542DC3C20}" ShortID="506498652">
+					<ChildrenList>
+						<Folder Name="Player" ID="{8F99DA00-0571-4930-8012-7E3197DD5092}" ShortID="420268991"/>
+						<Folder Name="Enemies" ID="{3623F7E4-D525-4C20-B664-88316EDAACE1}" ShortID="460758729"/>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>
