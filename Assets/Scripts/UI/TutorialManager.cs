@@ -21,6 +21,7 @@ public class TutorialManager: MonoBehaviour
     private bool CompletedSection7;
     private bool CompletedSection8;
 
+    private bool SiRecargo;
 
 
     [SerializeField] Baby baby;
@@ -48,6 +49,9 @@ public class TutorialManager: MonoBehaviour
         DOTween.Init();
         _currentState = TutorialState.Section1;
 
+        baby.ReloadCompleted += ReloadComplete;
+
+        SiRecargo = false;
         CompletedSection1 = false;
         CompletedSection2 = false;
         CompletedSection3 = false;
@@ -98,23 +102,26 @@ public class TutorialManager: MonoBehaviour
                 }
                 ;
                 break;
-/*            case TutorialState.Section5:
+            case TutorialState.Section5:
                 if (CompletedSection5 == false)
                 {
-                    Section1();
-                    CompletedSection5 = true;
+                        CompletedSection5 = true;
+                        Section5();                    
                 }
                 ;
                 break;
             case TutorialState.Section6:
                 if (CompletedSection6 == false)
                 {
-                    Section1();
-                    CompletedSection6 = true;
+                    if (SiRecargo == true)
+                    {
+                        CompletedSection6 = true;
+                        Section6();
+                    }   
                 }
                 ;
                 break;
-            case TutorialState.Section7:
+/*            case TutorialState.Section7:
                 if (CompletedSection7 == false)
                 {
                     Section1();
@@ -132,6 +139,11 @@ public class TutorialManager: MonoBehaviour
                 break;*/
 
         }
+    }
+
+    private void ReloadComplete()
+    {
+        SiRecargo = true;
     }
     private void OnDisable() //Cierre de tweeners
     {
@@ -206,6 +218,28 @@ public class TutorialManager: MonoBehaviour
         DownArrow.DOFillAmount(1, 3).SetUpdate(true).SetDelay(2);
         Text5.DOFade(1, 2).SetUpdate(true).SetDelay(2);
 
-        ScreenButton.onClick.AddListener(() => _currentState = TutorialState.Section6);
+        ScreenButton.onClick.AddListener(() => {
+            _currentState = TutorialState.Section6;
+
+            //Se bloquea el cursor
+            Cursor.lockState = CursorLockMode.Locked;
+
+
+        });
+    }
+
+    private void Section6()
+    {
+        Debug.Log(" Entra seccion 6");
+        Text4.DOFade(0, 1).SetUpdate(true).OnComplete(() => Text4.gameObject.SetActive(false));
+        DownArrow.DOFillAmount(0, 1).SetUpdate(true);
+
+
+        TextBackground.DOFade(1, 3).SetUpdate(true).OnComplete(() =>
+        {
+
+            ScreenButton.gameObject.SetActive(true);
+            TextBackground.gameObject.SetActive(true);
+        });
     }
 }
