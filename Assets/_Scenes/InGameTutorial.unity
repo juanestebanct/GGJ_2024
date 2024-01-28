@@ -572,6 +572,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &998649638 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7433294879274961747, guid: eab1004c2a01dd34f8696ead80466e20,
+    type: 3}
+  m_PrefabInstance: {fileID: 6438705359119473554}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 490ba891d0a48b8499aa0ecb791971c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1040708081
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -642,7 +654,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 8c79db9448bb54e4b8922da81952d394, type: 3}
 --- !u!4 &1040708082 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 2662233609782127623, guid: 8c79db9448bb54e4b8922da81952d394,
+  m_CorrespondingSourceObject: {fileID: 7401782080877600763, guid: 8c79db9448bb54e4b8922da81952d394,
     type: 3}
   m_PrefabInstance: {fileID: 1040708081}
   m_PrefabAsset: {fileID: 0}
@@ -844,6 +856,10 @@ MonoBehaviour:
   _reloadSliderSpeedDown: 1.5
   _laughLevelReloadSpeedUp: 3
   _babyBoom: {fileID: 6619998366972309661}
+  _explotionSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
   CurrentState: 0
 --- !u!114 &238409529712898035
 MonoBehaviour:
@@ -1485,6 +1501,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2774838872115130122, guid: eab1004c2a01dd34f8696ead80466e20,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2774838872115130122, guid: eab1004c2a01dd34f8696ead80466e20,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2774838872115130122, guid: eab1004c2a01dd34f8696ead80466e20,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 998649638}
+    - target: {fileID: 2774838872115130122, guid: eab1004c2a01dd34f8696ead80466e20,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2774838872115130122, guid: eab1004c2a01dd34f8696ead80466e20,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseOptions
+      objectReference: {fileID: 0}
+    - target: {fileID: 2774838872115130122, guid: eab1004c2a01dd34f8696ead80466e20,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Pause, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2774838872115130122, guid: eab1004c2a01dd34f8696ead80466e20,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3215679726755950102, guid: eab1004c2a01dd34f8696ead80466e20,
         type: 3}
@@ -2207,10 +2258,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hitParticle: {fileID: 7112702268404700146}
+  _launchParticle: {fileID: 0}
+  _hitMarker: {fileID: 0}
   _laser: {fileID: 7112702268404700147}
   _laserScale: {x: 0.02, y: 0.02, z: 0.02}
   _laserStartTime: 0.2
   _laserEndTime: 0.2
+  _laserSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  _hitMarkerSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!1 &7363622339213486109
 GameObject:
   m_ObjectHideFlags: 0
