@@ -29,6 +29,14 @@ public class RoomManager : MonoBehaviour
         instance = this;
     }
 
+    private void Update()
+    {
+        if(Input.GetKeyUp(KeyCode.K))
+        {
+            SpawnRoom();
+        }
+    }
+
     #region Utility
 
     public void AddRoom(RoomInfo roomInfo)
@@ -42,6 +50,8 @@ public class RoomManager : MonoBehaviour
     public void SpawnRoom()
     {
         if (lastRoom == null) return;
+
+        print("Called");
 
         int rnd = 0;
 
@@ -62,6 +72,8 @@ public class RoomManager : MonoBehaviour
                 createdRoom.EntranceTeleport[rnd].TPInfo.SetDestinyRoom(lastRoom, lastRoom.EntranceTeleport.FindIndex(a => a == tp));
             }
         }
+
+        lastRoom.EnableTPs();
 
         lastRoom = roomCreated.Last();
     }
