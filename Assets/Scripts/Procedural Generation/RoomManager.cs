@@ -11,10 +11,8 @@ public class RoomManager : MonoBehaviour
 
     //VARIABLES
     //Assignable
-    [SerializeField] List<RoomInfo> roomPrefabs = new List<RoomInfo>();
-
-    //Utility
-    public UnityEvent OnRoomFinished;
+    [SerializeField] private List<RoomInfo> roomPrefabs = new List<RoomInfo>();
+    [SerializeField] private int bakeLayer, defaultLayer;
 
     private List<RoomInfo> roomCreated = new List<RoomInfo>();
     private Queue<Vector3> roomSpawnPoint = new Queue<Vector3>();
@@ -32,18 +30,11 @@ public class RoomManager : MonoBehaviour
         }
 
         instance = this;
-
-        OnRoomFinished.AddListener(UpdateRoomStatus);
     }
 
-    private void Update()
+    private void Start()
     {
-        if(Input.GetKeyDown(KeyCode.K))
-        {
-            if (!currentRoom) return;
-
-            currentRoom.EnableTPs();        
-        }
+        SpawnEnemy.Instance.EndFight.AddListener(UpdateRoomStatus);
     }
 
     #region Utility
@@ -53,7 +44,14 @@ public class RoomManager : MonoBehaviour
         roomCreated.Add(roomInfo);
         roomSpawnPoint.Enqueue(roomInfo.TopHeight);
 
-        if(!currentRoom) currentRoom = roomInfo;
+        if (!currentRoom)
+        {
+            currentRoom = roomInfo;
+
+            AssignLayer(currentRoom.gameObject.transform.GetChild(0), bakeLayer);
+
+            StartCoroutine(RoomEnemyDisposal());
+        }
     }
 
     public void SpawnRoom(Teleport tp)
@@ -68,8 +66,6 @@ public class RoomManager : MonoBehaviour
 
             RoomInfo createdRoom = Instantiate(roomPrefabs[rnd], roomSpawnPoint.Dequeue(), Quaternion.identity, transform);
 
-            AddRoom(createdRoom);
-
             rnd = Random.Range(0, createdRoom.EntranceTeleport.Count);
 
             Teleport destinyTeleport = createdRoom.EntranceTeleport.ElementAt(rnd);
@@ -77,6 +73,10 @@ public class RoomManager : MonoBehaviour
             tp.TPInfo.SetDestinyRoom(createdRoom, destinyTeleport);
 
             destinyTeleport.TPInfo.SetDestinyRoom(currentRoom, tp);
+
+            AssignLayer(createdRoom.gameObject.transform.GetChild(0), bakeLayer);
+
+            SpawnEnemy.Instance.ActionLevel(createdRoom.transform, createdRoom.GridSize);
         }
     }
 
@@ -87,6 +87,26 @@ public class RoomManager : MonoBehaviour
         if (currentRoom.Finished) return;
 
         currentRoom.RoomFinished();
+        AssignLayer(currentRoom.gameObject.transform.GetChild(0), defaultLayer);
+    }
+
+    private void AssignLayer(Transform parent, int layer)
+    {
+        parent.gameObject.layer = layer;
+
+        foreach (Transform child in parent)
+        {
+            child.gameObject.layer = layer;
+        }
+    }
+
+    IEnumerator RoomEnemyDisposal()
+    {
+        yield return new WaitForEndOfFrame();
+
+        SpawnEnemy.Instance.ActionLevel(currentRoom.transform, currentRoom.GridSize);
+
+        yield return null;
     }
 
     #endregion
