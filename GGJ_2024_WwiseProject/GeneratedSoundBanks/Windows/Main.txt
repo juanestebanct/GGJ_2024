@@ -1,10 +1,24 @@
 Event	ID	Name			Wwise Object Path	Notes
+	1316910230	Impacts			\Default Work Unit\Gameplay\Player\Impacts	
+	1954149466	Play_BabyExplotion			\Default Work Unit\Gameplay\Player\Play_BabyExplotion	
+	2270376495	Play_Laser			\Default Work Unit\Gameplay\Player\Play_Laser	
+	2523452252	WW_Death			\Default Work Unit\Gameplay\Enemies\Death\WW_Death	
+	2794401964	Steward_Death			\Default Work Unit\Gameplay\Enemies\Death\Steward_Death	
 	4264879856	Play_Music_PlayList			\Default Work Unit\Music\Play_Music_PlayList	
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	2175994658	Music_Parameter			\Default Work Unit\Music_Parameter	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	93839807	Laser Beam Loop	E:\Proyectos\Juegos\GGJ_2024\GGJ_2024_WwiseProject\.cache\Windows\SFX\Laser Beam Loop_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Baby\Laser\Laser Beam Loop		384828
+	182345871	Enemy death	E:\Proyectos\Juegos\GGJ_2024\GGJ_2024_WwiseProject\.cache\Windows\SFX\Enemy death_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Enemy death		125836
+	294384409	Hit_Punch 02	E:\Proyectos\Juegos\GGJ_2024\GGJ_2024_WwiseProject\.cache\Windows\SFX\Hit_Punch 02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Impacts\Hit_Punch 02		91844
+	309855778	Hit_Bodyfall 02	E:\Proyectos\Juegos\GGJ_2024\GGJ_2024_WwiseProject\.cache\Windows\SFX\Hit_Bodyfall 02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Impacts\Hit_Bodyfall 02		159552
+	422282666	Hit_Bodyfall	E:\Proyectos\Juegos\GGJ_2024\GGJ_2024_WwiseProject\.cache\Windows\SFX\Hit_Bodyfall_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Impacts\Hit_Bodyfall		149208
 	496249538	Acid-Action_145BPM	E:\Proyectos\Juegos\GGJ_2024\GGJ_2024_WwiseProject\.cache\Windows\SFX\GGJ_Music_Action_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Music_PlayList\Music\Acid-Action_145BPM		5912372
 	580469773	Acid-Basic_145BPM	E:\Proyectos\Juegos\GGJ_2024\GGJ_2024_WwiseProject\.cache\Windows\SFX\GGJ_Music_Chill_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Music_PlayList\Music\Acid-Basic_145BPM		5912372
+	719394933	Baby explotion	E:\Proyectos\Juegos\GGJ_2024\GGJ_2024_WwiseProject\.cache\Windows\SFX\Baby explotion_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Baby\Baby explotion		236564
+	766503118	Enemy death Slime	E:\Proyectos\Juegos\GGJ_2024\GGJ_2024_WwiseProject\.cache\Windows\SFX\Enemy death Slime_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Enemies\Enemy death Slime		204660
+	782584750	Hit_Punch	E:\Proyectos\Juegos\GGJ_2024\GGJ_2024_WwiseProject\.cache\Windows\SFX\Hit_Punch_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Impacts\Hit_Punch		221356
+	1028423080	Laser Start	E:\Proyectos\Juegos\GGJ_2024\GGJ_2024_WwiseProject\.cache\Windows\SFX\Laser Start_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Baby\Laser\Laser Start		37428
 

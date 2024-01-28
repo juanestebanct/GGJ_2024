@@ -5,7 +5,12 @@
 			<ChildrenList>
 				<SoundBank Name="Main" ID="{26178FF0-59B0-44F6-A3AE-28B0BD1454B9}">
 					<ObjectInclusionList>
+						<ObjectRef Name="WW_Death" ID="{3736D62A-E5B6-4074-87A5-41D0F73C335E}" WorkUnitID="{B92ECC66-4074-4996-B057-BD06025CBFFE}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_BabyExplotion" ID="{77943850-17E6-40A1-8326-24CA01B0038C}" WorkUnitID="{B92ECC66-4074-4996-B057-BD06025CBFFE}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Steward_Death" ID="{808063D1-2F8E-4BAE-81A0-6E098D5B2270}" WorkUnitID="{B92ECC66-4074-4996-B057-BD06025CBFFE}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Music_PlayList" ID="{BC06EA40-0807-4C30-9AC1-7EFEFBCAA4ED}" WorkUnitID="{B92ECC66-4074-4996-B057-BD06025CBFFE}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Impacts" ID="{5FFF8B15-0FD8-4D71-B1A9-2F38F130E6EE}" WorkUnitID="{B92ECC66-4074-4996-B057-BD06025CBFFE}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Laser" ID="{BC32EBD4-1C39-4EE7-997B-BC8EA5AC5F91}" WorkUnitID="{B92ECC66-4074-4996-B057-BD06025CBFFE}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

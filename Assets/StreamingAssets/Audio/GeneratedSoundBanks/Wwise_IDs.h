@@ -13,7 +13,12 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID IMPACTS = 1316910230U;
+        static const AkUniqueID PLAY_BABYEXPLOTION = 1954149466U;
+        static const AkUniqueID PLAY_LASER = 2270376495U;
         static const AkUniqueID PLAY_MUSIC_PLAYLIST = 4264879856U;
+        static const AkUniqueID STEWARD_DEATH = 2794401964U;
+        static const AkUniqueID WW_DEATH = 2523452252U;
     } // namespace EVENTS
 
     namespace GAME_PARAMETERS
