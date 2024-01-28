@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class RoomManager : MonoBehaviour
@@ -57,8 +58,12 @@ public class RoomManager : MonoBehaviour
                 rnd = Random.Range(0, createdRoom.EntranceTeleport.Count);
 
                 tp.TPInfo.SetDestinyRoom(createdRoom, rnd);
+
+                createdRoom.EntranceTeleport[rnd].TPInfo.SetDestinyRoom(lastRoom, lastRoom.EntranceTeleport.FindIndex(a => a == tp));
             }
         }
+
+        lastRoom = roomCreated.Last();
     }
 
     #endregion
