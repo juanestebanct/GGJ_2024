@@ -4,6 +4,10 @@
 		<WorkUnit Name="Default Work Unit" ID="{B92ECC66-4074-4996-B057-BD06025CBFFE}" PersistMode="Standalone">
 			<ChildrenList>
 				<Folder Name="Music" ID="{A9AE3E11-D945-4EAE-A159-A1000D0D67C4}" ShortID="44011915">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="13"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
 					<ChildrenList>
 						<Event Name="Play_Music_PlayList" ID="{BC06EA40-0807-4C30-9AC1-7EFEFBCAA4ED}">
 							<ChildrenList>
@@ -20,8 +24,120 @@
 				</Folder>
 				<Folder Name="Gameplay" ID="{D2E94621-46DB-4885-B503-5E3542DC3C20}" ShortID="506498652">
 					<ChildrenList>
-						<Folder Name="Player" ID="{8F99DA00-0571-4930-8012-7E3197DD5092}" ShortID="420268991"/>
-						<Folder Name="Enemies" ID="{3623F7E4-D525-4C20-B664-88316EDAACE1}" ShortID="460758729"/>
+						<Folder Name="Player" ID="{8F99DA00-0571-4930-8012-7E3197DD5092}" ShortID="420268991">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="4"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<Event Name="Play_Laser" ID="{BC32EBD4-1C39-4EE7-997B-BC8EA5AC5F91}">
+									<ChildrenList>
+										<Action Name="" ID="{4999862B-4070-4720-A161-3D04520BACC2}" ShortID="955812861">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Laser Start" ID="{5A8E9CC7-1FF4-4341-8DF0-C7DB5A1473F1}" WorkUnitID="{2DE1879A-8553-4D10-BEFD-54ACB10CC91E}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{6296598F-2B8D-4D50-A05D-3C4B6E644468}" ShortID="87930888">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="0.1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Laser Beam Loop" ID="{5EE7A7C9-7659-48D7-992F-596AB835EA2F}" WorkUnitID="{2DE1879A-8553-4D10-BEFD-54ACB10CC91E}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_BabyExplotion" ID="{77943850-17E6-40A1-8326-24CA01B0038C}">
+									<ChildrenList>
+										<Action Name="" ID="{10F8C038-BFFD-445D-8028-3B7360E72920}" ShortID="360595527">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Baby explotion" ID="{56D7194E-18A7-4406-AB50-D4F70904F91D}" WorkUnitID="{2DE1879A-8553-4D10-BEFD-54ACB10CC91E}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Impacts" ID="{5FFF8B15-0FD8-4D71-B1A9-2F38F130E6EE}">
+									<ChildrenList>
+										<Action Name="" ID="{E9BDC6A3-8C09-4D58-92D6-600BF2D33BA7}" ShortID="186430741">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Impacts" ID="{BA3A41A9-0C5C-4AF8-9580-F743782518FA}" WorkUnitID="{2DE1879A-8553-4D10-BEFD-54ACB10CC91E}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Enemies" ID="{3623F7E4-D525-4C20-B664-88316EDAACE1}" ShortID="460758729">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="10"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<Folder Name="Death" ID="{70BC93E0-9CF6-43DF-A61B-04545401FD31}" ShortID="574870804">
+									<ChildrenList>
+										<Event Name="WW_Death" ID="{3736D62A-E5B6-4074-87A5-41D0F73C335E}">
+											<ChildrenList>
+												<Action Name="" ID="{CA9A605A-DB24-417B-B067-D74B7F92141D}" ShortID="154655027">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Enemy death Slime" ID="{93BEF08F-34DE-4A5D-9587-881B49345F63}" WorkUnitID="{2DE1879A-8553-4D10-BEFD-54ACB10CC91E}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Steward_Death" ID="{808063D1-2F8E-4BAE-81A0-6E098D5B2270}">
+											<ChildrenList>
+												<Action Name="" ID="{BAE7FD35-BE73-45E5-BC98-8B53FB548A11}" ShortID="352190637">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Enemy death" ID="{AF337630-2B74-44BA-8904-E9C3205042F3}" WorkUnitID="{2DE1879A-8553-4D10-BEFD-54ACB10CC91E}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+									</ChildrenList>
+								</Folder>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Ambient" ID="{C44BEEC3-84EC-45D0-AD8E-1AD1E2000092}" ShortID="114539924">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="17"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Event Name="Play_Door" ID="{AD1A6E3C-D696-4E66-BF90-2A6A4208A5CD}">
+							<ChildrenList>
+								<Action Name="" ID="{6712FDDC-1A13-4BE5-8227-9DFEAD607137}" ShortID="659122990">
+									<PropertyList>
+										<Property Name="Delay" Type="Real64" Value="0.5"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Door Active Loop" ID="{3AA4A068-B80F-4222-B2BE-BC038CD2DD28}" WorkUnitID="{2DE1879A-8553-4D10-BEFD-54ACB10CC91E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{070AA7A7-4FBE-4BF8-AC93-C3DDFABC85A8}" ShortID="680313743">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Door Active Start" ID="{CFA0198E-F968-4951-9CC9-72A351F89E21}" WorkUnitID="{2DE1879A-8553-4D10-BEFD-54ACB10CC91E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

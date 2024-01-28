@@ -458,6 +458,9 @@ MonoBehaviour:
   - {fileID: 2204027428770612828, guid: d3aa13fedc71cc443b8b00f1e21f1138, type: 3}
   - {fileID: 3101043757455451264, guid: 0449ec86943cc3447a88f1b453e9ef53, type: 3}
   - {fileID: 8260808816243432375, guid: 3720700d6c814024fb42d3e271b54773, type: 3}
+  OnRoomFinished:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1576217102
 GameObject:
   m_ObjectHideFlags: 0
@@ -468,6 +471,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1576217104}
   - component: {fileID: 1576217103}
+  - component: {fileID: 1576217105}
   m_Layer: 0
   m_Name: WwiseGlobal
   m_TagString: Untagged
@@ -516,6 +520,31 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1576217105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576217102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 758c1c4cd6ae737469712595eb2b40a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: c37bb42fbce41d4458217f0a0a0c626a,
+      type: 2}
+  decodeBank: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
+  valueGuidInternal: 
 --- !u!1001 &1838048681
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -537,6 +566,17 @@ PrefabInstance:
     - target: {fileID: 1653619898218261139, guid: 553119e9d60edbf46b4441d949b342b0,
         type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1689988878274215650, guid: 553119e9d60edbf46b4441d949b342b0,
+        type: 3}
+      propertyPath: _explotionSFX.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 9a166a3e388e2da4692eda5d41ec93bb,
+        type: 2}
+    - target: {fileID: 1895041767033349411, guid: 553119e9d60edbf46b4441d949b342b0,
+        type: 3}
+      propertyPath: CustomDataModule.enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3621593064644270484, guid: 553119e9d60edbf46b4441d949b342b0,
@@ -609,11 +649,28 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5993197383510921346, guid: 553119e9d60edbf46b4441d949b342b0,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7250663404949598724, guid: 553119e9d60edbf46b4441d949b342b0,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8315580282722361106, guid: 553119e9d60edbf46b4441d949b342b0,
+        type: 3}
+      propertyPath: _laserSFX.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 78e2bec264604374ca8c65b5f10b9b4b,
+        type: 2}
+    - target: {fileID: 8315580282722361106, guid: 553119e9d60edbf46b4441d949b342b0,
+        type: 3}
+      propertyPath: _hitMarkerSFX.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: be5040acbff7f714a912930a6204b2ee,
+        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

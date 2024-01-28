@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using EZhex1991.EZSoftBone;
 using UnityEngine;
 
 public class Baby : MonoBehaviour
@@ -17,6 +18,12 @@ public class Baby : MonoBehaviour
     [SerializeField] private int _currentAmmo;
     [SerializeField] private LayerMask _enemiesLayer;
     [SerializeField] private Transform _aimPoint;
+
+    [SerializeField] private Animator _animatorA;
+    [SerializeField] private Animator _animatorB;
+
+    [SerializeField] private EZSoftBone _boneDynamicsA;
+    [SerializeField] private EZSoftBone _boneDynamicsB;
     
     private InputManager _inputManager;
     private WeaponState _currentState;
@@ -51,6 +58,8 @@ public class Baby : MonoBehaviour
         _nextFireTime = 0;
         _fireStarted = false;
         _fireEnded = false;
+        _boneDynamicsA.enabled = false;
+        _boneDynamicsB.enabled = false;
     }
 
     private void Update()
@@ -72,6 +81,8 @@ public class Baby : MonoBehaviour
     {
         if (_firePressed && Time.time >= _nextFireTime)
         {
+            _animatorA.SetBool("IsShooting", true);
+            _animatorB.SetBool("IsShooting", true);
             StartCoroutine(Shoot());
             _fireEnded = false;
             _nextFireTime = Time.time + _fireRate;
@@ -83,6 +94,8 @@ public class Baby : MonoBehaviour
         }
         else if (!_firePressed)
         {
+            _animatorA.SetBool("IsShooting", false);
+            _animatorB.SetBool("IsShooting", false);
             _fireStarted = false;
             if (!_fireEnded)
             {
@@ -107,8 +120,18 @@ public class Baby : MonoBehaviour
                 _reloadPressed = false;
                 _isReloading = true;
                 _currentState = WeaponState.Reloading;
+                StartCoroutine(StartBoneDynamics());
+                _animatorA.SetTrigger("OutOfAmmo");
+                _animatorB.SetTrigger("OutOfAmmo");
                 _reloadController.StartReload();
             }
+    }
+
+    private IEnumerator StartBoneDynamics()
+    {
+        yield return new WaitForSeconds(1.36f);
+        _boneDynamicsA.enabled = true;
+        _boneDynamicsB.enabled = true;
     }
 
     public void ReloadDone()
@@ -116,6 +139,10 @@ public class Baby : MonoBehaviour
         _isReloading = false;
         _currentAmmo = _maxAmmo;
         _currentState = WeaponState.IdleShooting;
+        _animatorA.SetTrigger("ReloadComplete");
+        _animatorB.SetTrigger("ReloadComplete");
+        _boneDynamicsA.enabled = false;
+        _boneDynamicsB.enabled = false;
         if (ReloadCompleted != null) ReloadCompleted.Invoke();
     }
     
@@ -131,6 +158,8 @@ public class Baby : MonoBehaviour
         else
         {
             _currentState = WeaponState.OutOfAmmo;
+            _animatorA.SetBool("IsShooting", false);
+            _animatorB.SetBool("IsShooting", false);
             _laserFX.EndLaser();
             _fireEnded = true; 
         }
@@ -141,7 +170,10 @@ public class Baby : MonoBehaviour
         Ray ray = new Ray(_aimPoint.position, _aimPoint.forward);
 
         if (Physics.Raycast(ray, out var enemyHit, Mathf.Infinity, _enemiesLayer))
+        {
             enemyHit.transform.GetComponent<Enemy>().RecieveDamage(1);
+            _laserFX.SetHitMarkerPosition(enemyHit.point);
+        }
     }
 
     private void FireInput(bool value) { _firePressed = value; }

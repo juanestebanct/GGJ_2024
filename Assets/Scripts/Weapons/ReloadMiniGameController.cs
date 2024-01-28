@@ -18,6 +18,7 @@ public class ReloadMiniGameController : MonoBehaviour
     [SerializeField] private float _reloadSliderSpeedDown = 250f;
     [SerializeField] private float _laughLevelReloadSpeedUp = 1f;
     [SerializeField] private ParticleSystem _babyBoom;
+    [SerializeField] private AK.Wwise.Event _explotionSFX;
     private PlayerStats _playerStats;
     private InputManager _inputManager;
     public ReloadState CurrentState;
@@ -91,6 +92,7 @@ public class ReloadMiniGameController : MonoBehaviour
     private IEnumerator Explode()
     {
         CurrentState = ReloadState.Failed;
+        _explotionSFX.Post(gameObject);
         _babyBoom.Play();
         yield return new WaitForSeconds(0.2f);
         _playerStats.ReceiveDamage(5);
