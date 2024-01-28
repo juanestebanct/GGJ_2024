@@ -78,8 +78,7 @@ public class PlayerController : MonoBehaviour
 
     private void HandleInput()
     {
-        if (_reloadMiniGame.CurrentState == ReloadState.Reloading) LookVertical = 0;    
-        else LookVertical = -_inputManager.LookInput.y;
+        LookVertical = -_inputManager.LookInput.y;
         LookHorizontal = _inputManager.LookInput.x;
         _moveVertical = _inputManager.MovementInput.y;
         _moveHorizontal = _inputManager.MovementInput.x;
