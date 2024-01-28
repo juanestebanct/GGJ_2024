@@ -783,6 +783,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1653619898218261139, guid: 553119e9d60edbf46b4441d949b342b0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2402806578312425065, guid: 553119e9d60edbf46b4441d949b342b0,
         type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
@@ -2496,6 +2501,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec28499416ed2e64189b7007461f5d4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EndFight:
+    m_PersistentCalls:
+      m_Calls: []
+  StarFight:
+    m_PersistentCalls:
+      m_Calls: []
   enemysPrefabs:
   - {fileID: 1726486076944580503, guid: deb6e3c02c3d20a409bac7a54018b699, type: 3}
   - {fileID: 5862923921047638827, guid: 594c0e9802838c94a8be8ee171edbe92, type: 3}
