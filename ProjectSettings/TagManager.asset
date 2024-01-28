@@ -4,13 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Rooms
-  - SpawnPoint
+  - Laser
+  - Damage Zone
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Enemies
   - Water
   - UI
   - 
