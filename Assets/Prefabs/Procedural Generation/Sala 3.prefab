@@ -63,7 +63,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2467512823250510004}
+  - {fileID: 6950201136510243656}
   - {fileID: 4742118266884167291}
   - {fileID: 235070381644024364}
   - {fileID: 4962950178029797626}
@@ -85,6 +85,7 @@ MonoBehaviour:
   entranceTeleport:
   - {fileID: 5705838051035448312}
   - {fileID: 1840629859930498752}
+  gridSize: {x: 4, y: 3}
 --- !u!1 &2071993471200676347
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,14 +319,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sala_3
       objectReference: {fileID: 0}
+    - target: {fileID: 7401782080877600763, guid: 8c79db9448bb54e4b8922da81952d394,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c79db9448bb54e4b8922da81952d394, type: 3}
---- !u!4 &2467512823250510004 stripped
+--- !u!4 &6950201136510243656 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 2662233609782127623, guid: 8c79db9448bb54e4b8922da81952d394,
+  m_CorrespondingSourceObject: {fileID: 7401782080877600763, guid: 8c79db9448bb54e4b8922da81952d394,
     type: 3}
   m_PrefabInstance: {fileID: 489901193418116275}
   m_PrefabAsset: {fileID: 0}
