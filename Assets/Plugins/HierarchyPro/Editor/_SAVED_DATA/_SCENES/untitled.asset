@@ -19,6 +19,20 @@ MonoBehaviour:
   - data: []
   - data: []
   - data: []
-  - data: []
+  - data:
+    - saverType: 6
+      id_in_external_heap: 1077089258
+      indentifierVersion: GlobalObjectId_V1
+      identifierTypetargetObjectIdtargetPrefabId: -2-00000000000000000000000000000000-1159865279876625955-0
+      namesPathBackup: Entrada
+      siblingsPathBackup: 0
+      boolValue: 0
+      stringValue: 
+      highLighterData: []
+      iconData:
+      - icon_guid: Library/sv_icon_dot14_pix16_gizmo
+        icon_path: 
+        has_icon_color: 0
+        icon_color: {r: 0, g: 0, b: 0, a: 0}
   BookMarks_InternalGlobal: []
   HierExpands_InternalGlobal: []
