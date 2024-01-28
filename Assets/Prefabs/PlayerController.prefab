@@ -367,6 +367,16 @@ MonoBehaviour:
   _laserScale: {x: 0.02, y: 0.02, z: 0.02}
   _laserStartTime: 0.2
   _laserEndTime: 0.2
+  _laserSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 78e2bec264604374ca8c65b5f10b9b4b,
+      type: 2}
+  _hitMarkerSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: be5040acbff7f714a912930a6204b2ee,
+      type: 2}
 --- !u!1 &3621593064644270484
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,6 +514,11 @@ MonoBehaviour:
   _reloadSliderSpeedDown: 1.5
   _laughLevelReloadSpeedUp: 3
   _babyBoom: {fileID: 1895041767033349411}
+  _explotionSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 9a166a3e388e2da4692eda5d41ec93bb,
+      type: 2}
   CurrentState: 0
 --- !u!114 &1864483337108529732
 MonoBehaviour:
