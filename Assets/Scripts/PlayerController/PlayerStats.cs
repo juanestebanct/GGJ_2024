@@ -29,6 +29,7 @@ public class PlayerStats : MonoBehaviour
     
     public void ReceiveDamage(int amount)
     {
+        CameraShaker.Invoke_ReceiveDamage();
         _health -= amount;
         switch (_health)
         {

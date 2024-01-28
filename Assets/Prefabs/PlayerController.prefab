@@ -98,6 +98,8 @@ MonoBehaviour:
   _camera: {fileID: 699989099371112261}
   _laserRotationStrength: {x: 0, y: 0, z: 1}
   _laserShakeTime: 0.2
+  _receiveDamageStrength: {x: 1, y: -1, z: 5}
+  _receiveDamageTime: 0.5
 --- !u!1 &2437690233164619985
 GameObject:
   m_ObjectHideFlags: 0
