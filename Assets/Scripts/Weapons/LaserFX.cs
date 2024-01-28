@@ -15,7 +15,7 @@ public class LaserFX : MonoBehaviour
     [SerializeField] private float _laserStartTime;
     [SerializeField] private float _laserEndTime;
 
-    [SerializeField] private AK.Wwise.Event _laserSFX;
+    [SerializeField] private AK.Wwise.Event _laserSFX, _hitMarkerSFX;
 
 
     public void SetHitParticlePosition(Vector3 pos)
@@ -28,6 +28,7 @@ public class LaserFX : MonoBehaviour
     {
         _hitMarker.transform.position = pos;
         _hitMarker.Play();
+        _hitMarkerSFX.Post(gameObject);
     }
 
     public void StartLaser()
