@@ -8,11 +8,12 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Mask 2
-  m_Shader: {fileID: -6465566751694194690, guid: 70d2124810c339f4fbf690097995541e,
+  m_Shader: {fileID: -6465566751694194690, guid: c0e099e640fc13a45a61e96e501b7515,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
+  - _ALPHATEST_ON
   - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -33,7 +34,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture_Red_Emissiv_Green_Opacity:
-        m_Texture: {fileID: 2800000, guid: ef13df24c75fd38499d56d84d6a2f376, type: 3}
+        m_Texture: {fileID: 2800000, guid: 39c2fbe3922ae8146a1241e0e78c3ac3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Vertex_Offset_Texture:
@@ -55,7 +56,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _0_Opacity_Fade_1_Disolve: 1
-    - _AlphaClip: 0
+    - _AlphaClip: 1
     - _AlphaToMask: 0
     - _Blend: 0
     - _CastShadows: 0
