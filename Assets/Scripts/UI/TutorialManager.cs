@@ -23,6 +23,7 @@ public class TutorialManager: MonoBehaviour
 
 
 
+    [SerializeField] Baby baby;
     [SerializeField] Button ScreenButton;
     [SerializeField] CanvasGroup TextBackground;
     [SerializeField] CanvasGroup Text1;
@@ -34,6 +35,8 @@ public class TutorialManager: MonoBehaviour
     [SerializeField] CanvasGroup Text7;
     [SerializeField] CanvasGroup Text8;
     [SerializeField] CanvasGroup SlideMiniGame;
+    [SerializeField] Image UpArrow;
+    [SerializeField] Image DownArrow;
 
     private void Awake()
     {
@@ -76,24 +79,27 @@ public class TutorialManager: MonoBehaviour
                 }
                 ;
                 break;
-/*            case TutorialState.Section3:
+            case TutorialState.Section3:
                 if (CompletedSection3 == false)
                 {
-                    Section1();
-                    CompletedSection3 = true;
+                    if (Input.GetKeyDown(KeyCode.R))
+                    {
+                        CompletedSection3 = true;
+                        Section3();
+                    }
                 }
                 ;
                 break;
             case TutorialState.Section4:
-                if (CompletedSection1 == false)
+                if (CompletedSection4 == false)
                 {
-                    Section1();
                     CompletedSection4 = true;
+                    Section4();
                 }
                 ;
                 break;
-            case TutorialState.Section5:
-                if (CompletedSection1 == false)
+/*            case TutorialState.Section5:
+                if (CompletedSection5 == false)
                 {
                     Section1();
                     CompletedSection5 = true;
@@ -126,7 +132,11 @@ public class TutorialManager: MonoBehaviour
                 break;*/
 
         }
-    }   
+    }
+    private void OnDisable() //Cierre de tweeners
+    {
+        DOTween.KillAll(gameObject);
+    }
 
     private void Section1()
     {
@@ -135,32 +145,67 @@ public class TutorialManager: MonoBehaviour
         TextBackground.gameObject.SetActive(true);
         Text1.gameObject.SetActive(true);
 
+        //Se desbloquea el cursor
+        Cursor.lockState = CursorLockMode.None;
 
+        //Se detiene el tiempo
         Time.timeScale = 0;
-        Debug.Log("cambio timescale");
-        TextBackground.DOFade(1,10).SetUpdate(true).OnComplete(()=> 
-        Text1.DOFade(1, 1).SetUpdate(true)
+
+        TextBackground.DOFade(1,3).SetUpdate(true).OnComplete(()=> 
+        Text1.DOFade(1, 2).SetUpdate(true)
         );
 
-        ScreenButton.onClick.AddListener(() => { Section2(); Debug.Log("Estaa listo pa dar click"); });
+        ScreenButton.onClick.AddListener(() =>_currentState = TutorialState.Section2);
     }
 
     private void Section2()
     {
         Debug.Log(" Entra seccion 2");
-        Text1.DOFade(0, 1).OnComplete(() =>Text1.gameObject.SetActive(false));
-        SlideMiniGame.DOFade(1, 0.7f);
+        Text1.DOFade(0, 1).SetUpdate(true).OnComplete(() =>Text1.gameObject.SetActive(false));
 
-        ScreenButton.gameObject.SetActive(true);
-        TextBackground.gameObject.SetActive(true);
         Text2.gameObject.SetActive(true);
 
-        Time.timeScale = 0;
+        Text2.DOFade(1, 2).SetUpdate(true).SetDelay(2);        
 
-        TextBackground.DOFade(1, 1).SetUpdate(true);
-        Text2.DOPlay();
-        ;
+        _currentState = TutorialState.Section3;
+    }
+    private void Section3()
+    {
+        Debug.Log(" Entra seccion 3");
+        Text2.DOFade(0, 1).SetUpdate(true).OnComplete(() => Text2.gameObject.SetActive(false));
 
-        ScreenButton.onClick.AddListener(() => _currentState = TutorialState.Section2);
+        Text3.gameObject.SetActive(true);
+
+        SlideMiniGame.DOFade(1, 2).SetUpdate(true).SetDelay(2);
+        Text3.DOFade(1, 2).SetUpdate(true).SetDelay(2);
+
+        ScreenButton.onClick.AddListener(() => _currentState = TutorialState.Section4);
+    }
+
+    private void Section4()
+    {
+        Debug.Log(" Entra seccion 4");
+        Text3.DOFade(0, 1).SetUpdate(true).OnComplete(() => Text3.gameObject.SetActive(false));
+
+        Text4.gameObject.SetActive(true);
+
+        UpArrow.DOFillAmount(1, 3).SetUpdate(true).SetDelay(2);
+        Text4.DOFade(1, 2).SetUpdate(true).SetDelay(2);
+
+        ScreenButton.onClick.AddListener(() => _currentState = TutorialState.Section5);
+    }
+
+    private void Section5()
+    {
+        Debug.Log(" Entra seccion 5");
+        Text4.DOFade(0, 1).SetUpdate(true).OnComplete(() => Text4.gameObject.SetActive(false));
+        UpArrow.DOFillAmount(0, 1).SetUpdate(true);
+
+        Text5.gameObject.SetActive(true);
+
+        DownArrow.DOFillAmount(1, 3).SetUpdate(true).SetDelay(2);
+        Text5.DOFade(1, 2).SetUpdate(true).SetDelay(2);
+
+        ScreenButton.onClick.AddListener(() => _currentState = TutorialState.Section6);
     }
 }
