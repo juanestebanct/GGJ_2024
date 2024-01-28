@@ -21,39 +21,11 @@ MonoBehaviour:
   - data: []
   - data:
     - saverType: 6
-      id_in_external_heap: 303975812
+      id_in_external_heap: 34728725
       indentifierVersion: GlobalObjectId_V1
-      identifierTypetargetObjectIdtargetPrefabId: -2-3f74a32051a278f4fbda6d368d829a0a-1159865279876625955-1829259842141293951
-      namesPathBackup: "Main Map\xBE-----Teleports------\xBEEntrada 1"
-      siblingsPathBackup: "4\xBE2\xBE0"
-      boolValue: 0
-      stringValue: 
-      highLighterData: []
-      iconData:
-      - icon_guid: Library/sv_icon_dot14_pix16_gizmo
-        icon_path: 
-        has_icon_color: 0
-        icon_color: {r: 0, g: 0, b: 0, a: 0}
-    - saverType: 6
-      id_in_external_heap: 521430608
-      indentifierVersion: GlobalObjectId_V1
-      identifierTypetargetObjectIdtargetPrefabId: -2-3f74a32051a278f4fbda6d368d829a0a-1411315689-0
-      namesPathBackup: "Main Map\xBE-----Teleports------\xBEEntrada 4"
-      siblingsPathBackup: "4\xBE2\xBE3"
-      boolValue: 0
-      stringValue: 
-      highLighterData: []
-      iconData:
-      - icon_guid: Library/sv_icon_dot14_pix16_gizmo
-        icon_path: 
-        has_icon_color: 0
-        icon_color: {r: 0, g: 0, b: 0, a: 0}
-    - saverType: 6
-      id_in_external_heap: 1341003845
-      indentifierVersion: GlobalObjectId_V1
-      identifierTypetargetObjectIdtargetPrefabId: -2-3f74a32051a278f4fbda6d368d829a0a-1159865279876625955-87711783
+      identifierTypetargetObjectIdtargetPrefabId: -2-3f74a32051a278f4fbda6d368d829a0a-9113272614898540513-3476003537139203841
       namesPathBackup: "Main Map\xBE-----Teleports------\xBEEntrada"
-      siblingsPathBackup: "4\xBE2\xBE4"
+      siblingsPathBackup: "3\xBE2\xBE0"
       boolValue: 0
       stringValue: 
       highLighterData: []
@@ -63,25 +35,95 @@ MonoBehaviour:
         has_icon_color: 0
         icon_color: {r: 0, g: 0, b: 0, a: 0}
     - saverType: 6
-      id_in_external_heap: 2063685206
+      id_in_external_heap: -2139774452
       indentifierVersion: GlobalObjectId_V1
-      identifierTypetargetObjectIdtargetPrefabId: -2-3f74a32051a278f4fbda6d368d829a0a-1159865279876625955-926731571
-      namesPathBackup: "Main Map\xBE-----Teleports------\xBEEntrada (2)"
-      siblingsPathBackup: "4\xBE2\xBE2"
-      boolValue: 0
-      stringValue: 
-      highLighterData: []
-      iconData:
-      - icon_guid: Library/sv_icon_dot14_pix16_gizmo
-        icon_path: 
-        has_icon_color: 0
-        icon_color: {r: 0, g: 0, b: 0, a: 0}
-    - saverType: 6
-      id_in_external_heap: 1213358019
-      indentifierVersion: GlobalObjectId_V1
-      identifierTypetargetObjectIdtargetPrefabId: -2-3f74a32051a278f4fbda6d368d829a0a-1159865279876625955-1593301644
+      identifierTypetargetObjectIdtargetPrefabId: -2-3f74a32051a278f4fbda6d368d829a0a-7339402140613326363-3476003537139203841
       namesPathBackup: "Main Map\xBE-----Teleports------\xBEEntrada (3)"
-      siblingsPathBackup: "4\xBE2\xBE3"
+      siblingsPathBackup: "3\xBE2\xBE3"
+      boolValue: 0
+      stringValue: 
+      highLighterData: []
+      iconData:
+      - icon_guid: Library/sv_icon_dot14_pix16_gizmo
+        icon_path: 
+        has_icon_color: 0
+        icon_color: {r: 0, g: 0, b: 0, a: 0}
+    - saverType: 6
+      id_in_external_heap: -622439180
+      indentifierVersion: GlobalObjectId_V1
+      identifierTypetargetObjectIdtargetPrefabId: -2-3f74a32051a278f4fbda6d368d829a0a-8767312386522326724-3476003537139203841
+      namesPathBackup: "Main Map\xBE-----Teleports------\xBEEntrada (1)"
+      siblingsPathBackup: "3\xBE2\xBE1"
+      boolValue: 0
+      stringValue: 
+      highLighterData: []
+      iconData:
+      - icon_guid: Library/sv_icon_dot14_pix16_gizmo
+        icon_path: 
+        has_icon_color: 0
+        icon_color: {r: 0, g: 0, b: 0, a: 0}
+    - saverType: 6
+      id_in_external_heap: 267252176
+      indentifierVersion: GlobalObjectId_V1
+      identifierTypetargetObjectIdtargetPrefabId: -2-3f74a32051a278f4fbda6d368d829a0a-5068719051132554525-3476003537139203841
+      namesPathBackup: "Main Map\xBE-----Teleports------\xBEEntrada (2)"
+      siblingsPathBackup: "3\xBE2\xBE2"
+      boolValue: 0
+      stringValue: 
+      highLighterData: []
+      iconData:
+      - icon_guid: Library/sv_icon_dot14_pix16_gizmo
+        icon_path: 
+        has_icon_color: 0
+        icon_color: {r: 0, g: 0, b: 0, a: 0}
+    - saverType: 6
+      id_in_external_heap: 1498703573
+      indentifierVersion: GlobalObjectId_V1
+      identifierTypetargetObjectIdtargetPrefabId: -2-3f74a32051a278f4fbda6d368d829a0a-1159865279876625955-117507414
+      namesPathBackup: "Sala 2\xBE-----Teleports------\xBEEntrada"
+      siblingsPathBackup: "6\xBE1\xBE0"
+      boolValue: 0
+      stringValue: 
+      highLighterData: []
+      iconData:
+      - icon_guid: Library/sv_icon_dot14_pix16_gizmo
+        icon_path: 
+        has_icon_color: 0
+        icon_color: {r: 0, g: 0, b: 0, a: 0}
+    - saverType: 6
+      id_in_external_heap: -1739515423
+      indentifierVersion: GlobalObjectId_V1
+      identifierTypetargetObjectIdtargetPrefabId: -2-3f74a32051a278f4fbda6d368d829a0a-1159865279876625955-1889524821
+      namesPathBackup: "Sala 2\xBE-----Teleports------\xBEEntrada (1)"
+      siblingsPathBackup: "6\xBE1\xBE1"
+      boolValue: 0
+      stringValue: 
+      highLighterData: []
+      iconData:
+      - icon_guid: Library/sv_icon_dot14_pix16_gizmo
+        icon_path: 
+        has_icon_color: 0
+        icon_color: {r: 0, g: 0, b: 0, a: 0}
+    - saverType: 6
+      id_in_external_heap: -344464892
+      indentifierVersion: GlobalObjectId_V1
+      identifierTypetargetObjectIdtargetPrefabId: -2-3f74a32051a278f4fbda6d368d829a0a-1159865279876625955-667381811
+      namesPathBackup: "Sala 2\xBE-----Teleports------\xBEEntrada (2)"
+      siblingsPathBackup: "6\xBE1\xBE2"
+      boolValue: 0
+      stringValue: 
+      highLighterData: []
+      iconData:
+      - icon_guid: Library/sv_icon_dot14_pix16_gizmo
+        icon_path: 
+        has_icon_color: 0
+        icon_color: {r: 0, g: 0, b: 0, a: 0}
+    - saverType: 6
+      id_in_external_heap: 366060643
+      indentifierVersion: GlobalObjectId_V1
+      identifierTypetargetObjectIdtargetPrefabId: -2-3f74a32051a278f4fbda6d368d829a0a-1159865279876625955-1143271973
+      namesPathBackup: "Sala 2\xBE-----Teleports------\xBEEntrada (3)"
+      siblingsPathBackup: "6\xBE1\xBE3"
       boolValue: 0
       stringValue: 
       highLighterData: []

@@ -13,7 +13,7 @@ public class RoomInfo : MonoBehaviour
     public Vector3 TopHeight { get { return topHeight.position; } }
     public List<Teleport> EntranceTeleport {  get { return entranceTeleport; } }
 
-    private void Awake()
+    private void Start()
     {
         //Throw reference to manager
         RoomManager.instance.AddRoom(this);
