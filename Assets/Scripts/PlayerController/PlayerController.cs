@@ -49,7 +49,6 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         if (Instance == null) Instance = this;
-        else Destroy(transform.root);
         _reloadMiniGame = GetComponent<ReloadMiniGameController>();
         _inputManager = GetComponent<InputManager>();
         _inputManager.OnJumpPressed += Jump;
@@ -67,13 +66,14 @@ public class PlayerController : MonoBehaviour
         _runningValue = _runningSpeed;
         WalkingValue = _walkingSpeed;
         _jump = false;
+        MouseSensitivity = PlayerPrefs.GetFloat("MouseSensitivity");
     }
 
     void Update()
     {
+        HandleInput();
         HandleCameraLook();
         HandleMovement();
-        HandleInput();
     }
 
     private void HandleInput()
@@ -121,7 +121,7 @@ public class PlayerController : MonoBehaviour
         }
         else MoveDirection.y = movementDirectionY;
 
-        Controller.Move(MoveDirection * Time.deltaTime);
+        if (Controller.enabled) Controller.Move(MoveDirection * Time.deltaTime);
         Moving = Horizontal < 0 || Vertical < 0 || Horizontal > 0 || Vertical > 0 ? true : false;
     }
 
