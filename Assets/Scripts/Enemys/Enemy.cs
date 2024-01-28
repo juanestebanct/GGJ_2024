@@ -5,12 +5,13 @@ using Unity.AI.Navigation;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public enum MoventPatron { Change, Attacking }
 public class Enemy : MonoBehaviour
 {
     public NavMeshSurface navMeshSurface;
-    
+
     public Action Move;
 
     [SerializeField] private GameObject deathParticlePrefab;
@@ -20,10 +21,12 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected int AttackDamage;
     [SerializeField] protected float rangeZoneAttack;
     [SerializeField] protected float Speed;
+    [SerializeField] protected int PointDie;
 
     protected Transform playerReferent;
     protected NavMeshAgent navMeshAgent;
     protected MoventPatron m_Patron;
+    protected SpawnEnemy Faher;
     private void Update()
     {
         Move();
@@ -40,11 +43,13 @@ public class Enemy : MonoBehaviour
         else Dead();
 
     }
-    public void GetReference(Transform RefPlayer, NavMeshSurface refNav )
+    public void GetReference(Transform RefPlayer, NavMeshSurface refNav, SpawnEnemy father)
     {
         playerReferent = RefPlayer;
         navMeshSurface = refNav;
+        Faher = father;
     }
+
     public virtual void Dead()
     {
         if (deathParticlePrefab != null)
@@ -52,10 +57,12 @@ public class Enemy : MonoBehaviour
             Instantiate(deathParticlePrefab, transform.position, Quaternion.identity);
             deathParticlePrefab.GetComponent<ParticleSystem>().Play();
         }
+        Score.Instance.GetPoins(PointDie);
         Desactive();
     }
     public void Desactive()
     {
+        Faher.RemoveEnemy();
         Live = MaxLive;
         gameObject.SetActive(false);
     }
