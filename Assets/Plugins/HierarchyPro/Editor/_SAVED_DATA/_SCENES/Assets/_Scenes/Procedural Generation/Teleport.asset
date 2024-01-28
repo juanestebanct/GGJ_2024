@@ -77,11 +77,11 @@ MonoBehaviour:
         has_icon_color: 0
         icon_color: {r: 0, g: 0, b: 0, a: 0}
     - saverType: 6
-      id_in_external_heap: 1498703573
+      id_in_external_heap: -1689779009
       indentifierVersion: GlobalObjectId_V1
-      identifierTypetargetObjectIdtargetPrefabId: -2-3f74a32051a278f4fbda6d368d829a0a-1159865279876625955-117507414
-      namesPathBackup: "Sala 2\xBE-----Teleports------\xBEEntrada"
-      siblingsPathBackup: "6\xBE1\xBE0"
+      identifierTypetargetObjectIdtargetPrefabId: -2-3f74a32051a278f4fbda6d368d829a0a-1159865279876625955-1246133561
+      namesPathBackup: "Sala 7\xBE-----Teleports------\xBEEntrada"
+      siblingsPathBackup: "6\xBE2\xBE0"
       boolValue: 0
       stringValue: 
       highLighterData: []
@@ -91,11 +91,11 @@ MonoBehaviour:
         has_icon_color: 0
         icon_color: {r: 0, g: 0, b: 0, a: 0}
     - saverType: 6
-      id_in_external_heap: -1739515423
+      id_in_external_heap: -1196279990
       indentifierVersion: GlobalObjectId_V1
-      identifierTypetargetObjectIdtargetPrefabId: -2-3f74a32051a278f4fbda6d368d829a0a-1159865279876625955-1889524821
-      namesPathBackup: "Sala 2\xBE-----Teleports------\xBEEntrada (1)"
-      siblingsPathBackup: "6\xBE1\xBE1"
+      identifierTypetargetObjectIdtargetPrefabId: -2-3f74a32051a278f4fbda6d368d829a0a-1159865279876625955-1911456798
+      namesPathBackup: "Sala 7\xBE-----Teleports------\xBEEntrada (1)"
+      siblingsPathBackup: "6\xBE2\xBE1"
       boolValue: 0
       stringValue: 
       highLighterData: []
@@ -105,11 +105,11 @@ MonoBehaviour:
         has_icon_color: 0
         icon_color: {r: 0, g: 0, b: 0, a: 0}
     - saverType: 6
-      id_in_external_heap: -344464892
+      id_in_external_heap: 863573178
       indentifierVersion: GlobalObjectId_V1
-      identifierTypetargetObjectIdtargetPrefabId: -2-3f74a32051a278f4fbda6d368d829a0a-1159865279876625955-667381811
-      namesPathBackup: "Sala 2\xBE-----Teleports------\xBEEntrada (2)"
-      siblingsPathBackup: "6\xBE1\xBE2"
+      identifierTypetargetObjectIdtargetPrefabId: -2-3f74a32051a278f4fbda6d368d829a0a-1159865279876625955-1420272179
+      namesPathBackup: "Sala 7\xBE-----Teleports------\xBEEntrada (2)"
+      siblingsPathBackup: "6\xBE2\xBE2"
       boolValue: 0
       stringValue: 
       highLighterData: []
@@ -119,11 +119,11 @@ MonoBehaviour:
         has_icon_color: 0
         icon_color: {r: 0, g: 0, b: 0, a: 0}
     - saverType: 6
-      id_in_external_heap: 366060643
+      id_in_external_heap: 1315528402
       indentifierVersion: GlobalObjectId_V1
-      identifierTypetargetObjectIdtargetPrefabId: -2-3f74a32051a278f4fbda6d368d829a0a-1159865279876625955-1143271973
-      namesPathBackup: "Sala 2\xBE-----Teleports------\xBEEntrada (3)"
-      siblingsPathBackup: "6\xBE1\xBE3"
+      identifierTypetargetObjectIdtargetPrefabId: -2-3f74a32051a278f4fbda6d368d829a0a-1159865279876625955-1231141389
+      namesPathBackup: "Sala 7\xBE-----Teleports------\xBEEntrada (3)"
+      siblingsPathBackup: "6\xBE2\xBE3"
       boolValue: 0
       stringValue: 
       highLighterData: []
