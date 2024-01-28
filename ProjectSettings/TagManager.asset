@@ -5,11 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Laser
+  - Damage Zone
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Enemies
   - Water
   - UI
   - 
