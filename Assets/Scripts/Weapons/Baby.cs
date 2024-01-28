@@ -38,8 +38,8 @@ public class Baby : MonoBehaviour
 
     private void Start()
     {
-        _currentAmmo = _maxAmmo;
-        _currentState = WeaponState.IdleShooting;
+        _currentAmmo = 0;
+        _currentState = WeaponState.OutOfAmmo;
         _firePressed = false;
         _reloadPressed = false;
         _laserDamageArea.enabled = false;
