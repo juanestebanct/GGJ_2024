@@ -46,7 +46,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _0_Opacity_Fade_1_Disolve: 0
+    - _0_Opacity_Fade_1_Disolve: 1
     - _AlphaClip: 0
     - _AlphaToMask: 0
     - _Blend: 0

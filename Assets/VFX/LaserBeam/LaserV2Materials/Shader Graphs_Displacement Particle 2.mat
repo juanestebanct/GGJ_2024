@@ -80,7 +80,7 @@ Material:
     - _ZWrite: 0
     - _ZWriteControl: 0
     m_Colors:
-    - _Color_1: {r: 1, g: 0.6084906, b: 0.6084906, a: 1}
+    - _Color_1: {r: 0, g: 0, b: 0, a: 1}
     - _Color_2: {r: 0, g: 0, b: 0, a: 1}
     - _Main_Texture_Tiling_and_Offset_Speed: {r: 2, g: 1, b: -0.5, a: -4}
     - _Rainbow_Tile: {r: 5, g: 1, b: 0, a: 0}
