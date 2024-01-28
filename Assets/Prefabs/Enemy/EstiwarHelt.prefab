@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 4823726675154876711}
   - component: {fileID: 5824009658033410244}
   - component: {fileID: 7010385896203731280}
+  - component: {fileID: 1465284187432211060}
+  - component: {fileID: 5979882879110862319}
   m_Layer: 3
   m_Name: EstiwarHelt
   m_TagString: Untagged
@@ -138,6 +140,43 @@ CapsuleCollider:
   m_Height: 1.4805285
   m_Direction: 1
   m_Center: {x: 0, y: 0.7552113, z: 0}
+--- !u!111 &1465284187432211060
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5862923921047638827}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7716664733805391584, guid: 6178dc57522fd674c8edbf1fb8754e99,
+    type: 3}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!95 &5979882879110862319
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5862923921047638827}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &9056602820145034333
 GameObject:
   m_ObjectHideFlags: 0
