@@ -94,8 +94,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ee0fa6cb685ff443a7421467d3be7bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  opDir: 2
+  opDir: 0
   waitTime: 4
+  doorPos: {fileID: 3744540703033932938}
 --- !u!1 &941294577879852336
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,6 +213,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5239088625461532712}
   - component: {fileID: 6594544139543720932}
+  - component: {fileID: -1543312178041251246}
   m_Layer: 0
   m_Name: RB
   m_TagString: Untagged
@@ -235,6 +237,8 @@ Transform:
   - {fileID: 4248165358404119371}
   - {fileID: 4666287376095122102}
   - {fileID: 6992308576333430735}
+  - {fileID: 3744540703033932938}
+  - {fileID: 2422536367697539643}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6594544139543720932
@@ -249,6 +253,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0f7fbd17dcc4f64abcd659ab67de322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-1543312178041251246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910173122185148207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7961fe9b27405f48a71e3abbd83ee31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  top: {fileID: 0}
+  bottom: {fileID: 2422536367697539643}
+  left: {fileID: 0}
+  right: {fileID: 3744540703033932938}
 --- !u!1 &2390988158099878338
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,6 +375,37 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2618539334286959686
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3744540703033932938}
+  m_Layer: 0
+  m_Name: DoorPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3744540703033932938
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2618539334286959686}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5239088625461532712}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3010029136679478866
 GameObject:
   m_ObjectHideFlags: 0
@@ -449,8 +500,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ee0fa6cb685ff443a7421467d3be7bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  opDir: 1
+  opDir: 0
   waitTime: 4
+  doorPos: {fileID: 2422536367697539643}
 --- !u!1 &4016329951722023305
 GameObject:
   m_ObjectHideFlags: 0
@@ -762,6 +814,37 @@ Transform:
   - {fileID: 561789574285697492}
   - {fileID: 4048297775610102077}
   - {fileID: 6991891577855661518}
+  m_Father: {fileID: 5239088625461532712}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4958602992077811016
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2422536367697539643}
+  m_Layer: 0
+  m_Name: DoorPos (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2422536367697539643
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4958602992077811016}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
   m_Father: {fileID: 5239088625461532712}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5373768902322468929

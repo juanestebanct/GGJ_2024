@@ -15,7 +15,7 @@ public class RoomSpawner : MonoBehaviour
 
     //Changeable
     [SerializeField] private OpeningDir opDir;
-    [SerializeField] [Range(0f, 100f)] private float waitTime = 4f;
+    [SerializeField] private float waitTime = 4f;
     [SerializeField] private Transform doorPos;
 
     //Utility
@@ -27,6 +27,7 @@ public class RoomSpawner : MonoBehaviour
         templates = RoomTemplates.instance;
 
         Destroy(gameObject, waitTime);
+
         Invoke("Spawn", 0.1f);
     }
 
@@ -74,36 +75,34 @@ public class RoomSpawner : MonoBehaviour
         return moduleList.ElementAt(rand);
     }
 
-    void AlinearObjetos(Door doorInfo)
+    private void AlinearObjetos(Door doorInfo)
     {
-        Transform doorPos;
+        Transform doorTransform = null;
 
         switch (opDir)
         {
             case OpeningDir.Bottom:
-                doorPos = doorInfo.Bottom.transform;
+                doorTransform = doorInfo.Bottom.transform;
                 break;
             case OpeningDir.Top:
-                doorPos = doorInfo.Top.transform;
+                doorTransform = doorInfo.Top.transform;
                 break;
             case OpeningDir.Left:
-                doorPos = doorInfo.Left.transform;
+                doorTransform = doorInfo.Left.transform;
                 break;
             case OpeningDir.Right:
-                doorPos = doorInfo.Right.transform;
-                break;
-            default: doorPos = null; 
+                doorTransform = doorInfo.Right.transform;
                 break;
         }
 
-        if (doorPos == null) return;
+        if (doorTransform == null) return;
 
-        Vector3 posicionLocalObjetoA = doorPos.localPosition;
-        Vector3 posicionLocalObjetoB = doorPos.transform.parent.InverseTransformPoint(this.doorPos.position);
+        Vector3 padreAPuerta = doorPos.position - doorTransform.parent.position;
+        Vector3 puertaAPuerta = doorTransform.position - doorTransform.parent.position;
 
-        Vector3 diferenciaDePosicion = posicionLocalObjetoB - posicionLocalObjetoA;
+        Vector3 resultado = padreAPuerta - puertaAPuerta;
 
-        doorPos.transform.parent.position -= diferenciaDePosicion;
+        doorTransform.parent.position += resultado;
     }
 
     #endregion
@@ -116,7 +115,7 @@ public class RoomSpawner : MonoBehaviour
         {
             if (other.GetComponent<RoomSpawner>().spawned == false && spawned == false)
             {
-                Instantiate(templates.ClosedRoom, transform.position, Quaternion.identity);
+                //Instantiate(templates.ClosedRoom, transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
 

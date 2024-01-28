@@ -244,6 +244,37 @@ Transform:
   - {fileID: 442932911760676974}
   m_Father: {fileID: 3573474139531806613}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &1891426785882350577
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6803130477453649984}
+  m_Layer: 0
+  m_Name: DoorPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6803130477453649984
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891426785882350577}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2233889162378025897}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2035406840424921899
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,6 +455,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2233889162378025897}
   - component: {fileID: 5151391398207017886}
+  - component: {fileID: 7166825567252887890}
   m_Layer: 0
   m_Name: LB
   m_TagString: Untagged
@@ -447,6 +479,8 @@ Transform:
   - {fileID: 6568280996551179549}
   - {fileID: 3573474139531806613}
   - {fileID: 1504461076508443085}
+  - {fileID: 6803130477453649984}
+  - {fileID: 9158690414688693680}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5151391398207017886
@@ -461,6 +495,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0f7fbd17dcc4f64abcd659ab67de322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7166825567252887890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3796136590982137489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7961fe9b27405f48a71e3abbd83ee31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  top: {fileID: 0}
+  bottom: {fileID: 9158690414688693680}
+  left: {fileID: 6803130477453649984}
+  right: {fileID: 0}
 --- !u!1 &4628714033862818014
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,8 +605,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ee0fa6cb685ff443a7421467d3be7bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  opDir: 3
+  opDir: 0
   waitTime: 4
+  doorPos: {fileID: 6803130477453649984}
 --- !u!1 &5740711865096318048
 GameObject:
   m_ObjectHideFlags: 0
@@ -720,8 +771,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ee0fa6cb685ff443a7421467d3be7bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  opDir: 1
+  opDir: 0
   waitTime: 4
+  doorPos: {fileID: 9158690414688693680}
 --- !u!1 &6044792989375292998
 GameObject:
   m_ObjectHideFlags: 0
@@ -965,6 +1017,37 @@ Transform:
   m_Children:
   - {fileID: 3275184694047938858}
   - {fileID: 6825992175190846844}
+  m_Father: {fileID: 2233889162378025897}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7201088762780187921
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9158690414688693680}
+  m_Layer: 0
+  m_Name: DoorPos (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9158690414688693680
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7201088762780187921}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
   m_Father: {fileID: 2233889162378025897}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7516149234063579412

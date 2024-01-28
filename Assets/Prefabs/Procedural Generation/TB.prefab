@@ -64,6 +64,37 @@ Transform:
   - {fileID: 6438078446489898152}
   m_Father: {fileID: 3747077653455912440}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!1 &923010075586552396
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8227397910259325573}
+  m_Layer: 0
+  m_Name: DoorPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8227397910259325573
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923010075586552396}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4053052803518713566}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1844682701706377519
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,8 +327,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ee0fa6cb685ff443a7421467d3be7bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  opDir: 1
+  opDir: 0
   waitTime: 4
+  doorPos: {fileID: 8083575525323580840}
 --- !u!1 &2728009527627397357
 GameObject:
   m_ObjectHideFlags: 0
@@ -639,6 +671,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   opDir: 0
   waitTime: 4
+  doorPos: {fileID: 8227397910259325573}
 --- !u!1 &4109442949957241813
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,6 +682,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4053052803518713566}
   - component: {fileID: 379772870602423287}
+  - component: {fileID: 2410764120615895438}
   m_Layer: 0
   m_Name: TB
   m_TagString: Untagged
@@ -672,6 +706,8 @@ Transform:
   - {fileID: 1891020597184682053}
   - {fileID: 3747077653455912440}
   - {fileID: 3798326379854136612}
+  - {fileID: 8227397910259325573}
+  - {fileID: 8083575525323580840}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &379772870602423287
@@ -686,6 +722,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0f7fbd17dcc4f64abcd659ab67de322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2410764120615895438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4109442949957241813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7961fe9b27405f48a71e3abbd83ee31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  top: {fileID: 8227397910259325573}
+  bottom: {fileID: 8083575525323580840}
+  left: {fileID: 0}
+  right: {fileID: 0}
 --- !u!1 &6301670010071247540
 GameObject:
   m_ObjectHideFlags: 0
@@ -856,6 +908,37 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &7473506177454333482
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8083575525323580840}
+  m_Layer: 0
+  m_Name: DoorPos (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8083575525323580840
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7473506177454333482}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4053052803518713566}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7760365397903757665
 GameObject:
   m_ObjectHideFlags: 0
