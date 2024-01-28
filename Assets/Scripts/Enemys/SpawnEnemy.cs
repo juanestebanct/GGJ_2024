@@ -46,7 +46,7 @@ public class SpawnEnemy : MonoBehaviour
         if (Instance == null) Instance = this;
 
         playerReferent = GameObject.FindGameObjectWithTag("Player").transform;
-        GenerateNavMesh();
+
         PoolEnemies(wWs, ListNavmesh[0]);
         PoolEnemies(estiwars,ListNavmesh[0]);
         PoolEnemies(estiwarsHealts, ListNavmesh[0]);
@@ -72,7 +72,7 @@ public class SpawnEnemy : MonoBehaviour
     }
     private List<GameObject> choose()
     {
-        // Generamos un número aleatorio entre 0 y 1
+        
         float RangeProbability = Random.Range(0, 101);
 
         // Comparamos el número aleatorio con las probabilidades definidas
@@ -165,11 +165,36 @@ public class SpawnEnemy : MonoBehaviour
     {
         ListNavmesh[0].BuildNavMesh();
     }
+    private void StarEvent()
+    {
+        print("Comenzo la pelea y estas jodidos ");
+    }
+    private void Finish()
+    {
+        print("Sobreviviste ve a otro ligar ");
+    }
+    private void ExampleGrid()
+    {
+        Vector3 startOffset = new Vector3(-maxRange.x * spacing * 0.5f, -center.position.y, -maxRange.y * spacing * 0.5f);
+        for (int x = 0; x < maxRange.x; x++)
+        {
+            for (int z = 0; z < maxRange.y; z++)
+            {
+                // Calcular la posición de spawn
+                Vector3 spawnPosition = new Vector3(x * spacing, center.position.y, z * spacing) + center.position + startOffset;
+
+                // Instanciar el objeto en la posición calculada
+                Instantiate(prefabt, spawnPosition, Quaternion.identity);
+            }
+        }
+    }
     public void ActionLevel(Transform tempCol,Vector2 tempGrid)
     {
         center = tempCol;
         maxRange = tempGrid;
         StarFight.Invoke();
+        GenerateNavMesh();
+
         //ExampleGrid();
         for (int i = 0;i < maxEnemyRound; i++)
         {
@@ -205,27 +230,5 @@ public class SpawnEnemy : MonoBehaviour
         print("Faltan  "+enemyActives);
     }
     // pruebas 
-    private void StarEvent()
-    {
-        print("Comenzo la pelea y estas jodidos ");
-    }
-    private void Finish()
-    {
-        print("Sobreviviste ve a otro ligar ");
-    }
-    private void ExampleGrid()
-    {
-        Vector3 startOffset = new Vector3(-maxRange.x * spacing * 0.5f, -center.position.y, -maxRange.y * spacing * 0.5f);
-        for (int x = 0; x < maxRange.x; x++)
-        {
-            for (int z = 0; z < maxRange.y; z++)
-            {
-                // Calcular la posición de spawn
-                Vector3 spawnPosition = new Vector3(x * spacing, center.position.y, z * spacing) + center.position + startOffset;
-
-                // Instanciar el objeto en la posición calculada
-                Instantiate(prefabt, spawnPosition, Quaternion.identity);
-            }
-        }
-    }
+ 
 }
