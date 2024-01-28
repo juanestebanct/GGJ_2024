@@ -173,6 +173,7 @@ MonoBehaviour:
   - {fileID: 3298284826073889358}
   - {fileID: 1313267297837158807}
   - {fileID: 3581724984315603601}
+  gridSize: {x: 4, y: 3}
 --- !u!1 &7567240222038701396
 GameObject:
   m_ObjectHideFlags: 0

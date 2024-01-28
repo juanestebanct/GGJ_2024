@@ -58,7 +58,9 @@ public class RoomManager : MonoBehaviour
         {
             currentRoom = roomInfo;
 
-            currentRoom.gameObject.layer = bakeLayer;
+            AssignLayer(currentRoom.gameObject.transform.GetChild(0), bakeLayer);
+
+            StartCoroutine(RoomEnemyDisposal());
         }
     }
 
@@ -82,7 +84,9 @@ public class RoomManager : MonoBehaviour
 
             destinyTeleport.TPInfo.SetDestinyRoom(currentRoom, tp);
 
-            createdRoom.gameObject.layer = bakeLayer;
+            AssignLayer(createdRoom.gameObject.transform.GetChild(0), bakeLayer);
+
+            SpawnEnemy.Instance.ActionLevel(createdRoom.transform, createdRoom.GridSize);
         }
     }
 
@@ -93,7 +97,26 @@ public class RoomManager : MonoBehaviour
         if (currentRoom.Finished) return;
 
         currentRoom.RoomFinished();
-        currentRoom.gameObject.layer = defaultLayer;
+        AssignLayer(currentRoom.gameObject.transform.GetChild(0), defaultLayer);
+    }
+
+    IEnumerator RoomEnemyDisposal()
+    {
+        yield return new WaitForEndOfFrame();
+
+        SpawnEnemy.Instance.ActionLevel(currentRoom.transform, currentRoom.GridSize);
+
+        yield return null;
+    }
+
+    private void AssignLayer(Transform parent, int layer)
+    {
+        parent.gameObject.layer = layer;
+
+        foreach (Transform child in parent)
+        {
+            child.gameObject.layer = layer;
+        }
     }
 
     #endregion
