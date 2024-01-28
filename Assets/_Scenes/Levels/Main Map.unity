@@ -555,32 +555,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 892560269231681936, guid: 553119e9d60edbf46b4441d949b342b0,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 892560269231681936, guid: 553119e9d60edbf46b4441d949b342b0,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1653619898218261139, guid: 553119e9d60edbf46b4441d949b342b0,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1689988878274215650, guid: 553119e9d60edbf46b4441d949b342b0,
-        type: 3}
-      propertyPath: _explotionSFX.WwiseObjectReference
-      value: 
-      objectReference: {fileID: 11400000, guid: 9a166a3e388e2da4692eda5d41ec93bb,
-        type: 2}
-    - target: {fileID: 1895041767033349411, guid: 553119e9d60edbf46b4441d949b342b0,
-        type: 3}
-      propertyPath: CustomDataModule.enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3621593064644270484, guid: 553119e9d60edbf46b4441d949b342b0,
         type: 3}
       propertyPath: m_Name
@@ -641,43 +615,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4544256213055059339, guid: 553119e9d60edbf46b4441d949b342b0,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4544256213055059339, guid: 553119e9d60edbf46b4441d949b342b0,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4544256213055059339, guid: 553119e9d60edbf46b4441d949b342b0,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5993197383510921346, guid: 553119e9d60edbf46b4441d949b342b0,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7250663404949598724, guid: 553119e9d60edbf46b4441d949b342b0,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8315580282722361106, guid: 553119e9d60edbf46b4441d949b342b0,
-        type: 3}
-      propertyPath: _laserSFX.WwiseObjectReference
-      value: 
-      objectReference: {fileID: 11400000, guid: 78e2bec264604374ca8c65b5f10b9b4b,
-        type: 2}
-    - target: {fileID: 8315580282722361106, guid: 553119e9d60edbf46b4441d949b342b0,
-        type: 3}
-      propertyPath: _hitMarkerSFX.WwiseObjectReference
-      value: 
-      objectReference: {fileID: 11400000, guid: be5040acbff7f714a912930a6204b2ee,
-        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
