@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using EZhex1991.EZSoftBone;
 using UnityEngine;
 
 public class Baby : MonoBehaviour
@@ -20,6 +21,9 @@ public class Baby : MonoBehaviour
 
     [SerializeField] private Animator _animatorA;
     [SerializeField] private Animator _animatorB;
+
+    [SerializeField] private EZSoftBone _boneDynamicsA;
+    [SerializeField] private EZSoftBone _boneDynamicsB;
     
     private InputManager _inputManager;
     private WeaponState _currentState;
@@ -54,6 +58,8 @@ public class Baby : MonoBehaviour
         _nextFireTime = 0;
         _fireStarted = false;
         _fireEnded = false;
+        _boneDynamicsA.enabled = false;
+        _boneDynamicsB.enabled = false;
     }
 
     private void Update()
@@ -114,10 +120,18 @@ public class Baby : MonoBehaviour
                 _reloadPressed = false;
                 _isReloading = true;
                 _currentState = WeaponState.Reloading;
+                StartCoroutine(StartBoneDynamics());
                 _animatorA.SetTrigger("OutOfAmmo");
                 _animatorB.SetTrigger("OutOfAmmo");
                 _reloadController.StartReload();
             }
+    }
+
+    private IEnumerator StartBoneDynamics()
+    {
+        yield return new WaitForSeconds(1.36f);
+        _boneDynamicsA.enabled = true;
+        _boneDynamicsB.enabled = true;
     }
 
     public void ReloadDone()
@@ -127,6 +141,8 @@ public class Baby : MonoBehaviour
         _currentState = WeaponState.IdleShooting;
         _animatorA.SetTrigger("ReloadComplete");
         _animatorB.SetTrigger("ReloadComplete");
+        _boneDynamicsA.enabled = false;
+        _boneDynamicsB.enabled = false;
         if (ReloadCompleted != null) ReloadCompleted.Invoke();
     }
     
