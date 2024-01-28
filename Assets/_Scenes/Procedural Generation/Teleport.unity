@@ -453,6 +453,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomPrefabs:
   - {fileID: 4229971765952218214, guid: 967e3f1a2656ee0458e1dbe08209b076, type: 3}
+  - {fileID: 7654621946808384056, guid: ddf8d95509ce2084dbd2894d3f9e5bcd, type: 3}
+  - {fileID: 1061770064931826250, guid: f03cde8212943da41ba170ef12a1b8f4, type: 3}
+  - {fileID: 2204027428770612828, guid: d3aa13fedc71cc443b8b00f1e21f1138, type: 3}
+  - {fileID: 3101043757455451264, guid: 0449ec86943cc3447a88f1b453e9ef53, type: 3}
+  - {fileID: 8260808816243432375, guid: 3720700d6c814024fb42d3e271b54773, type: 3}
 --- !u!1 &1576217102
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,6 +534,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1653619898218261139, guid: 553119e9d60edbf46b4441d949b342b0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3621593064644270484, guid: 553119e9d60edbf46b4441d949b342b0,
         type: 3}
       propertyPath: m_Name
@@ -542,7 +552,7 @@ PrefabInstance:
     - target: {fileID: 3723763598020617544, guid: 553119e9d60edbf46b4441d949b342b0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.146
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3723763598020617544, guid: 553119e9d60edbf46b4441d949b342b0,
         type: 3}
