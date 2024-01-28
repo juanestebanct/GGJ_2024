@@ -64,7 +64,7 @@ Material:
     - _Depth_Fade_Distance: 1
     - _DstBlend: 0
     - _Emissiv_Driven_By_Vertex_Color_Alpha_1: 0
-    - _Emissiv_Intensity: 5
+    - _Emissiv_Intensity: 6
     - _Normal_Lerp: 0.5
     - _Normal_Strength: 0.05
     - _QueueControl: 0
@@ -78,7 +78,7 @@ Material:
     - _ZWrite: 1
     - _ZWriteControl: 0
     m_Colors:
-    - _Color: {r: 1, g: 0.018810797, b: 0, a: 0}
+    - _Color: {r: 1, g: 0.018810797, b: 0, a: 1}
     - _Especular_Color: {r: 0.7384583, g: 0.1273585, b: 1, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &8733851544877462455
