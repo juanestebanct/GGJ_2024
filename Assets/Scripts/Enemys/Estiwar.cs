@@ -49,11 +49,9 @@ public class Estiwar : Enemy
         if (ChangeMode())
         {
             ChangePatrone(MoventPatron.Attacking);
-            print("Attacking");
         }
         else 
         {
-            print("No attackin");
         }
 
     }
@@ -84,12 +82,10 @@ public class Estiwar : Enemy
         if (distance <= rangeZoneAttack)
         {
             //ChangePatrone(MoventPatron.Attacking);
-            print("rango de ataque ");
             return true;
         }
         else 
         {
-            print("no rango de ataque");
             return false;
         }
     }

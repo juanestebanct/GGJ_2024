@@ -7,14 +7,15 @@ using UnityEngine.AI;
 using static Cinemachine.DocumentationSortingAttribute;
 using UnityEngine.UIElements;
 using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.Events;
 
 public class SpawnEnemy : MonoBehaviour
 {
     public static SpawnEnemy Instance { get; set; }
+    public UnityEvent EndFight,StarFight;
 
     [Header("configuracion de Spawn Enemy")]
     [SerializeField] private List<GameObject> enemysPrefabs;
-    [SerializeField] private int MaxEnemy, maxTipyEnemy;
     [SerializeField] private List<NavMeshSurface> ListNavmesh;
     [SerializeField] private List<int> probability;
 
@@ -32,37 +33,39 @@ public class SpawnEnemy : MonoBehaviour
     private int xPos;
     private int zPos;
 
-    private List<GameObject> allEnemyList = new List<GameObject>();
+    private List<GameObject> ActiveEnemyList = new List<GameObject>();
     private List<GameObject> wWs = new List<GameObject>();
     private List<GameObject> estiwars = new List<GameObject>();
     private List<GameObject> estiwarsHealts = new List<GameObject>();
 
     private int indexEnemy;
+    private int enemyActives;
     private Transform playerReferent;
     private void Start()
     {
         if (Instance == null) Instance = this;
 
-        maxTipyEnemy = enemysPrefabs.Count;
         playerReferent = GameObject.FindGameObjectWithTag("Player").transform;
         GenerateNavMesh();
         PoolEnemies(wWs, ListNavmesh[0]);
-        PoolEnemies(estiwars,ListNavmesh[1]);
-        PoolEnemies(estiwarsHealts, ListNavmesh[1]);
+        PoolEnemies(estiwars,ListNavmesh[0]);
+        PoolEnemies(estiwarsHealts, ListNavmesh[0]);
 
+        EndFight.AddListener(Finish);
+        StarFight.AddListener(StarEvent);
     }
 
     private void PoolEnemies(List<GameObject> list, NavMeshSurface nav)
     {
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 8; i++)
         {
             GameObject enemy = Instantiate(enemysPrefabs[indexEnemy]);
             enemy.SetActive(false);
             enemy.transform.position = transform.position;
             enemy.transform.parent = transform.parent;
-            enemy.GetComponent<Enemy>().GetReference(playerReferent,nav);
+            enemy.GetComponent<Enemy>().GetReference(playerReferent,nav,this);
+
             list.Add(enemy);
-            allEnemyList.Add(enemy);
         }
         indexEnemy++;
 
@@ -114,8 +117,8 @@ public class SpawnEnemy : MonoBehaviour
             enemy.transform.position = transform.position;
             enemy.transform.parent = transform.parent;
 
-            if (enemy.GetComponent<Enemy>() is EnemyWw) enemy.GetComponent<Enemy>().GetReference(playerReferent, ListNavmesh[0]);
-            else enemy.GetComponent<Enemy>().GetReference(playerReferent, ListNavmesh[1]);
+            if (enemy.GetComponent<Enemy>() is EnemyWw) enemy.GetComponent<Enemy>().GetReference(playerReferent, ListNavmesh[0], this);
+            else enemy.GetComponent<Enemy>().GetReference(playerReferent, ListNavmesh[0], this);
 
             pool.Add(enemy);
         }
@@ -123,59 +126,106 @@ public class SpawnEnemy : MonoBehaviour
 
         enemy.transform.position = PositionToSpawn();
         enemy.SetActive(true);
+        ActiveEnemyList.Add(enemy);
 
     }
     private Vector3 PositionToSpawn()
     {
-        Vector3 startOffset = new Vector3(-maxRange.x * spacing * 0.5f, 0f, -maxRange.y * spacing * 0.5f);
-        xPos = (int)Random.Range(0, maxRange.x);
-        zPos = (int)Random.Range(0, maxRange.y);
-        Vector3 spawnPosition = new Vector3(xPos * spacing, 3f, zPos * spacing) + center.position + startOffset;
-        NavMeshHit hit;
+        bool isSpawn = false;
+        int temp = 0;
+        while (!isSpawn)
+        {
+            temp++;
+            Vector3 startOffset = new Vector3(-maxRange.x * spacing * 0.5f, -center.position.y, -maxRange.y * spacing * 0.5f);
+            xPos = (int)Random.Range(0, maxRange.x);
+            zPos = (int)Random.Range(0, maxRange.y);
+            Vector3 spawnPosition = new Vector3(xPos * spacing, center.position.y, zPos * spacing) + center.position + startOffset;
+            print(spawnPosition);
+            NavMeshHit hit;
+            if (temp>25)
+            {
+                print("Dale, no prende");
+                return Vector3.zero;
 
-        if (NavMesh.SamplePosition(spawnPosition, out hit, 5f, NavMesh.GetAreaFromName("fly")))
-            return hit.position;
-        else return PositionToSpawn();
+            }
 
+            if (NavMesh.SamplePosition(spawnPosition, out hit, 5f,NavMesh.AllAreas))
+            {
+                isSpawn = true;
+                print(hit.position);
+                return hit.position;
+            }
+            else isSpawn = false;
+        }
+        return Vector3.zero;
+
+    }
+
+    private void GenerateNavMesh()
+    {
+        ListNavmesh[0].BuildNavMesh();
+    }
+    public void ActionLevel(Transform tempCol,Vector2 tempGrid)
+    {
+        center = tempCol;
+        maxRange = tempGrid;
+        StarFight.Invoke();
+        //ExampleGrid();
+        for (int i = 0;i < maxEnemyRound; i++)
+        {
+            SpawnEnemys(choose());
+        }
+        enemyActives = maxEnemyRound;
+    }
+    /// <summary>
+    /// Vamos a subir de nivel 
+    /// </summary>
+    public void NextLevel(int level)
+    {
+        level = this.level;
+        maxEnemyRound += enemyByLevels;
+        print(maxEnemyRound);
+        if (level < 5)
+        {
+            probability[0] += 2;
+            probability[0] += 2;
+            probability[0] -= 2;
+        }
+    }
+    /// <summary>
+    /// llama evento de se acabo o que tales 
+    /// </summary>
+    public void RemoveEnemy()
+    {
+        if (enemyActives < 0)
+        {
+            EndFight.Invoke();
+        }
+        else enemyActives--;
+        print("Faltan  "+enemyActives);
+    }
+    // pruebas 
+    private void StarEvent()
+    {
+        print("Comenzo la pelea y estas jodidos ");
+    }
+    private void Finish()
+    {
+        print("Sobreviviste ve a otro ligar ");
     }
     private void ExampleGrid()
     {
-        Vector3 startOffset = new Vector3(-maxRange.x * spacing * 0.5f, 0f, -maxRange.y * spacing * 0.5f);
+        Vector3 startOffset = new Vector3(-maxRange.x * spacing * 0.5f, -center.position.y, -maxRange.y * spacing * 0.5f);
         for (int x = 0; x < maxRange.x; x++)
         {
             for (int z = 0; z < maxRange.y; z++)
             {
                 // Calcular la posición de spawn
-                Vector3 spawnPosition = new Vector3(x * spacing, 3f, z * spacing)+ center.position+ startOffset;
+                Vector3 spawnPosition = new Vector3(x * spacing, center.position.y, z * spacing) + center.position + startOffset;
 
                 // Instanciar el objeto en la posición calculada
                 Instantiate(prefabt, spawnPosition, Quaternion.identity);
             }
         }
-    }
-    private void GenerateNavMesh()
-    {
-        ListNavmesh[0].BuildNavMesh();
-        ListNavmesh[1].BuildNavMesh();
-    }
-    public void ActionLevel(Transform tempCol)
-    {
-        center = tempCol;
-
-        for (int i = 0;i < maxEnemyRound; i++)
-        {
-            SpawnEnemys(choose());
-        }
-    }
-    /// <summary>
-    /// Vamos a subir de nivel 
-    /// </summary>
-    public void NextLevel()
-    {
-        maxEnemyRound += enemyByLevels;
-        
-        probability[0] +=2;
-        probability[0] +=2;
-        probability[0] -=2;
     }
 }
