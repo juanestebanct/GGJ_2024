@@ -2506,7 +2506,7 @@ MonoBehaviour:
   probability: 28000000280000000a000000
   maxRange: {x: 10, y: 10}
   spacing: 3
-  maxEnemyRound: 10
+  maxEnemyRound: 5
   prefabt: {fileID: 919132149155446097, guid: b0038c2db3bebb241926a64f56663752, type: 3}
   center: {fileID: 0}
   enemyByLevels: 3

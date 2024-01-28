@@ -88,6 +88,10 @@ public class EnemyWw : Enemy
         yield return new WaitForSeconds(1f);
         EndAttack();
     }
-
+    private void OnDisable()
+    {
+        ChangePatrone(MoventPatron.Change);
+        //Se resetea las animacion o algo
+    }
 
 }
