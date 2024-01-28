@@ -583,7 +583,7 @@ GameObject:
   - component: {fileID: 9171878692834625930}
   - component: {fileID: 535912140612619088}
   m_Layer: 0
-  m_Name: Options title
+  m_Name: Settings title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1894,7 +1894,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Epic
+  m_text: "\xC9pico"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 02b3c2facc816ac428e29d3f7bac627a, type: 2}
   m_sharedMaterial: {fileID: -2711841947230476223, guid: 02b3c2facc816ac428e29d3f7bac627a,
@@ -2893,7 +2893,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Fullscreen
+  m_text: 'Pantalla completa
 
 '
   m_isRightToLeft: 0
@@ -3030,7 +3030,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Mouse Sensitivity
+  m_text: Sensibilidad
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 02b3c2facc816ac428e29d3f7bac627a, type: 2}
   m_sharedMaterial: {fileID: -2711841947230476223, guid: 02b3c2facc816ac428e29d3f7bac627a,
@@ -3115,7 +3115,7 @@ GameObject:
   - component: {fileID: 2208916197300054344}
   - component: {fileID: 4005692393725467201}
   m_Layer: 0
-  m_Name: Options
+  m_Name: Settings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

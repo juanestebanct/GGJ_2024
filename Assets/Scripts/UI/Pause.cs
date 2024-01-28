@@ -6,7 +6,7 @@ using DG.Tweening;
 
 public class Pause : MonoBehaviour
 {
-    [SerializeField] private GameObject _settingsMenu;
+    [SerializeField] CanvasGroup _settingsMenu;
     [SerializeField] CanvasGroup FadeBackground;
 
     private bool paused;
@@ -16,7 +16,7 @@ public class Pause : MonoBehaviour
         FadeBackground.alpha = 0;
         InputManager.Instance.OnPausePressed += TogglePause;
         paused = false;
-        _settingsMenu.SetActive(false);
+        _settingsMenu.gameObject.SetActive(false);
     }
 
     private void TogglePause()
@@ -45,11 +45,11 @@ public class Pause : MonoBehaviour
 
     public void OpenOptions()
     {
-        _settingsMenu.SetActive(false);
+        _settingsMenu.gameObject.SetActive(false);
     }
-    public void OpenOptions()
+    public void CloseOptions()
     {
-        _settingsMenu.SetActive(true);
+        _settingsMenu.gameObject.SetActive(true);
     }
 
 }
