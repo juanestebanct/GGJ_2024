@@ -141,7 +141,10 @@ public class Baby : MonoBehaviour
         Ray ray = new Ray(_aimPoint.position, _aimPoint.forward);
 
         if (Physics.Raycast(ray, out var enemyHit, Mathf.Infinity, _enemiesLayer))
+        {
             enemyHit.transform.GetComponent<Enemy>().RecieveDamage(1);
+            _laserFX.SetHitMarkerPosition(enemyHit.point);
+        }
     }
 
     private void FireInput(bool value) { _firePressed = value; }
