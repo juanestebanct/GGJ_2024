@@ -48,8 +48,8 @@ public class SpawnEnemy : MonoBehaviour
         playerReferent = GameObject.FindGameObjectWithTag("Player").transform;
         GenerateNavMesh();
         PoolEnemies(wWs, ListNavmesh[0]);
-        PoolEnemies(estiwars,ListNavmesh[1]);
-        PoolEnemies(estiwarsHealts, ListNavmesh[1]);
+        PoolEnemies(estiwars,ListNavmesh[0]);
+        PoolEnemies(estiwarsHealts, ListNavmesh[0]);
 
         EndFight.AddListener(Finish);
         StarFight.AddListener(StarEvent);
@@ -118,7 +118,7 @@ public class SpawnEnemy : MonoBehaviour
             enemy.transform.parent = transform.parent;
 
             if (enemy.GetComponent<Enemy>() is EnemyWw) enemy.GetComponent<Enemy>().GetReference(playerReferent, ListNavmesh[0], this);
-            else enemy.GetComponent<Enemy>().GetReference(playerReferent, ListNavmesh[1], this);
+            else enemy.GetComponent<Enemy>().GetReference(playerReferent, ListNavmesh[0], this);
 
             pool.Add(enemy);
         }
@@ -164,7 +164,6 @@ public class SpawnEnemy : MonoBehaviour
     private void GenerateNavMesh()
     {
         ListNavmesh[0].BuildNavMesh();
-        ListNavmesh[1].BuildNavMesh();
     }
     public void ActionLevel(Transform tempCol,Vector2 tempGrid)
     {
