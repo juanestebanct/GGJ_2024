@@ -47,7 +47,7 @@ Material:
     - _CastShadows: 1
     - _Cull: 0
     - _DstBlend: 10
-    - _Outline_Thickness: 0.0035
+    - _Outline_Thickness: 0.001
     - _QueueControl: 0
     - _QueueOffset: 0
     - _SrcBlend: 5
