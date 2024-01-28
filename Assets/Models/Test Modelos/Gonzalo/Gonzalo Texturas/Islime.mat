@@ -138,8 +138,8 @@ Material:
     m_Colors:
     - _BaseColor: {r: 0.096009634, g: 0.4671992, b: 0.28847083, a: 0.65198237}
     - _Color: {r: 0.09600962, g: 0.4671992, b: 0.2884708, a: 0.65198237}
-    - _Color_1: {r: 0, g: 1, b: 0.21875882, a: 1}
-    - _Color_2: {r: 0, g: 0.0022024768, b: 0.0031321736, a: 1}
+    - _Color_1: {r: 0, g: 0.9329295, b: 1, a: 1}
+    - _Color_2: {r: 0, g: 0.0013090554, b: 0.0031321743, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Main_Texture_Tiling_and_Offset_Speed: {r: 2, g: 1, b: 0.1, a: 0.1}
     - _Rainbow_Tile: {r: 1, g: 1, b: 0, a: 0}
