@@ -9,9 +9,14 @@ public class RoomInfo : MonoBehaviour
     [SerializeField] private Transform topHeight;
     [SerializeField] private List<Teleport> entranceTeleport = new List<Teleport> ();
 
+    //Utility
+    private bool finished = false;
+
     //Access
     public Vector3 TopHeight { get { return topHeight.position; } }
     public List<Teleport> EntranceTeleport {  get { return entranceTeleport; } }
+
+    public bool Finished { get => finished; }
 
     private void Start()
     {
@@ -27,6 +32,11 @@ public class RoomInfo : MonoBehaviour
         {
             t.TPZoneActivation();
         }
+    }
+
+    public void RoomFinished()
+    {
+        finished = true;
     }
 
     #endregion
