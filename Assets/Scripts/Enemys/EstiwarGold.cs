@@ -9,5 +9,6 @@ public class EstiwarGold : Estiwar
     public override void Dead()
     {
         PlayerController.Instance.GetComponent<PlayerStats>().Heal();
+        base.Dead();
     }
 }
