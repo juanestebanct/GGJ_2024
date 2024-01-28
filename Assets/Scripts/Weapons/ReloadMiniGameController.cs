@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,8 +14,12 @@ public class ReloadMiniGameController : MonoBehaviour
     [SerializeField] private Slider _reloadSlider;
     [SerializeField] private Slider _reloadIndicatorSlider;
     [SerializeField] private Slider _laughLevelSlider;
-    [SerializeField] private float _reloadSliderSpeed = 1f;
-    [SerializeField] private float _laughLevelReloadSpeed = 1f;
+    [SerializeField] private float _reloadSliderSpeedUp = 150f;
+    [SerializeField] private float _reloadSliderSpeedDown = 250f;
+    [SerializeField] private float _laughLevelReloadSpeedUp = 1f;
+    [SerializeField] private ParticleSystem _babyBoom;
+    [SerializeField] private AK.Wwise.Event _explotionSFX;
+    private PlayerStats _playerStats;
     private InputManager _inputManager;
     public ReloadState CurrentState;
     private bool _isIndicatorMoving;
@@ -23,6 +28,7 @@ public class ReloadMiniGameController : MonoBehaviour
     {
         _inputManager = GetComponent<InputManager>();
         _baby = GetComponentInChildren<Baby>();
+        _playerStats = GetComponent<PlayerStats>();
     }
 
     private void Start()
@@ -32,7 +38,12 @@ public class ReloadMiniGameController : MonoBehaviour
         _miniGameInterface.SetActive(false);
     }
 
-    public void StartReload() { CurrentState = ReloadState.Reloading; _miniGameInterface.SetActive(true);}
+    public void StartReload()
+    {
+        CurrentState = ReloadState.Reloading; 
+        _miniGameInterface.SetActive(true);
+        _reloadSlider.value = 0;
+    }
 
     private void Update()
     {
@@ -50,21 +61,22 @@ public class ReloadMiniGameController : MonoBehaviour
 
     private void HandleReloadSliderMovement()
     {
-        float sliderValue = Time.deltaTime * _reloadSliderSpeed;
-        
-        if (_inputManager.ReloadMovementInput.magnitude > 0) _reloadSlider.value += sliderValue;
-        else _reloadSlider.value -= sliderValue;
+        if (_inputManager.ReloadMovementInput.magnitude > 0)
+            _reloadSlider.value += _reloadSliderSpeedUp * Time.deltaTime;
+        else _reloadSlider.value -= _reloadSliderSpeedDown * Time.deltaTime;
 
         float indicator = _reloadIndicatorSlider.value;
         if (indicator - 0.1f < _reloadSlider.value && _reloadSlider.value < indicator + 0.1f)
-            _laughLevelSlider.value += Time.deltaTime * _laughLevelReloadSpeed;
+            _laughLevelSlider.value += Time.deltaTime * _laughLevelReloadSpeedUp;
         
         if (_laughLevelSlider.value >= _laughLevelSlider.maxValue) CurrentState = ReloadState.Completed;
+
+        if (_reloadSlider.value >= 0.9f) StartCoroutine(Explode());
     }
 
     private void HandleIndicatorSliderMovement()
     {
-        if (!_isIndicatorMoving) StartCoroutine(IndicatorMovement(Random.Range(0f, 1f), 3));
+        if (!_isIndicatorMoving) StartCoroutine(IndicatorMovement(Random.Range(0.2f, 0.8f), 3));
     }
 
     private IEnumerator IndicatorMovement(float targetValue, float time)
@@ -75,6 +87,15 @@ public class ReloadMiniGameController : MonoBehaviour
             targetValue, time);
         yield return new WaitForSeconds(time + 1f);
         _isIndicatorMoving = false;
+    }
+
+    private IEnumerator Explode()
+    {
+        CurrentState = ReloadState.Failed;
+        _explotionSFX.Post(gameObject);
+        _babyBoom.Play();
+        yield return new WaitForSeconds(0.2f);
+        _playerStats.ReceiveDamage(5);
     }
     
     private void HandleResetValues()

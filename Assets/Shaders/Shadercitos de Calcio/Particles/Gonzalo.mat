@@ -73,7 +73,7 @@ Material:
     - _CastShadows: 0
     - _Cull: 2
     - _Depth_Fade_Distance: 0
-    - _Displacement_Intensity: 10.9
+    - _Displacement_Intensity: 0.1
     - _DstBlend: 10
     - _Emissiv_Driven_By_Vertex_Color_Alpha_1: 1
     - _Emissiv_Intensity: 1

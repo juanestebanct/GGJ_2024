@@ -37,6 +37,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Marco
+    second: {fileID: 2100000, guid: e4afb002d72ccf543bc79a0b27ebe967, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Metal
     second: {fileID: 2100000, guid: 7746b1f571a94534583534da4d1787cc, type: 2}
   - first:
@@ -69,6 +74,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Plastico_Rojo
     second: {fileID: 2100000, guid: 3f7978bf6d6368a499199970c7f46f9f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Portal
+    second: {fileID: 2100000, guid: cdf3eca1fcd2cd947a9f15b55496f9e9, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

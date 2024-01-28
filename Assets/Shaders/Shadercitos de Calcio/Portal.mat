@@ -50,16 +50,16 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Alpha: 0.1
-    - _Float: -1
+    - _Alpha: -6.94
+    - _Float: -1.52
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _Color: {r: 1, g: 0.51687396, b: 0, a: 1}
+    - _Color: {r: 0.7064765, g: 0.0039215568, b: 0.8, a: 1}
     - _Color_1: {r: 1, g: 1, b: 1, a: 0}
-    - _Color_2: {r: 4.867144, g: 0.3587839, b: 0, a: 1}
-    - _Ghost_Movement: {r: 0.2, g: 0.1, b: 0, a: 0}
-    - _Speed: {r: 1, g: 1.5, b: 0, a: 0}
+    - _Color_2: {r: 0, g: 7.0163345, b: 14.754422, a: 0}
+    - _Ghost_Movement: {r: 0.1, g: 0, b: 0, a: 0}
+    - _Speed: {r: 1, g: 2, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &1745874023615097375
 MonoBehaviour:

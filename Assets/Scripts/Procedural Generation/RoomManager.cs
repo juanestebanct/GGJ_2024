@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class RoomManager : MonoBehaviour
 {
@@ -10,12 +11,14 @@ public class RoomManager : MonoBehaviour
 
     //VARIABLES
     //Assignable
-    [SerializeField] List<RoomInfo> roomPrefabs = new List<RoomInfo>();
+    [SerializeField] private List<RoomInfo> roomPrefabs = new List<RoomInfo>();
+    [SerializeField] private int bakeLayer, defaultLayer;
 
-    //Utility
     private List<RoomInfo> roomCreated = new List<RoomInfo>();
     private Queue<Vector3> roomSpawnPoint = new Queue<Vector3>();
-    private RoomInfo lastRoom = null;
+    private RoomInfo currentRoom = null;
+
+    public RoomInfo CurrentRoom { get => currentRoom; set { if (currentRoom != value) currentRoom = value; } }
 
     private void Awake()
     {
@@ -29,12 +32,9 @@ public class RoomManager : MonoBehaviour
         instance = this;
     }
 
-    private void Update()
+    private void Start()
     {
-        if(Input.GetKeyUp(KeyCode.K))
-        {
-            SpawnRoom();
-        }
+        SpawnEnemy.Instance.EndFight.AddListener(UpdateRoomStatus);
     }
 
     #region Utility
@@ -44,38 +44,69 @@ public class RoomManager : MonoBehaviour
         roomCreated.Add(roomInfo);
         roomSpawnPoint.Enqueue(roomInfo.TopHeight);
 
-        if(!lastRoom) lastRoom = roomInfo;
+        if (!currentRoom)
+        {
+            currentRoom = roomInfo;
+
+            AssignLayer(currentRoom.gameObject.transform.GetChild(0), bakeLayer);
+
+            StartCoroutine(RoomEnemyDisposal());
+        }
     }
 
-    public void SpawnRoom()
+    public void SpawnRoom(Teleport tp)
     {
-        if (lastRoom == null) return;
-
-        print("Called");
+        if (tp == null) return;
 
         int rnd = 0;
 
-        foreach(Teleport tp in lastRoom.EntranceTeleport) 
+        if (!tp.TPInfo.Destiny)
         {
-            if(!tp.TPInfo.Destiny)
-            {
-                rnd = Random.Range(0, roomPrefabs.Count);
+            rnd = Random.Range(0, roomPrefabs.Count);
 
-                RoomInfo createdRoom = Instantiate(roomPrefabs[rnd], roomSpawnPoint.Dequeue(), Quaternion.identity, transform);
+            RoomInfo createdRoom = Instantiate(roomPrefabs[rnd], roomSpawnPoint.Dequeue(), Quaternion.identity, transform);
 
-                AddRoom(createdRoom);
+            rnd = Random.Range(0, createdRoom.EntranceTeleport.Count);
 
-                rnd = Random.Range(0, createdRoom.EntranceTeleport.Count);
+            Teleport destinyTeleport = createdRoom.EntranceTeleport.ElementAt(rnd);
 
-                tp.TPInfo.SetDestinyRoom(createdRoom, rnd);
+            tp.TPInfo.SetDestinyRoom(createdRoom, destinyTeleport);
 
-                createdRoom.EntranceTeleport[rnd].TPInfo.SetDestinyRoom(lastRoom, lastRoom.EntranceTeleport.FindIndex(a => a == tp));
-            }
+            destinyTeleport.TPInfo.SetDestinyRoom(currentRoom, tp);
+
+            AssignLayer(createdRoom.gameObject.transform.GetChild(0), bakeLayer);
+
+            SpawnEnemy.Instance.ActionLevel(createdRoom.transform, createdRoom.GridSize);
         }
+    }
 
-        lastRoom.EnableTPs();
+    private void UpdateRoomStatus()
+    {
+        if (!currentRoom) return;
 
-        lastRoom = roomCreated.Last();
+        if (currentRoom.Finished) return;
+
+        currentRoom.RoomFinished();
+        AssignLayer(currentRoom.gameObject.transform.GetChild(0), defaultLayer);
+    }
+
+    private void AssignLayer(Transform parent, int layer)
+    {
+        parent.gameObject.layer = layer;
+
+        foreach (Transform child in parent)
+        {
+            child.gameObject.layer = layer;
+        }
+    }
+
+    IEnumerator RoomEnemyDisposal()
+    {
+        yield return new WaitForEndOfFrame();
+
+        SpawnEnemy.Instance.ActionLevel(currentRoom.transform, currentRoom.GridSize);
+
+        yield return null;
     }
 
     #endregion
