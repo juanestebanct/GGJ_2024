@@ -3236,6 +3236,26 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2430538621849797656, guid: 7e45299ec9cb7fd4cbbb8432205bd436,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2430538621849797656, guid: 7e45299ec9cb7fd4cbbb8432205bd436,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2430538621849797656, guid: 7e45299ec9cb7fd4cbbb8432205bd436,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2430538621849797656, guid: 7e45299ec9cb7fd4cbbb8432205bd436,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2788464442452546529, guid: 7e45299ec9cb7fd4cbbb8432205bd436,
         type: 3}
       propertyPath: m_Color.a
@@ -3333,7 +3353,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4321227502864527412, guid: 7e45299ec9cb7fd4cbbb8432205bd436,
         type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4321227502864527412, guid: 7e45299ec9cb7fd4cbbb8432205bd436,
+        type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4321227502864527412, guid: 7e45299ec9cb7fd4cbbb8432205bd436,
+        type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4403080401288438746, guid: 7e45299ec9cb7fd4cbbb8432205bd436,
@@ -3380,6 +3410,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6036134096317032277, guid: 7e45299ec9cb7fd4cbbb8432205bd436,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6036134096317032277, guid: 7e45299ec9cb7fd4cbbb8432205bd436,
         type: 3}
@@ -3683,6 +3718,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sensitivitySlider: {fileID: 8771565956960119386}
   _fullscreenToggle: {fileID: 1096384207901938470}
+  _playerController: {fileID: 0}
 --- !u!224 &2369523069105686428 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7256433433220908619, guid: 7e45299ec9cb7fd4cbbb8432205bd436,
