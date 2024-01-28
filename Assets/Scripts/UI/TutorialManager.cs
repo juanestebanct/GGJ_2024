@@ -128,13 +128,6 @@ public class TutorialManager: MonoBehaviour
         }
     }   
 
-    private void ContinueAnimationLoop()
-    {
-        TextBackground.DOFade(1, 0.7f)
-        .SetEase(Ease.InQuart)
-        .SetLoops(-1, LoopType.Yoyo)
-        .SetUpdate(true);
-    }
     private void Section1()
     {
         Debug.Log(" Entra seccion 1");
@@ -144,11 +137,12 @@ public class TutorialManager: MonoBehaviour
 
 
         Time.timeScale = 0;
-        Debug.Log("cambi[o timescale");
-        TextBackground.DOFade(1,0.5f).SetUpdate(true);
-        Text1.DOFade(1, 1).SetUpdate(true);
+        Debug.Log("cambio timescale");
+        TextBackground.DOFade(1,10).SetUpdate(true).OnComplete(()=> 
+        Text1.DOFade(1, 1).SetUpdate(true)
+        );
 
-        ScreenButton.onClick.AddListener(() => Section2());
+        ScreenButton.onClick.AddListener(() => { Section2(); Debug.Log("Estaa listo pa dar click"); });
     }
 
     private void Section2()
