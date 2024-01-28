@@ -112,8 +112,8 @@ GameObject:
   - component: {fileID: 317833308247945729}
   - component: {fileID: 4967841183180178521}
   - component: {fileID: 1766939610618426162}
-  - component: {fileID: 1230139191498112635}
-  - component: {fileID: 5959787497150549299}
+  - component: {fileID: 5426832502536608267}
+  - component: {fileID: 6441415441675205687}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -252,7 +252,7 @@ MonoBehaviour:
   EnabledRoationMovement: 1
   RoationMovementSmooth: 6.7
   RoationMovementAmount: 4
---- !u!114 &1230139191498112635
+--- !u!114 &5426832502536608267
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -274,7 +274,7 @@ MonoBehaviour:
     positionOffset: {x: 0, y: 0, z: 0}
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
---- !u!114 &5959787497150549299
+--- !u!114 &6441415441675205687
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -298,6 +298,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3211945043350487051}
   - component: {fileID: 2534773029040384619}
+  - component: {fileID: 8315580282722361106}
   m_Layer: 0
   m_Name: Baby
   m_TagString: Untagged
@@ -335,8 +336,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ray: {fileID: 2653602527707736030}
-  _laserDamageArea: {fileID: 7536709616727770893}
+  _laserDamageArea: {fileID: 8676677548168977258}
   _reloadController: {fileID: 1689988878274215650}
+  _laserFX: {fileID: 8315580282722361106}
   _fireRate: 0.2
   _maxAmmo: 30
   _currentAmmo: 0
@@ -344,6 +346,23 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   _aimPoint: {fileID: 6813323336594631790}
+--- !u!114 &8315580282722361106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3232370225190948320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5d4e26923dd3204fb771d4e41b45324, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hitParticle: {fileID: 2987731889701942898}
+  _laser: {fileID: 2653602527707736030}
+  _laserScale: {x: 0.02, y: 0.02, z: 0.02}
+  _laserStartTime: 0.2
+  _laserEndTime: 0.2
 --- !u!1 &3621593064644270484
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,7 +445,7 @@ MonoBehaviour:
   Controller: {fileID: 0}
   _camera: {fileID: 2805562707622565768}
   _walkingSpeed: 3
-  _runningSpeed: 4
+  _runningSpeed: 6
   _jumpSpeed: 6
   _lookSpeed: 2
   _lookXLimit: 80
@@ -478,7 +497,7 @@ MonoBehaviour:
   _reloadIndicatorSlider: {fileID: 3422365806930073358}
   _laughLevelSlider: {fileID: 6607860184207274866}
   _reloadSliderSpeed: 0.5
-  _laughLevelReloadSpeed: 1
+  _laughLevelReloadSpeed: 3
   CurrentState: 0
 --- !u!114 &1864483337108529732
 MonoBehaviour:
@@ -984,21 +1003,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5415591486378555219, guid: 1a01f8ca8d553814f9f6aef41138e556,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 5415591486378555219, guid: 1a01f8ca8d553814f9f6aef41138e556,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 5415591486378555219, guid: 1a01f8ca8d553814f9f6aef41138e556,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 5415591486378555219, guid: 1a01f8ca8d553814f9f6aef41138e556,
-        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.11800003
       objectReference: {fileID: 0}
@@ -1047,49 +1051,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5415591486378555219, guid: 1a01f8ca8d553814f9f6aef41138e556,
-        type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5772446032989736273, guid: 1a01f8ca8d553814f9f6aef41138e556,
         type: 3}
       propertyPath: m_Name
       value: RayBeam
       objectReference: {fileID: 0}
-    - target: {fileID: 5772446032989736273, guid: 1a01f8ca8d553814f9f6aef41138e556,
-        type: 3}
-      propertyPath: m_TagString
-      value: Laser
-      objectReference: {fileID: 0}
-    - target: {fileID: 6158330788862190243, guid: 1a01f8ca8d553814f9f6aef41138e556,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 6158330788862190243, guid: 1a01f8ca8d553814f9f6aef41138e556,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 6158330788862190243, guid: 1a01f8ca8d553814f9f6aef41138e556,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 6158330788862190243, guid: 1a01f8ca8d553814f9f6aef41138e556,
-        type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5772446032989736273, guid: 1a01f8ca8d553814f9f6aef41138e556,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7536709616727770893}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a01f8ca8d553814f9f6aef41138e556, type: 3}
 --- !u!1 &2653602527707736030 stripped
 GameObject:
@@ -1097,32 +1067,21 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8415156661037984399}
   m_PrefabAsset: {fileID: 0}
---- !u!136 &7536709616727770893
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+--- !u!198 &2987731889701942898 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6754882907478957309, guid: 1a01f8ca8d553814f9f6aef41138e556,
+    type: 3}
+  m_PrefabInstance: {fileID: 8415156661037984399}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2653602527707736030}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 2
-  m_Height: 2000
-  m_Direction: 2
-  m_Center: {x: 0, y: 0, z: 1000}
 --- !u!4 &4602871948221308380 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5415591486378555219, guid: 1a01f8ca8d553814f9f6aef41138e556,
+    type: 3}
+  m_PrefabInstance: {fileID: 8415156661037984399}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &8676677548168977258 stripped
+CapsuleCollider:
+  m_CorrespondingSourceObject: {fileID: 910118720642642405, guid: 1a01f8ca8d553814f9f6aef41138e556,
     type: 3}
   m_PrefabInstance: {fileID: 8415156661037984399}
   m_PrefabAsset: {fileID: 0}
