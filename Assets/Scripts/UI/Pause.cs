@@ -8,6 +8,7 @@ public class Pause : MonoBehaviour
 {
     [SerializeField] CanvasGroup _settingsMenu;
     [SerializeField] CanvasGroup FadeBackground;
+    [SerializeField] CanvasGroup Buttons;
 
     private bool paused;
 
@@ -27,6 +28,7 @@ public class Pause : MonoBehaviour
             Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.None;
             FadeBackground.DOFade(1, 1.5f).SetUpdate(true);
+            Buttons.DOFade(1, 1.5f).SetUpdate(true);
 
 
 
@@ -34,7 +36,8 @@ public class Pause : MonoBehaviour
         else
         {
             Time.timeScale = 1;
-
+            FadeBackground.DOFade(0, 0.5f).SetUpdate(true);
+            Buttons.DOFade(0, 0.5f).SetUpdate(true);
             Cursor.lockState = CursorLockMode.Locked;
 
             FadeBackground.gameObject.SetActive(true);           
