@@ -11,34 +11,34 @@ public class Score : MonoBehaviour
     [SerializeField] private TextMeshProUGUI highScoreText;
 
     [Header("Next level")]
-    private int nextLevelPoinst;
-    private int level;
-    public int CurrentScore, HighScore;
+    [SerializeField] private int currentScore, highScore,pointByLevel;
+    [SerializeField] private int nextLevelPoinst;
+    [SerializeField] private int level;
 
     private void Awake()
     {
         level = 1;
         if(Instance == null) Instance = this;
 
-        if (PlayerPrefs.HasKey("HighScore")) HighScore = PlayerPrefs.GetInt("HighScore");
-        highScoreText.text = $"High Score: {HighScore}";
+        if (PlayerPrefs.HasKey("highScore")) highScore = PlayerPrefs.GetInt("highScore");
+        highScoreText.text = $"High Score: {highScore}";
         scoreText.text = $"Score: {0}";
     }
 
     public void GetPoins(int poins)
     {
 
-        CurrentScore += poins;
+        currentScore += poins;
 
-        if (CurrentScore > HighScore)
+        if (currentScore > highScore)
         {
-            HighScore = CurrentScore;
-            PlayerPrefs.SetInt("HighScore", HighScore);
-            highScoreText.text = $"High Score: \n{HighScore}";
+            highScore = currentScore;
+            PlayerPrefs.SetInt("highScore", highScore);
+            //highScoreText.text = $"High Score: \n{highScore}";
         }
-        scoreText.text = $"Score: {CurrentScore}";
+        //scoreText.text = $"Score: {currentScore}";
 
-        if (CurrentScore >= nextLevelPoinst)
+        if (currentScore >= nextLevelPoinst)
         {
             ChangeLevel();
         }
@@ -48,7 +48,7 @@ public class Score : MonoBehaviour
     /// </summary>
     public void ChangeLevel()
     {
-        nextLevelPoinst += 10;
+        nextLevelPoinst += pointByLevel;
         level++;
         SpawnEnemy.Instance.NextLevel();
     }
