@@ -221,6 +221,17 @@ public class TutorialManager: MonoBehaviour
         ScreenButton.onClick.AddListener(() => {
             _currentState = TutorialState.Section6;
 
+            Text5.DOFade(0, 1).SetUpdate(true).OnComplete(() => Text5.gameObject.SetActive(false));
+            DownArrow.DOFillAmount(0, 1).SetUpdate(true);
+
+
+            TextBackground.DOFade(0, 3).SetUpdate(true).OnComplete(() =>
+            {
+
+                ScreenButton.gameObject.SetActive(true);
+                TextBackground.gameObject.SetActive(true);
+            });
+
             //Se bloquea el cursor
             Cursor.lockState = CursorLockMode.Locked;
 
@@ -231,15 +242,5 @@ public class TutorialManager: MonoBehaviour
     private void Section6()
     {
         Debug.Log(" Entra seccion 6");
-        Text4.DOFade(0, 1).SetUpdate(true).OnComplete(() => Text4.gameObject.SetActive(false));
-        DownArrow.DOFillAmount(0, 1).SetUpdate(true);
-
-
-        TextBackground.DOFade(1, 3).SetUpdate(true).OnComplete(() =>
-        {
-
-            ScreenButton.gameObject.SetActive(true);
-            TextBackground.gameObject.SetActive(true);
-        });
     }
 }
