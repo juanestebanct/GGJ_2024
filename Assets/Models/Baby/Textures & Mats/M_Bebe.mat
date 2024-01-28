@@ -78,8 +78,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _brushes:
         m_Texture: {fileID: 2800000, guid: e4646dbeaf2b6cf4a84da4db726d61bf, type: 3}
-        m_Scale: {x: 5, y: 5}
-        m_Offset: {x: 0, y: 0}
+        m_Scale: {x: 5, y: 4.54}
+        m_Offset: {x: 0, y: 0.35}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
