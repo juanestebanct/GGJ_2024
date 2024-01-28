@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Huesitos
-  m_Shader: {fileID: -6465566751694194690, guid: e24be1331b7beb948841857e147dc83a,
+  m_Shader: {fileID: -6465566751694194690, guid: 30ffa18007f1bed4aadd8ef454fd8d0a,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -31,7 +31,8 @@ Material:
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap: {}
+  stringTagMap:
+    RenderType: Opaque
   disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
@@ -108,6 +109,7 @@ Material:
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
+    - _CastShadows: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _Cull: 2
@@ -126,6 +128,8 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
+    - _RimAmout: 0.7
+    - _RimThreshold: 0.1
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -134,13 +138,21 @@ Material:
     - _Surface: 0
     - _Toon_Smoothness: 0.07
     - _WorkflowMode: 1
+    - _ZTest: 4
     - _ZWrite: 1
+    - _ZWriteControl: 0
+    - _power: 1
     m_Colors:
+    - _AmbientColor: {r: 0.7924528, g: 0.7924528, b: 0.7924528, a: 0}
     - _Ambient_Color: {r: 1, g: 0.514151, b: 0.514151, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _MainColor: {r: 1, g: 1, b: 1, a: 0}
     - _Main_Color: {r: 1, g: 1, b: 1, a: 1}
+    - _RimColor: {r: 0.8867924, g: 0.8867924, b: 0.8867924, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _Specular: {r: 1, g: 1, b: 1, a: 0}
+    - _SpecularColor: {r: 1, g: 1, b: 1, a: 0}
+    - _color_fresnel: {r: 1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
