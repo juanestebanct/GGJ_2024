@@ -14,7 +14,6 @@ public class SpawnEnemy : MonoBehaviour
 
     [Header("configuracion de Spawn Enemy")]
     [SerializeField] private List<GameObject> enemysPrefabs;
-    [SerializeField] private int MaxEnemy, maxTipyEnemy;
     [SerializeField] private List<NavMeshSurface> ListNavmesh;
     [SerializeField] private List<int> probability;
 
@@ -43,7 +42,6 @@ public class SpawnEnemy : MonoBehaviour
     {
         if (Instance == null) Instance = this;
 
-        maxTipyEnemy = enemysPrefabs.Count;
         playerReferent = GameObject.FindGameObjectWithTag("Player").transform;
         GenerateNavMesh();
         PoolEnemies(wWs, ListNavmesh[0]);
@@ -170,12 +168,16 @@ public class SpawnEnemy : MonoBehaviour
     /// <summary>
     /// Vamos a subir de nivel 
     /// </summary>
-    public void NextLevel()
+    public void NextLevel(int level)
     {
+        level = this.level;
         maxEnemyRound += enemyByLevels;
-        
-        probability[0] +=2;
-        probability[0] +=2;
-        probability[0] -=2;
+        print(maxEnemyRound);
+        if (level < 5)
+        {
+            probability[0] += 2;
+            probability[0] += 2;
+            probability[0] -= 2;
+        }
     }
 }

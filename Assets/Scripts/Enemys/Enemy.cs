@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected int AttackDamage;
     [SerializeField] protected float rangeZoneAttack;
     [SerializeField] protected float Speed;
-
+    [SerializeField] protected int PointDie;
     protected Transform playerReferent;
     protected NavMeshAgent navMeshAgent;
     protected MoventPatron m_Patron;
@@ -52,6 +52,7 @@ public class Enemy : MonoBehaviour
             Instantiate(deathParticlePrefab, transform.position, Quaternion.identity);
             deathParticlePrefab.GetComponent<ParticleSystem>().Play();
         }
+        Score.Instance.GetPoins(PointDie);
         Desactive();
     }
     public void Desactive()

@@ -77,6 +77,7 @@ MonoBehaviour:
   AttackDamage: 6
   rangeZoneAttack: 1.6
   Speed: 10
+  PointDie: 5
   DamageZone: {fileID: 7326202857374584932}
 --- !u!136 &7672882326959173128
 CapsuleCollider:

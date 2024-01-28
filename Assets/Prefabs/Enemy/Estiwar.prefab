@@ -78,6 +78,7 @@ MonoBehaviour:
   AttackDamage: 5
   rangeZoneAttack: 10
   Speed: 5
+  PointDie: 5
   timeToFire: 3
   attack:
     m_PersistentCalls:
