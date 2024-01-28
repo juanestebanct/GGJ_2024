@@ -32,6 +32,8 @@ public class RoomManager : MonoBehaviour
         }
 
         instance = this;
+
+        OnRoomFinished.AddListener(UpdateRoomStatus);
     }
 
     private void Update()
@@ -76,6 +78,15 @@ public class RoomManager : MonoBehaviour
 
             destinyTeleport.TPInfo.SetDestinyRoom(currentRoom, tp);
         }
+    }
+
+    private void UpdateRoomStatus()
+    {
+        if (!currentRoom) return;
+
+        if (currentRoom.Finished) return;
+
+        currentRoom.RoomFinished();
     }
 
     #endregion
