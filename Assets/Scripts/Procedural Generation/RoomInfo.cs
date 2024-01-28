@@ -39,6 +39,8 @@ public class RoomInfo : MonoBehaviour
     public void RoomFinished()
     {
         finished = true;
+
+        EnableTPs();
     }
 
     #endregion

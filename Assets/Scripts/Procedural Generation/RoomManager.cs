@@ -14,9 +14,6 @@ public class RoomManager : MonoBehaviour
     [SerializeField] private List<RoomInfo> roomPrefabs = new List<RoomInfo>();
     [SerializeField] private int bakeLayer, defaultLayer;
 
-    //Utility
-    public UnityEvent OnRoomFinished;
-
     private List<RoomInfo> roomCreated = new List<RoomInfo>();
     private Queue<Vector3> roomSpawnPoint = new Queue<Vector3>();
     private RoomInfo currentRoom = null;
@@ -33,18 +30,11 @@ public class RoomManager : MonoBehaviour
         }
 
         instance = this;
-
-        OnRoomFinished.AddListener(UpdateRoomStatus);
     }
 
-    private void Update()
+    private void Start()
     {
-        if(Input.GetKeyDown(KeyCode.K))
-        {
-            if (!currentRoom) return;
-
-            currentRoom.EnableTPs();        
-        }
+        SpawnEnemy.Instance.EndFight.AddListener(UpdateRoomStatus);
     }
 
     #region Utility
@@ -100,15 +90,6 @@ public class RoomManager : MonoBehaviour
         AssignLayer(currentRoom.gameObject.transform.GetChild(0), defaultLayer);
     }
 
-    IEnumerator RoomEnemyDisposal()
-    {
-        yield return new WaitForEndOfFrame();
-
-        SpawnEnemy.Instance.ActionLevel(currentRoom.transform, currentRoom.GridSize);
-
-        yield return null;
-    }
-
     private void AssignLayer(Transform parent, int layer)
     {
         parent.gameObject.layer = layer;
@@ -117,6 +98,15 @@ public class RoomManager : MonoBehaviour
         {
             child.gameObject.layer = layer;
         }
+    }
+
+    IEnumerator RoomEnemyDisposal()
+    {
+        yield return new WaitForEndOfFrame();
+
+        SpawnEnemy.Instance.ActionLevel(currentRoom.transform, currentRoom.GridSize);
+
+        yield return null;
     }
 
     #endregion
