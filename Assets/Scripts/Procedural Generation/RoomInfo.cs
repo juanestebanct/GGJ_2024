@@ -8,6 +8,7 @@ public class RoomInfo : MonoBehaviour
     //Assignables
     [SerializeField] private Transform topHeight;
     [SerializeField] private List<Teleport> entranceTeleport = new List<Teleport> ();
+    [SerializeField] private Vector2 gridSize = new Vector2(4,3);
 
     //Utility
     private bool finished = false;
@@ -17,6 +18,7 @@ public class RoomInfo : MonoBehaviour
     public List<Teleport> EntranceTeleport {  get { return entranceTeleport; } }
 
     public bool Finished { get => finished; }
+    public Vector2 GridSize { get => gridSize; }
 
     private void Start()
     {
@@ -37,6 +39,8 @@ public class RoomInfo : MonoBehaviour
     public void RoomFinished()
     {
         finished = true;
+
+        EnableTPs();
     }
 
     #endregion
