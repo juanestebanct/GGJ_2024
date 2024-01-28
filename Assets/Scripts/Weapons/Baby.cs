@@ -17,6 +17,9 @@ public class Baby : MonoBehaviour
     [SerializeField] private int _currentAmmo;
     [SerializeField] private LayerMask _enemiesLayer;
     [SerializeField] private Transform _aimPoint;
+
+    [SerializeField] private Animator _animatorA;
+    [SerializeField] private Animator _animatorB;
     
     private InputManager _inputManager;
     private WeaponState _currentState;
@@ -72,6 +75,8 @@ public class Baby : MonoBehaviour
     {
         if (_firePressed && Time.time >= _nextFireTime)
         {
+            _animatorA.SetBool("IsShooting", true);
+            _animatorB.SetBool("IsShooting", true);
             StartCoroutine(Shoot());
             _fireEnded = false;
             _nextFireTime = Time.time + _fireRate;
@@ -83,6 +88,8 @@ public class Baby : MonoBehaviour
         }
         else if (!_firePressed)
         {
+            _animatorA.SetBool("IsShooting", false);
+            _animatorB.SetBool("IsShooting", false);
             _fireStarted = false;
             if (!_fireEnded)
             {
@@ -107,6 +114,8 @@ public class Baby : MonoBehaviour
                 _reloadPressed = false;
                 _isReloading = true;
                 _currentState = WeaponState.Reloading;
+                _animatorA.SetTrigger("OutOfAmmo");
+                _animatorB.SetTrigger("OutOfAmmo");
                 _reloadController.StartReload();
             }
     }
@@ -116,6 +125,8 @@ public class Baby : MonoBehaviour
         _isReloading = false;
         _currentAmmo = _maxAmmo;
         _currentState = WeaponState.IdleShooting;
+        _animatorA.SetTrigger("ReloadComplete");
+        _animatorB.SetTrigger("ReloadComplete");
         if (ReloadCompleted != null) ReloadCompleted.Invoke();
     }
     
@@ -131,6 +142,8 @@ public class Baby : MonoBehaviour
         else
         {
             _currentState = WeaponState.OutOfAmmo;
+            _animatorA.SetBool("IsShooting", false);
+            _animatorB.SetBool("IsShooting", false);
             _laserFX.EndLaser();
             _fireEnded = true; 
         }
