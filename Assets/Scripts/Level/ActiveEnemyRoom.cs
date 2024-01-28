@@ -16,4 +16,9 @@ public class ActiveEnemyRoom : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    public void OnActiveScenari()
+    {
+        SpawnEnemy.Instance.ActionLevel(tranformCenterRoom, Grid);
+        //Destroy(gameObject);
+    }
 }
