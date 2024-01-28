@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5706354146105612394}
   - component: {fileID: 9001441612753632057}
   - component: {fileID: 7672882326959173128}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ww
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -302,16 +302,36 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 6144df0983a281b4e920f3cf1fe3da14, type: 2}
+    - target: {fileID: 742151548404996736, guid: b0038c2db3bebb241926a64f56663752,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b0038c2db3bebb241926a64f56663752,
         type: 3}
       propertyPath: m_Name
       value: AjoloteCapsula
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b0038c2db3bebb241926a64f56663752,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5562704547301609168, guid: b0038c2db3bebb241926a64f56663752,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8209654051649485559, guid: b0038c2db3bebb241926a64f56663752,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: fae147ccafadf0447bc9b241b5a425dd, type: 2}
+    - target: {fileID: 8712800123900742645, guid: b0038c2db3bebb241926a64f56663752,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

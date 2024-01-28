@@ -13,8 +13,12 @@ public class Proyectile : MonoBehaviour
     {
         rb.AddForce(direction * force, ForceMode.Impulse);
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
+        if (other.transform.CompareTag("Player"))
+        {
+            other.transform.GetComponent<PlayerStats>().ReceiveDamage(1);
+        }
         Destroy(gameObject);
     }
 }
