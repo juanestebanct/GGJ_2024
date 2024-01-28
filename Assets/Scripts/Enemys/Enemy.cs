@@ -45,7 +45,7 @@ public class Enemy : MonoBehaviour
         playerReferent = RefPlayer;
         navMeshSurface = refNav;
     }
-    public void Dead()
+    public virtual void Dead()
     {
         if (deathParticlePrefab != null)
         {
