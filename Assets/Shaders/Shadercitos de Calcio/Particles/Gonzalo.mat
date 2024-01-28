@@ -91,9 +91,9 @@ Material:
     - _ZWrite: 0
     - _ZWriteControl: 0
     m_Colors:
-    - _Color_1: {r: 0, g: 5.239241, b: 1.9150624, a: 0}
+    - _Color_1: {r: 0, g: 5.23924, b: 5.075267, a: 0}
     - _Color_2: {r: 0.75686276, g: 1, b: 0, a: 1}
-    - _Fresnel_Color: {r: 0, g: 4.5947933, b: 0.6747744, a: 1}
+    - _Fresnel_Color: {r: 0.083243646, g: 0, b: 4.5947933, a: 1}
     - _Main_Texture_Tiling_and_Offset_Speed: {r: 5, g: 1, b: -0.05, a: -0.05}
     - _Rainbow_Tile: {r: 1, g: 1, b: 0, a: 0}
     - _UV_Distorsion_Tiling_and_Offset_Speed: {r: 1, g: 1, b: 0, a: 0}
