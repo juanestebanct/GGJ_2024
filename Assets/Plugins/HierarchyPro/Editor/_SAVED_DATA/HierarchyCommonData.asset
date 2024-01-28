@@ -15,19 +15,14 @@ MonoBehaviour:
   ScenesTabs:
   - pin: 0
     path:
-    - Assets/_Scenes/EnemyTest/EnemyWW.unity
-    guid:
-    - 97ad7b191c0347f46a16f9bc78629642
-  - pin: 0
-    path:
     - Assets/_Scenes/PlayerController_Testing.unity
     guid:
     - 99c9720ab356a0642a771bea13969a05
   - pin: 0
     path:
-    - Assets/_Scenes/Levels/Main Map.unity
+    - Assets/_Scenes/EnemyTest/EnemyWW.unity
     guid:
-    - 35b06656b56bb7c43a8ba4cb41f36652
+    - 97ad7b191c0347f46a16f9bc78629642
   - pin: 0
     path:
     - Assets/_Scenes/Procedural Generation/Teleport.unity
