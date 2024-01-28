@@ -129,11 +129,11 @@ Material:
     - _BaseColor: {r: 0.18446636, g: 0.06731694, b: 0.034037445, a: 1}
     - _Color: {r: 0.18446633, g: 0.06731692, b: 0.034037445, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Main_Color: {r: 0.7924528, g: 0.5927533, b: 0.45229617, a: 1}
+    - _Main_Color: {r: 1, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _Specular: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &2742409427711930684
+--- !u!114 &8323007700530909918
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
