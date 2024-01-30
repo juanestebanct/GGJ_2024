@@ -36,6 +36,8 @@ public class LaserFX : MonoBehaviour
         _launchParticle.Play();
         _laser.SetActive(true);
         _laser.transform.localScale = Vector3.zero;
+        
+        DOTween.CompleteAll();
         DOTween.To(() => _laser.transform.localScale, x => _laser.transform.localScale = x,
             _laserScale, _laserStartTime);
 
@@ -44,6 +46,7 @@ public class LaserFX : MonoBehaviour
 
     public void EndLaser()
     {
+        DOTween.CompleteAll();
         DOTween.To(() => _laser.transform.localScale, x => _laser.transform.localScale = x,
             new Vector3(0,0,_laserScale.z), _laserEndTime).onComplete = TurnOffLaser;
 

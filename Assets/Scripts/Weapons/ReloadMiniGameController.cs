@@ -19,6 +19,8 @@ public class ReloadMiniGameController : MonoBehaviour
     [SerializeField] private float _laughLevelReloadSpeedUp = 1f;
     [SerializeField] private ParticleSystem _babyBoom;
     [SerializeField] private AK.Wwise.Event _explotionSFX;
+    [SerializeField] private GameObject _darkReloadScreen;
+    [SerializeField] private float _darkReloadScreenTargetAlpha = 98;
     private PlayerStats _playerStats;
     private InputManager _inputManager;
     public ReloadState CurrentState;
@@ -36,13 +38,7 @@ public class ReloadMiniGameController : MonoBehaviour
         CurrentState = ReloadState.NotActive;
         _isIndicatorMoving = false;
         _miniGameInterface.SetActive(false);
-    }
-
-    public void StartReload()
-    {
-        CurrentState = ReloadState.Reloading; 
-        _miniGameInterface.SetActive(true);
-        _reloadSlider.value = 0;
+        SetDarkScreen(0,0);
     }
 
     private void Update()
@@ -57,6 +53,14 @@ public class ReloadMiniGameController : MonoBehaviour
                 HandleResetValues();
                 break;
         }
+    }
+    
+    public void StartReload()
+    {
+        CurrentState = ReloadState.Reloading; 
+        _miniGameInterface.SetActive(true);
+        _reloadSlider.value = 0;
+        SetDarkScreen(0.98f,1);
     }
 
     private void HandleReloadSliderMovement()
@@ -105,7 +109,15 @@ public class ReloadMiniGameController : MonoBehaviour
         _laughLevelSlider.value = 0;
         _isIndicatorMoving = false;
         _miniGameInterface.SetActive(false);
+        SetDarkScreen(0,1);
         CurrentState = ReloadState.NotActive;
         _baby.ReloadDone();
+    }
+
+    private void SetDarkScreen(float targetValue, float time)
+    {
+        DOTween.To(() => _darkReloadScreen.GetComponent<MeshRenderer>().material.GetColor("_BaseColor").a,
+            x => _darkReloadScreen.GetComponent<MeshRenderer>().material.SetColor
+                ("_BaseColor", new Color(0,0,0,x)), targetValue, time);
     }
 }

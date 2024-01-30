@@ -460,9 +460,6 @@ MonoBehaviour:
   - {fileID: 8260808816243432375, guid: 3720700d6c814024fb42d3e271b54773, type: 3}
   bakeLayer: 6
   defaultLayer: 0
-  OnRoomFinished:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &1576217102
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,15 +552,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 892560269231681936, guid: 553119e9d60edbf46b4441d949b342b0,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 892560269231681936, guid: 553119e9d60edbf46b4441d949b342b0,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864483337108529732, guid: 553119e9d60edbf46b4441d949b342b0,
+        type: 3}
+      propertyPath: _maxHealth
+      value: 50000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534773029040384619, guid: 553119e9d60edbf46b4441d949b342b0,
+        type: 3}
+      propertyPath: _maxAmmo
+      value: 30000000
+      objectReference: {fileID: 0}
     - target: {fileID: 3621593064644270484, guid: 553119e9d60edbf46b4441d949b342b0,
         type: 3}
       propertyPath: m_Name
       value: PlayerController
-      objectReference: {fileID: 0}
-    - target: {fileID: 3621593064644270484, guid: 553119e9d60edbf46b4441d949b342b0,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3723763598020617544, guid: 553119e9d60edbf46b4441d949b342b0,
         type: 3}
@@ -613,6 +625,26 @@ PrefabInstance:
     - target: {fileID: 3723763598020617544, guid: 553119e9d60edbf46b4441d949b342b0,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4544256213055059339, guid: 553119e9d60edbf46b4441d949b342b0,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4544256213055059339, guid: 553119e9d60edbf46b4441d949b342b0,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4544256213055059339, guid: 553119e9d60edbf46b4441d949b342b0,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7250663404949598724, guid: 553119e9d60edbf46b4441d949b342b0,
+        type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -756,6 +788,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3894812740912935540, guid: 31e4b318dcf61d046891c79786a6f0f1,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7542272289717778857, guid: 31e4b318dcf61d046891c79786a6f0f1,
         type: 3}
       propertyPath: m_Name
@@ -775,5 +812,5 @@ SceneRoots:
   - {fileID: 1576217104}
   - {fileID: 3476003537139203841}
   - {fileID: 1509941926}
-  - {fileID: 1838048681}
   - {fileID: 1957847717}
+  - {fileID: 1838048681}
