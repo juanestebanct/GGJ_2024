@@ -17,6 +17,7 @@ public class SpawnEnemy : MonoBehaviour
     [SerializeField] private List<GameObject> enemysPrefabs;
     [SerializeField] private NavMeshSurface ListNavmesh;
     [SerializeField] private List<int> probability;
+    [SerializeField] private int timeForSpawn;
 
     [Header("Grid")]
     [SerializeField] private Vector2 maxRange;
@@ -181,12 +182,10 @@ public class SpawnEnemy : MonoBehaviour
         ListNavmesh = map;
         StarFight.Invoke();
 
-        ExampleGrid();
-        for (int i = 0;i < maxEnemyRound; i++)
-        {
-            SpawnEnemys(choose());
-        }
-        enemyActives = maxEnemyRound;
+        //  SpawnEnemys(choose());
+        StartCoroutine(StopToSpamn());
+        //ExampleGrid();
+
     }
     /// <summary>
     /// Vamos a subir de nivel 
@@ -232,6 +231,20 @@ public class SpawnEnemy : MonoBehaviour
             }
         }
     }
-    IE
+    IEnumerator SpawnEnemyWait()
+    {
+        for (int i = 0; i < maxEnemyRound; i++)
+        {
+            SpawnEnemys(choose());
+            yield return new WaitForSecondsRealtime(timeForSpawn);
+        }
+        enemyActives = maxEnemyRound;
+    }
+    IEnumerator StopToSpamn()
+    {
+        yield return new WaitForSecondsRealtime(2f);
+        StartCoroutine(SpawnEnemyWait());
+    }
+
 
 }
