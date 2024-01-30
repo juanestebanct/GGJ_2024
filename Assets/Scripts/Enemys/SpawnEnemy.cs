@@ -15,7 +15,7 @@ public class SpawnEnemy : MonoBehaviour
 
     [Header("configuracion de Spawn Enemy")]
     [SerializeField] private List<GameObject> enemysPrefabs;
-    [SerializeField] private List<NavMeshSurface> ListNavmesh;
+    [SerializeField] private NavMeshSurface ListNavmesh;
     [SerializeField] private List<int> probability;
 
     [Header("Grid")]
@@ -49,16 +49,16 @@ public class SpawnEnemy : MonoBehaviour
 
         playerReferent = GameObject.FindGameObjectWithTag("Player").transform;
 
-        PoolEnemies(wWs, ListNavmesh[0]);
-        PoolEnemies(estiwars,ListNavmesh[0]);
-        PoolEnemies(estiwarsHealts, ListNavmesh[0]);
+        PoolEnemies(wWs);
+        PoolEnemies(estiwars);
+        PoolEnemies(estiwarsHealts);
 
         EndFight.AddListener(Finish);
         StarFight.AddListener(StarEvent);
         this.gameObject.layer = 2;
     }
 
-    private void PoolEnemies(List<GameObject> list, NavMeshSurface nav)
+    private void PoolEnemies(List<GameObject> list)
     {
         for (int i = 0; i < 8; i++)
         {
@@ -66,7 +66,7 @@ public class SpawnEnemy : MonoBehaviour
             enemy.SetActive(false);
             enemy.transform.position = transform.position;
             enemy.transform.parent = transform.parent;
-            enemy.GetComponent<Enemy>().GetReference(playerReferent,nav,this);
+            enemy.GetComponent<Enemy>().GetReference(playerReferent, this);
 
             list.Add(enemy);
         }
@@ -119,14 +119,11 @@ public class SpawnEnemy : MonoBehaviour
             enemy = Instantiate(enemysPrefabs[indexEnemy]);
             enemy.transform.position = transform.position;
             enemy.transform.parent = transform.parent;
-
-            if (enemy.GetComponent<Enemy>() is EnemyWw) enemy.GetComponent<Enemy>().GetReference(playerReferent, ListNavmesh[0], this);
-            else enemy.GetComponent<Enemy>().GetReference(playerReferent, ListNavmesh[0], this);
-
             pool.Add(enemy);
+            enemy.GetComponent<Enemy>().GetReference(playerReferent, this);
         }
 
-
+        enemy.GetComponent<Enemy>().GetReference(ListNavmesh);
         enemy.transform.position = PositionToSpawn();
         enemy.SetActive(true);
         ActiveEnemyList.Add(enemy);
@@ -166,7 +163,7 @@ public class SpawnEnemy : MonoBehaviour
 
     private void GenerateNavMesh()
     {
-        ListNavmesh[0].BuildNavMesh();
+        ListNavmesh.BuildNavMesh();
     }
     private void StarEvent()
     {
@@ -177,14 +174,14 @@ public class SpawnEnemy : MonoBehaviour
         print("Sobreviviste ve a otro ligar ");
     }
  
-    public void ActionLevel(Transform tempCol,Vector2 tempGrid)
+    public void ActionLevel(Transform tempCol,Vector2 tempGrid, NavMeshSurface map)
     {
         center = tempCol;
         maxRange = tempGrid;
+        ListNavmesh = map;
         StarFight.Invoke();
-        GenerateNavMesh();
 
-        //ExampleGrid();
+        ExampleGrid();
         for (int i = 0;i < maxEnemyRound; i++)
         {
             SpawnEnemys(choose());
@@ -235,5 +232,6 @@ public class SpawnEnemy : MonoBehaviour
             }
         }
     }
+    IE
 
 }

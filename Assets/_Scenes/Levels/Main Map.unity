@@ -460,9 +460,6 @@ MonoBehaviour:
   - {fileID: 8260808816243432375, guid: 3720700d6c814024fb42d3e271b54773, type: 3}
   bakeLayer: 6
   defaultLayer: 0
-  OnRoomFinished:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &1576217102
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,6 +552,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 892560269231681936, guid: 553119e9d60edbf46b4441d949b342b0,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 892560269231681936, guid: 553119e9d60edbf46b4441d949b342b0,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3621593064644270484, guid: 553119e9d60edbf46b4441d949b342b0,
         type: 3}
       propertyPath: m_Name
@@ -615,6 +622,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4544256213055059339, guid: 553119e9d60edbf46b4441d949b342b0,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4544256213055059339, guid: 553119e9d60edbf46b4441d949b342b0,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4544256213055059339, guid: 553119e9d60edbf46b4441d949b342b0,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7250663404949598724, guid: 553119e9d60edbf46b4441d949b342b0,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -637,6 +664,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LayerMask.m_Bits
       value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 6551511596503293435, guid: fc9e106f559a9e3449423ea77eb0bec2,
+        type: 3}
+      propertyPath: maxEnemyRound
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7988160562821213540, guid: fc9e106f559a9e3449423ea77eb0bec2,
         type: 3}

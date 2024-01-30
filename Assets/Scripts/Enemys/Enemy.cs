@@ -39,11 +39,14 @@ public class Enemy : MonoBehaviour
         else Dead();
 
     }
-    public void GetReference(Transform RefPlayer, NavMeshSurface refNav, SpawnEnemy father)
+    public void GetReference(Transform RefPlayer, SpawnEnemy father)
     {
         playerReferent = RefPlayer;
-        navMeshSurface = refNav;
         Faher = father;
+    }
+    public void GetReference(NavMeshSurface refNav)
+    {
+        navMeshSurface = refNav;
     }
 
     public virtual void Dead()
