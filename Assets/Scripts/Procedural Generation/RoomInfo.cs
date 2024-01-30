@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.AI.Navigation;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class RoomInfo : MonoBehaviour
 {
@@ -8,6 +10,7 @@ public class RoomInfo : MonoBehaviour
     //Assignables
     [SerializeField] private Transform topHeight;
     [SerializeField] private List<Teleport> entranceTeleport = new List<Teleport> ();
+    [SerializeField] private NavMeshSurface navMap;
     [SerializeField] private Vector2 gridSize = new Vector2(4,3);
 
     //Utility
@@ -19,6 +22,8 @@ public class RoomInfo : MonoBehaviour
 
     public bool Finished { get => finished; }
     public Vector2 GridSize { get => gridSize; }
+
+    public NavMeshSurface NavMap { get => navMap; }
 
     private void Start()
     {

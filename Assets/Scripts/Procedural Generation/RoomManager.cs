@@ -76,7 +76,7 @@ public class RoomManager : MonoBehaviour
 
             AssignLayer(createdRoom.gameObject.transform.GetChild(0), bakeLayer);
 
-            SpawnEnemy.Instance.ActionLevel(createdRoom.transform, createdRoom.GridSize);
+            SpawnEnemy.Instance.ActionLevel(createdRoom.transform, createdRoom.GridSize,createdRoom.NavMap);
         }
     }
 
@@ -104,7 +104,7 @@ public class RoomManager : MonoBehaviour
     {
         yield return new WaitForEndOfFrame();
 
-        SpawnEnemy.Instance.ActionLevel(currentRoom.transform, currentRoom.GridSize);
+        SpawnEnemy.Instance.ActionLevel(currentRoom.transform, currentRoom.GridSize,currentRoom.NavMap);
 
         yield return null;
     }
