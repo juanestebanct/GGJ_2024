@@ -106,6 +106,7 @@ public class Baby : MonoBehaviour
 
         if (_firePressed)
         {
+            _fireEnded = false;
             Ray ray = new Ray(_aimPoint.position, _aimPoint.forward);
             if (Physics.Raycast(ray, out var collisionHit, 4f))
                 _laserFX.SetHitParticlePosition(collisionHit.point);
